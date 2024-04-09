@@ -29,7 +29,7 @@
 
 <body>
     <header>
-
+        <!-- Logo and navigation menu -->
 
         <a href="./index.html">
             <img src="./image/logo.png" alt="logo" class="logo">
@@ -37,7 +37,7 @@
         </a>
 
 
-
+        <!-- Navigation menu -->
         <nav class="nav navigation-menu">
             <a href="./index.html">
                 <img src="./image/logo.png" alt="logo" class="logo">
@@ -50,7 +50,7 @@
             <a href="contact.html" class="nav-link">CONTACT</a>
 
         </nav>
-
+        <!-- Book now button and menu toggle for mobile views -->
         <div class="bookButtonGroup">
             <a href="./book.html">BOOK NOW</a>
 
@@ -67,6 +67,9 @@
     </h1>
 
     <!-- dataform plugin html - source:https://www.jqueryscript.net/form/nice-validator.html-->
+    <!-- Form validation settings:
+           timely:2 - Triggers validation right after user input but not too aggressively, for instant feedback.
+           focusCleanup:true - Clears previous validation errors when a field gains focus, for a cleaner user experience. -->
     <form class="form" data-validator-option="{timely:2, focusCleanup:true}">
         <div class="form-item">
             <label class="label">Name</label>
