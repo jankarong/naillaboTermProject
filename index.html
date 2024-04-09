@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- 3D slide plugin css -->
+    <link rel="stylesheet" href="./css/sliderstyle.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- import box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/ef0c70bc73.js" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- import box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+
+<body>
+    <header>
+        <!-- Logo and navigation menu -->
+
+        <a href="./index.html">
+            <img src="./image/logo.png" alt="logo" class="logo">
+
+        </a>
+
+
+        <!-- Navigation menu -->
+        <nav class="nav navigation-menu">
+            <a href="./index.html">
+                <img src="./image/logo.png" alt="logo" class="logo">
+            </a>
+            <div class="divider"></div>
+
+
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+
+        </nav>
+
+
+        <!-- Book now button and menu toggle for mobile views -->
+        <div class="bookButtonGroup">
+            <a href="./book.html">BOOK NOW</a>
+
+
+            <i class='bx bx-menu toggle-menu'></i>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- 3d slider plugin HTML-source:https://www.jqueryscript.net/slider/3D-Stack-Card-Slider.html -->
+
+    <div class="container">
+        <div id="slider">
+            <div class="dp-wrap">
+                <div id="dp-slider">
+
+                    <div class="dp_item" data-class="1" data-position="1">
+                        <div class="dp-content">
+
+                            <h2>Manicure</h2>
+                            <br>
+                            <p> Beautify Together, Create Memories — Parent-Child Manicure, Where Love Meets Beauty!
+                            </p>
+                            <br>
+                            <a href="./book.html" class="site-btn">Book Now</a>
+                        </div>
+                        <div class="dp-img">
+                            <img class="img-fluid" src="./image/parentchildnail.JPG" alt="parentchildnail">
+                        </div>
+                    </div>
+
+                    <div class="dp_item" data-class="2" data-position="2">
+                        <div class="dp-content">
+
+                            <h2>Pedicure</h2>
+                            <br>
+                            <p>Luxurious pedicure: Soften, beautify, rejuvenate.
+                            </p>
+                            <br>
+                            <a href="./book.html" class="site-btn">Book Now</a>
+                        </div>
+                        <div class="dp-img">
+                            <img class="img-fluid" src="./image/main2.JPG" alt="pedicure">
+                        </div>
+                    </div>
+
+                    <div class="dp_item" data-class="3" data-position="3">
+                        <div class="dp-content">
+
+                            <h2>Eyelash</h2>
+                            <br>
+                            <p>Blink in Beauty — Your Exclusive Lash Extension Wonder. </p>
+                            <br>
+                            <a href="./book.html" class="site-btn">Book Now</a>
+                        </div>
+                        <div class="dp-img">
+                            <img class="img-fluid" src="./image/main3.png" alt="eyelash">
+                        </div>
+                    </div>
+
+                    <div class="dp_item" data-class="4" data-position="4">
+                        <div class="dp-content">
+
+                            <h2>Naillbo</h2>
+                            <br>
+                            <p>Naillabo Salon: Where Richmond's community and mothers find their favorite
+                                creative nail designs. </p>
+                            <br>
+                            <a href="./book.html" class="site-btn">Book Now</a>
+                        </div>
+                        <div class="dp-img">
+                            <img class="img-fluid" src="./image/naillabo.JPG" alt="naillaboshop">
+                        </div>
+                    </div>
+                </div>
+                <!-- Next and previous buttons -->
+                <span id="dp-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #fa8c8c;
+                                    stroke-miterlimit: 10;
+                                    stroke-width: 7px;
+                                }
+                            </style>
+                        </defs>
+                        <path id="Rectangle_4_pre" data-name="Rectangle 4 Copy" class="cls-1"
+                            d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)" />
+                    </svg>
+                </span>
+
+                <span id="dp-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #fa8c8c;
+                                    stroke-miterlimit: 10;
+                                    stroke-width: 7px;
+                                }
+                            </style>
+                        </defs>
+                        <path id="Rectangle_4_next" data-name="Rectangle 4 Copy" class="cls-1"
+                            d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)" />
+                    </svg>
+                </span>
+
+
+                <!-- Slider dots -->
+                <ul id="dp-dots">
+                    <li data-class="1" class="active"></li>
+                    <li data-class="2"></li>
+                    <li data-class="3"></li>
+                    <li data-class="4"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+
+            <div class="sec aboutus">
+                <h2>About Us</h2>
+                <p>Naillabo Salon, thriving for over 7 years, stands as your favorite nail spot in Aberdeen
+                    Center,
+                    Richmond, BC. Our salon
+                    isn't just popular; it's cute, clean, and the preferred spot for fantastic nail designs.
+                </p>
+                <img src="./image/logo.png" alt="logo" class="logo">
+            </div>
+            <div class="sec quicklinks">
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./contact.html">Contact US</a></li>
+                </ul>
+            </div>
+
+            <div class="sec contact">
+                <h2>Contact</h2>
+                <ul class="info">
+                    <li><span><i class="fa-regular fa-envelope"></i></span>
+                        <p><a href="#">jankarong@gmail.com</a></p>
+                    </li>
+                    <li><span><i class="fa-solid fa-phone"></i></span>
+                        <p><a href="#">604.998.7666</a></p>
+                    </li>
+                    <li><span><i class="fa-brands fa-weixin"></i></span>
+                        <p><a href="#">naillabo3530</a></p>
+                    </li>
+                    <li><span><i class="fa-solid fa-location-dot"></i></span>
+                        <p><a href="https://maps.app.goo.gl/e5at4vCP8VJvuesX9">3530-4151 Hazelbridge Way Richmond BC</a>
+                        </p>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="sec followUs">
+                <h2>Follow Us</h2>
+                <ul class="sociaMedia">
+                    <li><a href="#"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="copyRightText">
+        <p>Copyright © 2024 Naillabo.All Rights Reserved</p>
+    </div>
+
+    <!-- toggle nav js -->
+    <script src="./Javascript/togglenavscript.js"></script>
+    <!-- 3d slide plugin js -->
+    <script src="./Javascript/sliderscript.js"></script>
+</body>

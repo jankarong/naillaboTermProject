@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    \
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sliderstyle.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- import box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/ef0c70bc73.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+
+
+        <a href="./index.html">
+            <img src="./image/logo.png" alt="logo" class="logo">
+
+        </a>
+
+
+
+        <nav class="nav navigation-menu">
+            <a href="./index.html">
+                <img src="./image/logo.png" alt="logo" class="logo">
+            </a>
+            <div class="divider"></div>
+
+
+            <a href="index.html" class="nav-link">HOME</a>
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+
+        </nav>
+
+        <div class="bookButtonGroup">
+            <a href="./book.html">BOOK NOW</a>
+
+
+            <i class='bx bx-menu toggle-menu'></i>
+
+        </div>
+
+
+    </header>
+    <br>
+    <br>
+    <h1>MAKE YOUR RESERVATION
+    </h1>
+
+    <!-- dataform plugin html - source:https://www.jqueryscript.net/form/nice-validator.html-->
+    <form class="form" data-validator-option="{timely:2, focusCleanup:true}">
+        <div class="form-item">
+            <label class="label">Name</label>
+            <input type="text" name="username" data-rule="required;username;"
+                data-rule-username="[/^[\w\d]{3,12}$/, 'Please enter 3-12 digits, letters, underscores']"
+                data-tip="You can use letters, numbers and periods">
+        </div>
+
+
+        <div class="form-item">
+            <label class="label">Email</label>
+            <input type="text" name="email" data-rule="required;email">
+        </div>
+        <div class="form-item">
+            <label class="label">Phone</label>
+            <input type="text" name="phone" data-rule="required;numbers">
+        </div>
+        <div class="form-item">
+            <label class="label">Service</label>
+            <label><input type="checkbox" name="Service" data-rule="checked">Manicure</label>
+            <label><input type="checkbox" name="Service">Pedicure</label>
+            <label><input type="checkbox" name="Service">Eyelash Extension</label>
+        </div>
+
+        <!-- time picker plugin html- source：https://www.jqueryscript.net/time-clock/minimal-user-friendly-date-time-picker.html -->
+
+        <div class="form-item">Time:
+            <input class="example" type="text" name="jQueryScript" value="">
+        </div>
+
+
+
+
+
+        <div class="form-item">
+            <label class="label">Note</label>
+            <textarea data-rule="required;"></textarea>
+        </div>
+        <div class="form-item">
+            <label><input type="checkbox" id="agree_arguments" data-rule="checked">I agree to the service
+                agreement.</label>
+        </div>
+        <div class="form-item">
+            <button type="submit">Submit</button>
+        </div>
+
+
+
+    </form>
+
+
+
+    <footer>
+        <div class="container">
+
+            <div class="sec aboutus">
+                <h2>About Us</h2>
+                <p>Naillabo Salon, thriving for over 7 years, stands as your favorite nail spot in Aberdeen
+                    Center,
+                    Richmond, BC. Our salon
+                    isn't just popular; it's cute, clean, and the preferred spot for fantastic nail designs.
+                </p>
+                <img src="./image/logo.png" alt="logo" class="logo">
+            </div>
+            <div class="sec quicklinks">
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./contact.html">Contact US</a></li>
+                </ul>
+            </div>
+
+            <div class="sec contact">
+                <h2>Contact</h2>
+                <ul class="info">
+                    <li><span><i class="fa-regular fa-envelope"></i></span>
+                        <p><a href="#">jankarong@gmail.com</a></p>
+                    </li>
+                    <li><span><i class="fa-solid fa-phone"></i></span>
+                        <p><a href="#">604.998.7666</a></p>
+                    </li>
+                    <li><span><i class="fa-brands fa-weixin"></i></span>
+                        <p><a href="#">naillabo3530</a></p>
+                    </li>
+                    <li><span><i class="fa-solid fa-location-dot"></i></span>
+                        <p><a href="https://maps.app.goo.gl/e5at4vCP8VJvuesX9">3530-4151 Hazelbridge Way Richmond BC</a>
+                        </p>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div class="sec followUs">
+                <h2>Follow Us</h2>
+                <ul class="sociaMedia">
+                    <li><a href="#"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="copyRightText">
+        <p>Copyright © 2024 Naillabo.All Rights Reserved</p>
+    </div>
+
+    <script src="./Javascript/togglenavscript.js"></script>
+    <!-- validator plugin js -->
+    <script src="./Javascript/jquery.validator.js"></script>
+    <!-- dateandtime plugin js -->
+    <script src="./Javascript/jquery.dateandtime.js"></script>
+
+
+    <script>
+        $(function () {
+            $('.example').dateAndTime();
+        });</script>
+</body>
