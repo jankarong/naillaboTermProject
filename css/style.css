@@ -107,15 +107,16 @@ footer {
     background-color: #FFB9B9;
 }
 
-footer .container {
+footer .container1 {
     width: 100%;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
     grid-gap: 20px
 }
 
-footer .container .sec h2 {
+footer .container1 .sec h2 {
     font-family: "Poppins", sans-serif;
+    font-size: 20px;
 
     position: relative;
     color: #333;
@@ -124,52 +125,52 @@ footer .container .sec h2 {
 }
 
 
-footer .container .sec p {
+footer .container1 .sec p {
     color: #555;
 }
 
-footer .container .sociaMedia {
+footer .container1 .sociaMedia {
     margin-top: 20px;
 
 }
 
-footer .container .sociaMedia li {
+footer .container1 .sociaMedia li {
     list-style: none;
 
 }
 
-footer .container .quicklinks {
+footer .container1 .quicklinks {
     position: relative;
 }
 
-footer .container .quicklinks ul li {
+footer .container1 .quicklinks ul li {
     list-style: none;
 }
 
-footer .container .quicklinks ul li a {
+footer .container1 .quicklinks ul li a {
     color: #555;
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
 }
 
-footer .container .contact .info {
+footer .container1 .contact .info {
     position: relative;
 }
 
-footer .container .contact .info li {
+footer .container1 .contact .info li {
     display: grid;
     grid-template-columns: 30px 1fr;
     margin-bottom: 16px;
 }
 
-footer .container .contact .info li span {
+footer .container1 .contact .info li span {
     color: #555;
     font-size: 20px;
     gap: 10px;
 }
 
-footer .container .contact .info li a {
+footer .container1 .contact .info li a {
     color: #555;
     text-decoration: none;
 }
@@ -183,7 +184,7 @@ footer .container .contact .info li a {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-footer .container .followUs .sociaMedia li a {
+footer .container1 .followUs .sociaMedia li a {
     color: #555;
     font-size: 20px;
     gap: 10px;
