@@ -67,12 +67,17 @@
     </h1>
 
     <!-- dataform plugin html - source:https://www.jqueryscript.net/form/nice-validator.html-->
-    <!-- Form validation settings:
-           timely:2 - Triggers validation right after user input but not too aggressively, for instant feedback.
-           focusCleanup:true - Clears previous validation errors when a field gains focus, for a cleaner user experience. -->
+
+    <!-- data-validator-option sets rules for checking the data users enter, telling the webpage how to react when users type something -->
+    <!-- timely:2: Shows error messages right after a user stops typing -->
+    <!-- focusCleanup:true: Clears error messages when the user clicks back into a field -->
+
     <form class="form" data-validator-option="{timely:2, focusCleanup:true}">
         <div class="form-item">
             <label class="label">Name</label>
+
+            <!-- data-rule sets the rules for this input box, here specifying the username is required and can only be 3 to 12 characters long, using letters, numbers, or underscores.  -->
+            <!-- data-tip provides a hint to users about what characters they can use. -->
             <input type="text" name="username" data-rule="required;username;"
                 data-rule-username="[/^[\w\d]{3,12}$/, 'Please enter 3-12 digits, letters, underscores']"
                 data-tip="You can use letters, numbers and periods">
@@ -87,6 +92,7 @@
             <label class="label">Phone</label>
             <input type="text" name="phone" data-rule="required;numbers">
         </div>
+        <!-- data-rule="checked" means the box needs to be ticked to submit the form. -->
         <div class="form-item">
             <label class="label">Service</label>
             <label><input type="checkbox" name="Service" data-rule="checked">Manicure</label>
@@ -103,7 +109,7 @@
 
 
 
-
+        <!-- means this text area must be filled in before the form can be submitted; it's a required field. -->
         <div class="form-item">
             <label class="label">Note</label>
             <textarea data-rule="required;"></textarea>
@@ -186,7 +192,9 @@
 
 
     <script>
+        // Wait for the web page to be fully ready, then  run the function.
         $(function () {
+            //Adds date and time picking functionality to elements with the example class.
             $('.example').dateAndTime();
         });</script>
 </body>
