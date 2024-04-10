@@ -360,4 +360,9 @@ h4 {
         grid-gap: 20px
     }
 
+
+    p {
+        font-size: 14px;
+    }
+
 }
