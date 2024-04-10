@@ -82,6 +82,8 @@
     </p>
     <br>
 
+    <div id="map" style="height:400px; width:100%;"></div>
+
     <div class="naillabo">
         <a href="https://maps.app.goo.gl/e5at4vCP8VJvuesX9">
             <img src="./image/naillabo.png" alt="naillaboshop">
@@ -157,6 +159,22 @@
 
     <script src="./Javascript/togglenavscript.js"></script>
 
+    <script>
+        function initMap() {
+            var location = { lat: -34.397, lng: 150.644 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJCRW10Wr5Q0_TC2aYlRm867BNzFdXmnU&callback=initMap">
+        </script>
 
 
 
