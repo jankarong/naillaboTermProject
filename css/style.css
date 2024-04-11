@@ -283,7 +283,7 @@ h4 {
         padding: 40px;
     }
 
-    footer .container {
+    footer .container1 {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -354,7 +354,7 @@ h4 {
         font-size: 12px;
     }
 
-    footer .container {
+    footer .container1 {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
