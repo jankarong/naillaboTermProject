@@ -228,11 +228,9 @@ h4 {
     align-items: center;
 }
 
-/* #map {
-    height: 400px;
-
-    width: 100%;
-} */
+p {
+    margin: 10px;
+}
 
 
 @media(max-width:768px) {
