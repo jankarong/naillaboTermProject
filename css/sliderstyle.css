@@ -10,6 +10,7 @@
     width: 100%;
     position: absolute;
     transform-style: preserve-3d;
+
 }
 
 .dp-slider div {
@@ -27,6 +28,7 @@
 
 .dp-img img {
     border-left: 1px solid #fff;
+    max-width: none;
 }
 
 #dp-slider .dp_item:first-child {
@@ -159,6 +161,7 @@
 .dp-img img {
     object-fit: cover;
     object-position: right;
+
 }
 
 #dp-slider,
