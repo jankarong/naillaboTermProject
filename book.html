@@ -72,7 +72,8 @@
     <!-- timely:2: Shows error messages right after a user stops typing -->
     <!-- focusCleanup:true: Clears error messages when the user clicks back into a field -->
 
-    <form class="form" action="http://localhost:3000/send_email" data-validator-option="{timely:2, focusCleanup:true}">
+    <form class="form" action="http://localhost:3000/send_email" method="post"
+        data-validator-option="{timely:2, focusCleanup:true}">
         <div class="form-item">
             <label class="label">Name</label>
 
