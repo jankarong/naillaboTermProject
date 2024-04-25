@@ -20,3 +20,15 @@ $(document).ready(function () {
         }
     });
 });
+
+
+<script>
+    window.embeddedChatbotConfig = {
+        chatbotId: "mfASjJYTt37a0hQ65WX6A",
+    domain: "www.chatbase.co"
+}
+
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="mfASjJYTt37a0hQ65WX6A"
+    domain="www.chatbase.co"
+defer>

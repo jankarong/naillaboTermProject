@@ -190,16 +190,9 @@ footer .container1 .followUs .sociaMedia li a {
     gap: 10px;
 }
 
+iframe {
 
-/* form css */
-.form {
-    margin: 100px;
-
-}
-
-.form-item {
-    margin: 20px;
-
+    padding: 50px;
 }
 
 h1 {
