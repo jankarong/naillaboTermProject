@@ -52,6 +52,7 @@ header {
 
 }
 
+
 .nav a {
     color: #ffffff;
     text-decoration: none;
@@ -93,6 +94,10 @@ header {
 
 
 .bx-menu.toggle-menu {
+    display: none;
+}
+
+.bx-x.close-menu {
     display: none;
 }
 
@@ -225,6 +230,17 @@ p {
     margin: 10px;
 }
 
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
 
 @media(max-width:768px) {
     .nav {
@@ -238,6 +254,7 @@ p {
         width: 50%;
         gap: 16px;
         padding: 0 20px;
+
 
 
 
@@ -257,6 +274,20 @@ p {
     }
 
     .bx-menu.toggle-menu {
+        display: block;
+        font-size: 45px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .bx-x.close-menu {
+        display: block;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .fa-solid fa-xmark {
         display: block;
         font-size: 45px;
         color: white;
@@ -331,6 +362,21 @@ p {
         z-index: 2;
 
 
+
+    }
+
+    .bx-x.close-menu {
+        display: block;
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .fa-solid fa-xmark {
+        display: block;
+        font-size: 45px;
+        color: white;
+        cursor: pointer;
     }
 
 

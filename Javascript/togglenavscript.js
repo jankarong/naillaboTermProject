@@ -8,6 +8,13 @@ $(document).ready(function () {
         $('.navigation-menu').toggle();
     });
 
+    $('.close-menu').click(function () {
+        // Find elements with the 'navigation-menu' class and switch their visibility
+        $('.navigation-menu').toggle();
+    });
+
+
+
     //When the size of the browser window changes,then run the function.
     $(window).resize(function () {
         //If the window is wider than 768 px
@@ -20,4 +27,3 @@ $(document).ready(function () {
         }
     });
 });
-
