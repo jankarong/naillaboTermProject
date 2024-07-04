@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Discover the best nail salon near you at NaillaboSalon in Richmond. Get best nail salon services for all your manicure and pedicure needs.">
-    <meta name="keywords" content="nail salon near me, nail shop, nail salon Richmond">
-    <title>NaillaboSalon - Best Nail Salon Near You in Richmond</title>
+        content="Book your nail appointment online at NaillaboSalon in Richmond. Easy reservation for manicures, pedicures, and eyelash extensions. Experience top-quality nail services at Aberdeen Center. Reserve now for your beauty treatment.">
+    <meta name="keywords"
+        content="online nail appointment, nail salon booking Richmond, manicure reservation, pedicure booking, eyelash extension appointment, NaillaboSalon online booking, nail services Aberdeen Center, beauty salon reservation Richmond">
+    <title>Book Online - NaillaboSalon Appointments for Nails & Lashes in Richmond</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
@@ -35,7 +36,7 @@
         <!-- Logo and navigation menu -->
 
         <a href="./index.html">
-            <img src="./image/logo.png" alt="logo" class="logo">
+            <img src="./image/logo.png" alt="nail labo salon logo" class="logo">
 
         </a>
 
@@ -43,7 +44,7 @@
         <!-- Navigation menu -->
         <nav class="nav navigation-menu">
             <a href="./index.html">
-                <img src="./image/logo.png" alt="logo" class="logo">
+                <img src="./image/logo.png" alt="nail labo salon logo" class="logo">
             </a>
             <div class="divider"></div>
 
@@ -85,13 +86,15 @@
 
             <div class="sec aboutus">
                 <h2>About Us</h2>
-                <p>Naillabo Salon, thriving for over seven years at Aberdeen Center in Richmond, BC, is your top
-                    destination for exquisite
-                    nail designs. Known for its charming ambiance and spotless environment, it's the perfect place
-                    for a
-                    beauty treat.
+                <p>Naillabo Salon, a nail beauty salon, has been successful at Aberdeen Center in Richmond, BC for over
+                    ten years. We
+                    provide services such as manicures (regular manicure, spa nails, nail extension, nail design), nail
+                    pedicures, and
+                    eyelash extensions. We are famous for our nice atmosphere and great nail services, perfect for your
+                    beauty treatment.
+                    Welcome to our online platform for booking nail appointments!
                 </p>
-                <img src="./image/logo.png" alt="logo" class="logo">
+                <img src="./image/logo.png" alt="nail labo salon logo" class="logo">
             </div>
             <div class="sec quicklinks">
                 <h2>Support</h2>
@@ -127,12 +130,17 @@
             <div class="sec followUs">
                 <h2>Follow Us</h2>
                 <ul class="sociaMedia">
-                    <li><a href="#"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="#" id="wechat-icon"><i class="fa-brands fa-weixin"></i></a></li>
+
                     <li><a href="https://www.instagram.com/labonail/"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li><a href="https://www.facebook.com/NaillaboSalonOnlineBooking"><i
                                 class="fa-brands fa-facebook"></i></a></li>
                 </ul>
+            </div>
+            <div id="qr-popup" class="qr-popup">
+                <span class="close-menu" id="close-popup">&times;</span>
+                <img src="./image/work.png" alt="WeChat QR Code">
             </div>
         </div>
     </footer>
@@ -144,12 +152,9 @@
 
 
 
+    <script src="./Javascript/qrcode.js"></script>
 
-    <script>
-        // Wait for the web page to be fully ready, then  run the function.
-        $(function () {
-            //Adds date and time picking functionality to elements with the example class.
-            $('.example').dateAndTime();
-        });</script>
+
+
 
 </body>

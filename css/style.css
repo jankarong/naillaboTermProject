@@ -242,6 +242,38 @@ p {
     transition: visibility 0.3s, opacity 0.3s linear;
 }
 
+
+.qr-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.qr-popup img {
+    max-width: 200px;
+    height: auto;
+}
+
+.qr-popup .close-menu {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    line-height: 1;
+}
+
 @media(max-width:768px) {
     .nav {
         position: absolute;
@@ -317,6 +349,13 @@ p {
     }
 
 
+
+
+    .nav.active {
+        left: 0;
+
+    }
+
 }
 
 
@@ -324,7 +363,6 @@ p {
 @media(max-width:431px) {
     .nav {
         position: absolute;
-        left: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -334,9 +372,14 @@ p {
         width: 100%;
         gap: 20px;
         padding: 0 20px;
+        left: -100%;
+        transition: left 0.3s ease-in-out;
+
 
 
     }
+
+
 
 
     .nav .logo {
@@ -399,8 +442,11 @@ p {
     }
 
 
-    p {
-        font-size: 14px;
+
+    .nav.active {
+        left: 0;
+
     }
+
 
 }

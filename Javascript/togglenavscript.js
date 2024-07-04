@@ -1,29 +1,31 @@
 
-
-// Wait for the web page to be fully ready, then  run the function.
 $(document).ready(function () {
-    //  When an element with the 'toggle-menu' class is clicked， run the function.
+    // When the hamburger menu is clicked
     $('.toggle-menu').click(function () {
-        // Find elements with the 'navigation-menu' class and switch their visibility
-        $('.navigation-menu').toggle();
-    });
-
-    $('.close-menu').click(function () {
-        // Find elements with the 'navigation-menu' class and switch their visibility
-        $('.navigation-menu').toggle();
-    });
-
-
-
-    //When the size of the browser window changes,then run the function.
-    $(window).resize(function () {
-        //If the window is wider than 768 px
-        if ($(window).width() > 768) {
-            //show elements with the 'navigation-menu' class
-            $('.navigation-menu').show();
-            //else do nothing
+        $('.navigation-menu').toggleClass('active');
+        if ($('.navigation-menu').hasClass('active')) {
+            $('.navigation-menu').css('left', '0');
         } else {
+            $('.navigation-menu').css('left', '-100%');
+        }
+    });
 
+    // When the close button is clicked
+    $('.close-menu').click(function () {
+        $('.navigation-menu').removeClass('active');
+        $('.navigation-menu').css('left', '-100%');
+    });
+
+    // When the window is resized
+    $(window).resize(function () {
+        if ($(window).width() > 431) {
+            $('.navigation-menu').removeClass('active');
+            $('.navigation-menu').css('left', '0');
+            $('.navigation-menu').show();
+        } else {
+            if (!$('.navigation-menu').hasClass('active')) {
+                $('.navigation-menu').css('left', '-100%');
+            }
         }
     });
 });
