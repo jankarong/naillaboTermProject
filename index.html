@@ -45,6 +45,66 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!--  Schema tag -->
+
+    <script type="application/ld+json">
+
+
+        {
+          "@context": "https://schema.org",
+          "@type": "NailSalon",
+          "name": "Naillabo Salon",
+          "image": "./image/logo.png",
+          "description": "Naillabo Salon is Richmond's premier nail salon, offering expert manicures, pedicures, gel nails, and lash extensions. We provide luxurious organic products, creative designs, and a relaxing spa experience.",
+          "url": "https://www.naillabosalon.com",
+          "telephone": "604-998-7666",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3530-4151 Hazelbridge Way",
+            "addressLocality": "Richmond",
+            "addressRegion": "BC",
+            "postalCode": "V6X 4J7",
+            "addressCountry": "CA"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "10:00",
+            "closes": "21:00"
+          },
+          "sameAs": [
+            "https://www.instagram.com/labonail/",
+            "https://www.facebook.com/NaillaboSalonOnlineBooking"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "3"
+          },
+          "review": {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Toni Yu"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5"
+            },
+            "reviewBody": "This was my first visit to Naillabo Salon, and I was impressed. The booking process was smooth, and the service was impeccable. The staff took great care to ensure I was comfortable and satisfied with my nails. If you're searching for a professional nail salon in Richmond BC, this is the place to go."
+          },
+          "makesOffer": {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Nail Services",
+              "description": "Offering manicures, pedicures, gel nails, and lash extensions"
+            }
+          }
+        }
+        </script>
+
+
 
 </head>
 
