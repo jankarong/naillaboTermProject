@@ -14,6 +14,12 @@
 
     <title>NaillaboSalon - Best Nail Salon Near You in Richmond</title>
 
+
+
+    <!-- favicon -->
+    <link rel="icon" href="/image/icon.PNG" type="image/png">
+
+
     <!-- css -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- 3D slide plugin css -->
@@ -527,11 +533,15 @@
             <div class="sec followUs">
                 <h2>Follow Us</h2>
                 <ul class="sociaMedia">
-                    <li><a href="#"><i class="fa-brands fa-weixin"></i></a></li>
+                    <li><a href="#" id="wechat-icon"><i class="fa-brands fa-weixin"></i></a></li>
                     <li><a href="https://www.instagram.com/labonail/"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/NaillaboSalonOnlineBooking"><i
                                 class="fa-brands fa-facebook"></i></a></li>
                 </ul>
+            </div>
+            <div id="qr-popup" class="qr-popup">
+                <span class="close-menu" id="close-popup">&times;</span>
+                <img src="./image/qrcode.JPG" alt="WeChat QR Code">
             </div>
         </div>
     </footer>
@@ -543,4 +553,8 @@
     <script src="../Javascript/togglenavscript.js"></script>
     <!-- 3d slide plugin js -->
     <script src="../Javascript/sliderscript.js"></script>
+
+    <script src="./Javascript/qrcode.js"></script>
+
+
 </body>
