@@ -68,3 +68,46 @@
     color: white;
     cursor: pointer;
 }
+
+@media (max-width: 431px) {
+    .useSliderPlugin {
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .useSliderPlugin img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .useSliderPlugin img:first-child {
+        display: block;
+    }
+
+    #prevIcon,
+    #nextIcon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    #prevIcon {
+        left: 10px;
+    }
+
+    #nextIcon {
+        right: 10px;
+    }
+
+
+}

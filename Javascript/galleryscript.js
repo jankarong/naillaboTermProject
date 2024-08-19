@@ -56,3 +56,33 @@ $.fn.mySliderPlugin = function () {
 }
 
 $(".useSliderPlugin").mySliderPlugin();
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.innerWidth <= 480) {
+        const sliders = document.querySelectorAll('.useSliderPlugin');
+
+        sliders.forEach(slider => {
+            const images = slider.querySelectorAll('img');
+            const prevBtn = slider.querySelector('#prevIcon');
+            const nextBtn = slider.querySelector('#nextIcon');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach(img => img.style.display = 'none');
+                images[index].style.display = 'block';
+            }
+
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+        });
+    }
+});
