@@ -201,18 +201,21 @@ iframe {
 }
 
 h1 {
-    font-family: "Advent Pro";
+    font-family: "Cormorant",
+        serif;
     color: #E73F85;
     justify-content: center;
     display: flex;
 }
 
 h2 {
-    font-family: "Advent Pro";
-
+    font-family: "Cormorant",
+        serif;
     color: #E73F85;
-    padding-left: 50px;
+
 }
+
+
 
 h4 {
     font-family: "Advent Pro";
