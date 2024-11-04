@@ -200,26 +200,34 @@ iframe {
     padding: 50px;
 }
 
-h1 {
-    font-family: "Cormorant",
-        serif;
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Cormorant", serif;
     color: #E73F85;
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* 40px if base font-size is 16px */
     justify-content: center;
     display: flex;
 }
 
 h2 {
-    font-family: "Cormorant",
-        serif;
-    color: #E73F85;
-
+    font-size: 2rem;
+    /* 32px if base font-size is 16px */
 }
 
-
+h3 {
+    font-size: 1.75rem;
+    /* 28px if base font-size is 16px */
+}
 
 h4 {
-    font-family: "Advent Pro";
-    padding-top: 20px;
+    font-size: 1.5rem;
+    /* 24px if base font-size is 16px */
     text-align: center;
 }
 
@@ -230,7 +238,10 @@ h4 {
 }
 
 p {
-    margin: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1rem 0;
 }
 
 .hidden {
@@ -405,9 +416,29 @@ p {
         bottom: 10px;
 
     }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    /* 36px */
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    /* 30px */
+    h3 {
+        font-size: 1.625rem;
+    }
+
+    /* 26px */
+    h4 {
+        font-size: 1.375rem;
+    }
+
+    /* 22px */
+
 }
-
-
 
 @media(max-width:431px) {
     .nav {
@@ -508,5 +539,26 @@ p {
         bottom: 10px;
 
     }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* 32px */
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    /* 28px */
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* 24px */
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    /* 20px */
 
 }
