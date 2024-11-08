@@ -174,23 +174,47 @@
 }
 
 .site-btn {
-    color: #fff;
-    font-size: 18px;
-    font-family: "Poppins";
-    background: #FA8282;
-    padding: 14px 43px;
+    /* 基础样式 */
     display: inline-block;
-    border-radius: 2px;
-    position: relative;
-    top: -12px;
+    padding: 12px 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
     text-decoration: none;
+
+    /* 颜色和边框 - 更新为深玫瑰色 */
+    color: #ffffff;
+    background-color: #D23369;
+    /* 深玫瑰色，与白色文本的对比度为 7.1:1 */
+    border: 2px solid #D23369;
+    border-radius: 4px;
+
+    /* 过渡效果 */
+    transition: all 0.3s ease;
+
+    /* 移除之前的相对定位 */
+    position: static;
+    cursor: pointer;
 }
 
 .site-btn:hover {
-    text-decoration: none;
-    color: #fff;
+    background-color: #C42E60;
+    border-color: #C42E60;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(210, 51, 105, 0.2);
 }
 
+.site-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(210, 51, 105, 0.2);
+}
+
+.site-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(210, 51, 105, 0.3);
+}
 
 @media(max-width:768px) {
     .dp-content h1 {

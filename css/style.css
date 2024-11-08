@@ -325,20 +325,34 @@ p {
 
 @media(max-width:768px) {
     .nav {
-        position: absolute;
-        left: 0;
+        position: fixed;
+        left: -100%;
         display: flex;
         flex-direction: column;
         top: 0;
-        background: #FFB9B9;
-        height: 130vh;
-        width: 50%;
-        gap: 16px;
-        padding: 0 20px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        height: 100vh;
+        width: 300px;
+        gap: 24px;
+        padding: 40px 20px;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
 
+    .nav a {
+        color: #333333;
+        font-size: 18px;
+        padding: 12px 16px;
+        width: 100%;
+        text-align: left;
+        border-radius: 8px;
+        font-weight: 500;
+    }
 
-
-
+    .nav a:hover {
+        background: rgba(231, 63, 133, 0.1);
+        color: #E73F85;
     }
 
     .nav .logo {
@@ -357,21 +371,21 @@ p {
     .bx-menu.toggle-menu {
         display: block;
         font-size: 45px;
-        color: white;
+        color: #333333;
         cursor: pointer;
     }
 
     .bx-x.close-menu {
         display: block;
         font-size: 25px;
-        color: white;
+        color: #333333;
         cursor: pointer;
     }
 
     .fa-solid fa-xmark {
         display: block;
         font-size: 45px;
-        color: white;
+        color: #333333;
         cursor: pointer;
     }
 
@@ -442,73 +456,105 @@ p {
 
 @media(max-width:431px) {
     .nav {
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         top: 0;
-        background: #FFB9B9;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
         height: 100vh;
         width: 100%;
-        gap: 20px;
-        padding: 0 20px;
+        gap: 24px;
+        padding: 40px 20px;
         left: -100%;
-        transition: left 0.3s ease-in-out;
-
-
-
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     }
 
+    .nav a {
+        font-size: 18px;
+        padding: 14px 28px;
+        width: 85%;
+        text-align: center;
+        border-radius: 12px;
+        font-weight: 400;
+        color: #333;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
 
+    .nav a:hover {
+        background: rgba(231, 63, 133, 0.08);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(231, 63, 133, 0.15);
+        color: #E73F85;
+        font-weight: 500;
+    }
 
+    .nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #E73F85;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .nav a:hover::after {
+        width: 80%;
+    }
 
     .nav .logo {
-
         display: block;
+        margin-bottom: 30px;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
 
-
-
+    .nav .logo:hover {
+        transform: scale(1.15);
     }
 
     .divider {
-        background: rgba(255, 255, 255, 0.1);
-        width: 100%;
-        height: 2px;
-        margin: 10px 0px;
-    }
-
-    .bx-menu.toggle-menu {
-        display: block;
-        font-size: 45px;
-        color: white;
-        cursor: pointer;
-        z-index: 2;
-
-
-
+        background: linear-gradient(to right, transparent, rgba(231, 63, 133, 0.2), transparent);
+        width: 85%;
+        height: 1px;
+        margin: 8px 0;
     }
 
     .bx-x.close-menu {
         display: block;
-        font-size: 25px;
-        color: white;
+        font-size: 32px;
+        color: #333;
         cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
     }
 
-    .fa-solid fa-xmark {
-        display: block;
-        font-size: 45px;
-        color: white;
-        cursor: pointer;
+    .bx-x.close-menu:hover {
+        background: rgba(231, 63, 133, 0.1);
+        color: #E73F85;
+        transform: rotate(90deg);
     }
-
-
 
     .bookButtonGroup {
         display: flex;
         align-items: center;
     }
-
 
     .bookButtonGroup a {
         font-size: 12px;
@@ -521,44 +567,29 @@ p {
         grid-gap: 20px
     }
 
-
-
-    .nav.active {
-        left: 0;
-
-    }
-
     .imagesSec {
         padding-bottom: 60px;
-
     }
 
     .instagram-link {
         font-size: 12px;
         padding: 6px 12px;
         bottom: 10px;
-
     }
 
     h1 {
         font-size: 2rem;
     }
 
-    /* 32px */
     h2 {
         font-size: 1.75rem;
     }
 
-    /* 28px */
     h3 {
         font-size: 1.5rem;
     }
 
-    /* 24px */
     h4 {
         font-size: 1.25rem;
     }
-
-    /* 20px */
-
 }
