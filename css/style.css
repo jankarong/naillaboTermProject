@@ -1528,3 +1528,51 @@ p {
         min-height: 300px;
     }
 }
+
+/* 修改 review-link 相关样式 */
+.review-link {
+    display: inline-block;
+    margin-top: 24px;
+    /* 减少上边距 */
+    padding: 12px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    border: none;
+    border-radius: 99px;
+    background-color: #E73F85;
+    transition: all 0.3s ease;
+    /* 添加阴影效果 */
+    box-shadow: 0 4px 12px rgba(231, 63, 133, 0.2);
+}
+
+/* 修改移动端的样式 */
+@media (max-width: 768px) {
+    .review-link {
+        padding: 14px 28px;
+        /* 增加padding使按钮更高 */
+        font-size: 14px;
+        min-width: 180px;
+        /* 增加最小宽度 */
+        display: flex;
+        /* 使用flex布局 */
+        justify-content: center;
+        /* 水平居中 */
+        align-items: center;
+        /* 垂直居中 */
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 431px) {
+    .review-link {
+        padding: 12px 24px;
+        /* 稍微调整小屏幕下的padding */
+        font-size: 13px;
+        min-width: 160px;
+        margin-top: 20px;
+        height: 44px;
+        /* 明确设置高度 */
+    }
+}
