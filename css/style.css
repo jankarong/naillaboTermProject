@@ -775,6 +775,9 @@ p {
 .service-content h1 {
     text-align: center;
     margin-bottom: 32px;
+    font-size: 2.5rem;
+    font-family: "Cormorant", serif;
+    color: #E73F85;
 }
 
 .service-text {
@@ -831,7 +834,7 @@ p {
     }
 
     .service-content h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 24px;
     }
 
@@ -846,7 +849,7 @@ p {
     }
 
     .service-content h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         margin-bottom: 20px;
     }
 
