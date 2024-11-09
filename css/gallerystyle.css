@@ -93,12 +93,16 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 24px;
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 10px;
+        font-size: 2rem;
+        color: #ffffff;
+        background: rgba(231, 63, 133, 0.7);
+        padding: 12px 16px;
+        border-radius: 50%;
+        cursor: pointer;
         text-decoration: none;
         z-index: 10;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
     }
 
     #prevIcon {
@@ -109,5 +113,16 @@
         right: 10px;
     }
 
+    #prevIcon:hover,
+    #nextIcon:hover {
+        background: rgba(231, 63, 133, 0.9);
+        transform: translateY(-50%) scale(1.1);
+    }
 
+    #prevIcon.hidden,
+    #nextIcon.hidden {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
 }

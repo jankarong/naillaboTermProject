@@ -119,19 +119,21 @@
 }
 
 .dp-content h1 {
+    font-family: "Cormorant", serif;
     color: #E73F85;
-
-    font-size: 3rem;
+    font-size: 2.5rem;
     max-width: 460px;
     margin-top: 8px;
     margin-bottom: 0px;
 }
 
 .dp-content p {
-    color: #74747F;
+    color: #647084;
     max-width: 490px;
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5;
 }
 
 .dp-content .site-btn {
@@ -176,68 +178,224 @@
 .site-btn {
     /* 基础样式 */
     display: inline-block;
-    padding: 12px 24px;
+    padding: 15px 35px;
     font-family: "Poppins", sans-serif;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     text-align: center;
     text-decoration: none;
+    letter-spacing: 0.5px;
 
-    /* 颜色和边框 - 更新为深玫瑰色 */
+    /* 颜色和边框 */
     color: #ffffff;
-    background-color: #D23369;
-    /* 深玫瑰色，与白色文本的对比度为 7.1:1 */
-    border: 2px solid #D23369;
-    border-radius: 4px;
+    background: linear-gradient(135deg, #E73F85, #FF6B98);
+    border: none;
+    border-radius: 50px;
+
+    /* 阴影效果 */
+    box-shadow: 0 4px 15px rgba(231, 63, 133, 0.2);
 
     /* 过渡效果 */
     transition: all 0.3s ease;
-
-    /* 移除之前的相对定位 */
-    position: static;
+    
+    /* 定位 */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
     cursor: pointer;
 }
 
+.site-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FF6B98, #E73F85);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
 .site-btn:hover {
-    background-color: #C42E60;
-    border-color: #C42E60;
-    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(210, 51, 105, 0.2);
+    box-shadow: 0 6px 20px rgba(231, 63, 133, 0.3);
+}
+
+.site-btn:hover:before {
+    opacity: 1;
 }
 
 .site-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(210, 51, 105, 0.2);
+    box-shadow: 0 2px 10px rgba(231, 63, 133, 0.2);
 }
 
-.site-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(210, 51, 105, 0.3);
+/* 移动端适配 */
+@media(max-width: 431px) {
+    .site-btn {
+        padding: 14px 36px;
+        font-size: 16px;
+        margin-top: 20px;
+        border-radius: 50px;
+        background: linear-gradient(135deg, #E73F85, #FF6B98);
+        box-shadow: 0 4px 15px rgba(231, 63, 133, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .site-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(231, 63, 133, 0.3);
+    }
+
+    .site-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(231, 63, 133, 0.2);
+    }
 }
 
 @media(max-width:768px) {
     .dp-content h1 {
-        font-size: 30px;
+        font-size: 2.25rem;
     }
 
     .dp-content p {
-        font-size: 18px;
+        font-size: 0.875rem;
     }
-
-
-
 }
 
 @media(max-width:431px) {
     .dp-content h1 {
-        font-size: 24px;
+        font-family: "Cormorant", serif;
+        color: #E73F85;
+        font-size: 2rem;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .dp-content p {
+        color: #647084;
+        font-size: 0.875rem;
+        margin: 10px auto;
+        max-width: 100%;
+        line-height: 1.5;
+    }
+}
+
+@media(max-width:431px) {
+
+    /* 调整整体容器大小和布局 */
+    #dp-slider,
+    .dp-img img {
+        height: 700px;
+        /* 减少整体高度到700px */
+    }
+
+    .dp_item {
+        width: 95%;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    /* 调整图片区域样式 */
+    .dp-img {
+        width: 100%;
+        height: 380px;
+        /* 减少图片区域高度到380px */
+        order: 1;
+    }
+
+    .dp-img img {
+        width: 100%;
+        height: 380px;
+        /* 匹配新的图片容器高度 */
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* 调整内容区域样式 */
+    .dp-content {
+        padding: 30px;
+        /* 减少内边距 */
+        text-align: center;
+        order: 2;
+    }
+
+    .dp-content h1 {
+        font-size: 28px;
+        /* 稍微减小标题字体大小 */
+        margin: 0 auto 10px;
+        /* 减少底部间距 */
+        max-width: 100%;
+        line-height: 1.2;
     }
 
     .dp-content p {
         font-size: 16px;
+        /* 减小段落字体大小 */
+        margin: 15px auto;
+        max-width: 100%;
+        line-height: 1.5;
     }
 
+    /* 调整导航点的位置和样式 */
+    #dp-dots {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 320px;
+        /* 调整到图片底部位置 */
+        z-index: 20;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
 
+    #dp-dots li {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+        background: rgba(255, 255, 255, 0.7);
+    }
 
+    #dp-dots li.active {
+        background: #FA8C8C;
+        transform: scale(1.2);
+    }
+
+    #dp-dots li:hover {
+        background: #FA8C8C;
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+    }
+
+    /* 调整前后导航按钮 */
+    #dp-next,
+    #dp-prev {
+        top: 35%;
+        width: 28px;
+        height: 28px;
+    }
+
+    /* 更新按钮样式 */
+    .site-btn {
+        padding: 14px 36px;
+        font-size: 16px;
+        margin-top: 20px;
+        border-radius: 50px;
+        background: linear-gradient(135deg, #E73F85, #FF6B98);
+        box-shadow: 0 4px 15px rgba(231, 63, 133, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .site-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(231, 63, 133, 0.3);
+    }
+
+    .site-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(231, 63, 133, 0.2);
+    }
 }

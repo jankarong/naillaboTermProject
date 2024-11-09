@@ -213,6 +213,8 @@ h1 {
     /* 40px if base font-size is 16px */
     justify-content: center;
     display: flex;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
 }
 
 h2 {
@@ -554,6 +556,7 @@ p {
     .bookButtonGroup {
         display: flex;
         align-items: center;
+        gap: 15px;
     }
 
     .bookButtonGroup a {
@@ -591,5 +594,162 @@ p {
 
     h4 {
         font-size: 1.25rem;
+    }
+
+    /* 修改汉堡菜单图标颜色为白色 */
+    .bx-menu.toggle-menu {
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        /* 添加一些阴影使白色图标在浅色背景上更明显 */
+    }
+}
+
+/* Add these new styles */
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    padding: 35px 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+.contact-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0.8rem 0;
+    color: #555;
+    font-weight: 300;
+}
+
+.contact-content .highlight {
+    color: #E73F85;
+    font-weight: 500;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 4px 15px;
+    margin: 5px 0;
+    background: rgba(231, 63, 133, 0.05);
+    border-radius: 4px;
+    border: 1px solid rgba(231, 63, 133, 0.15);
+}
+
+.contact-content .emphasis {
+    font-size: 1.15rem;
+    color: #E73F85;
+    font-weight: 400;
+    margin: 2rem 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(231, 63, 133, 0.15);
+    border-bottom: 1px solid rgba(231, 63, 133, 0.15);
+    letter-spacing: 0.5px;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.services-list li {
+    padding: 10px 25px;
+    background: white;
+    border-radius: 4px;
+    color: #E73F85;
+    font-weight: 400;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(231, 63, 133, 0.08);
+    transition: all 0.3s ease;
+}
+
+.services-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 63, 133, 0.12);
+}
+
+/* 添加新的样式用于分隔内容 */
+.contact-section {
+    margin: 40px 0;
+}
+
+.contact-info-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+    padding: 12px 25px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.contact-info-item i {
+    color: #E73F85;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        padding: 25px 20px;
+        margin: 0 15px 3rem 15px;
+    }
+    
+    .contact-content p {
+        font-size: 0.95rem;
+    }
+    
+    .contact-content .highlight {
+        font-size: 1.1rem;
+    }
+    
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .services-list li {
+        width: 85%;
+        text-align: center;
+    }
+    
+    .contact-info-item {
+        display: flex;
+        width: 85%;
+        margin: 10px auto;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+    }
+}
+
+/* 地图容器的间距调整 */
+#map {
+    height: 400px;
+    width: 100%;
+    margin: 4rem 0;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .contact-content {
+        margin: 0 10px 3rem 10px;
+        padding: 20px;
+    }
+
+    #map {
+        margin: 3rem 0;
     }
 }
