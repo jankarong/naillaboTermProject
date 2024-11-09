@@ -126,3 +126,66 @@
         opacity: 1 !important;
     }
 }
+
+.instagram-button {
+    display: inline-block;
+    margin: 32px auto 48px;
+    padding: 14px 32px;
+    background-color: #E73F85;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #E73F85;
+    box-shadow: 0 2px 8px rgba(231, 63, 133, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-button:hover {
+    background-color: white;
+    color: #E73F85;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(231, 63, 133, 0.2);
+}
+
+.instagram-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(231, 63, 133, 0.15);
+}
+
+.instagram-button::before {
+    content: '\f16d';
+    font-family: 'Font Awesome 6 Brands';
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .instagram-button {
+        padding: 12px 28px;
+        font-size: 14px;
+        margin: 28px auto 40px;
+    }
+
+    .instagram-button::before {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 431px) {
+    .instagram-button {
+        padding: 10px 24px;
+        font-size: 13px;
+        margin: 24px auto 36px;
+        letter-spacing: 0.3px;
+    }
+
+    .instagram-button::before {
+        font-size: 14px;
+        margin-right: 8px;
+    }
+}
