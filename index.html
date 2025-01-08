@@ -69,6 +69,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link rel="stylesheet" href="css/testimony.css">
+
     <!--  Schema tag -->
 
     <script type="application/ld+json">
@@ -128,7 +130,8 @@
         }
         </script>
 
-
+    <link rel="stylesheet" href="css/testimony.css">
+    <script src="Javascript/testimony.js" defer></script>
 
 </head>
 
@@ -302,6 +305,8 @@
     <section class="testimonial-section">
         <div class="testimonial-container">
             <h2>What Our Clients Are Saying</h2>
+
+            <!-- Original grid layout (shown on desktop) -->
             <div class="testimonial-wrapper">
                 <div class="testimonial-grid">
                     <div class="testimonial-card">
@@ -369,13 +374,88 @@
                 </div>
             </div>
 
+            <!-- New carousel layout (shown on mobile/tablet) -->
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <div class="testimonial-card">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>"This was my first visit to Naillabo Salon, and I was impressed. The booking process was
+                                smooth, and the service was impeccable. The staff took great care to ensure I was
+                                comfortable and satisfied with my nails. If you're searching for a professional nail
+                                salon in Richmond BC, this is the place to go."</p>
+                            <div class="testimonial-author">
+                                <img src="https://lh3.googleusercontent.com/a/ACg8ocIBP5sugQY5WmuVT9KcOYrT2VH8AvNrrJ2rk51R9sobp2rjwQ=w45-h45-p-rp-mo-br100"
+                                    alt="Toni Yu">
+                                <h6>Toni Yu</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="testimonial-card">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>"Took my daughter here for her first shallac polish. She was reasonable, used the highest
+                                grade products, had a huge selection of colors to choose from and got us in right away.
+                                I'm going to bet her shallac will make it through daily competitive swimming, and
+                                constantly climbing in and out of the pool."</p>
+                            <div class="testimonial-author">
+                                <img src="https://lh3.googleusercontent.com/a-/ALV-UjUZDvyLuVw8WdIEopp3N9F3Ssn0OQUmzBTNGgf_ei4V9MBMl6Ct=w75-h75-p-rp-mo-ba3-br100"
+                                    alt="Christina Taylor">
+                                <h6>Christina Taylor</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="testimonial-card">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>"Been coming to Nail Labo since 2017 and have only had amazing experiences from everyone
+                                there. The service is friendly and helpful, they are professional and the store is
+                                always clean and organized. I am always satisfied with how my nails turn out and have
+                                been coming here on a monthly basis!"</p>
+                            <div class="testimonial-author">
+                                <img src="https://lh3.googleusercontent.com/a-/ALV-UjUOyabmzoa7NG2NBjn4BrSpf4BfmWRDoKNoNknMa3Yw-Yi2Yntj=w75-h75-p-rp-mo-br100"
+                                    alt="Jamie Chan">
+                                <h6>Jamie Chan</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button prev">&lt;</button>
+                <button class="carousel-button next">&gt;</button>
+                <div class="carousel-nav">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+            </div>
         </div>
     </section>
 
 
 
+
+
     <!-- Section service provided -->
     <section class="service-section">
+        <h2>Our Premium Services</h2>
         <div class="service-container">
             <div class="service-grid">
                 <div class="service-content">
@@ -578,6 +658,7 @@
     <script src="../Javascript/sliderscript.js"></script>
 
     <script src="./Javascript/qrcode.js"></script>
+    <script src="./Javascript/testimony.js"></script>
 
 
 </body>
