@@ -1,0 +1,499 @@
+/* Introduction Section */
+.intro {
+    padding: 100px 0;
+    background: linear-gradient(to right, var(--white) 0%, var(--light-gray) 100%);
+    margin-top: 72px;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 77, 141, 0.03) 0%, transparent 70%);
+    transform: rotate(-15deg);
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    position: relative;
+}
+
+.intro-text-content {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.intro-text-content h1 {
+    font-size: var(--font-size-display);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    position: relative;
+}
+
+.intro-text-content h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.intro-text {
+    font-size: var(--font-size-large);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 90%;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.intro-buttons .btn {
+    padding: 1rem 3.5rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.intro-buttons .btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), #FF6B9C);
+    border: none;
+    box-shadow: 0 10px 20px rgba(255, 77, 141, 0.2);
+}
+
+.intro-buttons .btn-primary:hover {
+    background: var(--accent-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.intro-image {
+    flex: 1.2;
+    max-width: 800px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.intro-image::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    right: -25px;
+    bottom: -25px;
+    background: linear-gradient(45deg, rgba(255, 77, 141, 0.1), rgba(255, 228, 230, 0.1));
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intro-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, var(--white), var(--light-gray));
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 77, 141, 0.2),
+            transparent);
+}
+
+.testimonials-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    font-size: var(--font-size-h2);
+    position: relative;
+}
+
+/* 桌面端网格布局 */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 0 1rem;
+}
+
+/* 移动端轮播样式 */
+.testimonials-mobile {
+    display: none;
+    position: relative;
+    padding: 0 50px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.testimonials-slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonials-slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.testimonial-content {
+    font-size: var(--font-size-body);
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    font-style: italic;
+    position: relative;
+}
+
+.testimonial-content::before {
+    content: '"';
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.1;
+    font-family: serif;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info {
+    flex-grow: 1;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+/* Popular Services Section */
+.popular-services {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.popular-services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+/* 桌面端网格布局 */
+.popular-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* 移动端轮播样式 */
+.popular-services-mobile {
+    display: none;
+    position: relative;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+
+.popular-services-slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.popular-services-slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.popular-services-slider .popular-service-card {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* 移动端卡片样式调整 */
+.popular-services-mobile .service-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popular-services-mobile .service-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 1rem;
+    aspect-ratio: 1;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+
+    /* Introduction Section Mobile */
+    .intro-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .intro-text-content {
+        padding-right: 0;
+    }
+
+    .intro-text-content h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .intro-buttons {
+        justify-content: center;
+    }
+
+    /* Testimonials Mobile */
+    .testimonials-grid {
+        display: none;
+    }
+
+    .testimonials-mobile {
+        display: block;
+    }
+
+    /* Popular Services Mobile */
+    .popular-services-grid {
+        display: none;
+    }
+
+    .popular-services-mobile {
+        display: block;
+    }
+
+    .popular-services-mobile .service-image {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Introduction Section Small Mobile */
+    .intro {
+        padding: 40px 0;
+    }
+
+    .intro-image {
+        max-width: 100%;
+    }
+
+    .intro-buttons .btn {
+        width: 100%;
+        padding: 0.9rem 2rem;
+    }
+
+    /* Other mobile styles... */
+
+    .popular-services-mobile .service-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* 移动端轮播样式 */
+.testimonials-mobile {
+    display: none;
+    position: relative;
+    padding: 0 50px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.testimonials-slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonials-slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonials-slider .testimonial-card {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* 轮播控制按钮 */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--white);
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* 点导航样式 */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        display: none;
+    }
+
+    .testimonials-mobile {
+        display: block;
+    }
+
+    .testimonial-content {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-mobile {
+        padding: 0 35px;
+    }
+
+    .testimonial-content {
+        font-size: 0.9rem;
+        padding: 0;
+    }
+
+    .testimonial-card {
+        padding: 1.25rem;
+    }
+
+    .slider-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}

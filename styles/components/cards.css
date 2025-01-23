@@ -1,0 +1,204 @@
+/* Cards */
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius-large);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 1rem;
+    aspect-ratio: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.1);
+}
+
+.service-content {
+    padding: 1rem;
+}
+
+.service-content h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.service-content p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.service-features {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.service-features li {
+    padding: 0.35rem 0;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.service-features li::before {
+    content: '•';
+    color: var(--secondary-color);
+}
+
+.service-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--light-gray);
+}
+
+.price {
+    font-size: var(--font-size-h4);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.duration {
+    color: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .service-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .service-image {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        padding: 0.75rem;
+    }
+
+    .service-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .service-content {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .service-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .service-features {
+        padding: 0;
+    }
+
+    .service-price {
+        padding: 0.5rem 0;
+    }
+
+    .price {
+        font-size: 1.5rem;
+    }
+
+    .duration {
+        font-size: 0.85rem;
+    }
+}
+
+/* 添加图片遮罩效果 */
+.service-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(255, 77, 141, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popular-service-card:hover .service-image::after {
+    opacity: 1;
+}
+
+/* 修改hover效果 */
+.popular-service-card:hover .service-image {
+    box-shadow: 0 15px 30px rgba(255, 77, 141, 0.2);
+}
+
+.popular-service-card:hover .service-image img {
+    transform: scale(1.06);
+    filter: brightness(1.05);
+}

@@ -1,0 +1,144 @@
+.gallery-section {
+    padding: 120px 0 80px;
+    background: var(--light-gray);
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gallery-header h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.instagram-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: var(--primary-color);
+}
+
+.instagram-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.instagram-item {
+    position: relative;
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.instagram-item:hover img {
+    transform: scale(1.05);
+}
+
+.instagram-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.instagram-item:hover video {
+    transform: scale(1.05);
+}
+
+.instagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-item:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.instagram-stats {
+    display: flex;
+    gap: 2rem;
+    color: var(--white);
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gallery-cta {
+    text-align: center;
+}
+
+.gallery-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 2rem;
+    grid-column: 1 / -1;
+    color: var(--text-color);
+}
+
+.error {
+    color: #dc3545;
+}
+
+@media (min-width: 1200px) {
+    .instagram-feed {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+    .instagram-feed {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram-feed {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-feed {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-cta .btn {
+        width: 100%;
+    }
+}

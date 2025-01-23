@@ -9,27 +9,47 @@
 
 <url>
   <loc>https://naillabosalon.com/</loc>
-  <lastmod>2024-06-24T02:58:45+00:00</lastmod>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://naillabosalon.com/index.html</loc>
-  <lastmod>2024-06-24T02:58:45+00:00</lastmod>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://naillabosalon.com/gallery.html</loc>
-  <lastmod>2024-06-24T02:58:45+00:00</lastmod>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://naillabosalon.com/contact.html</loc>
-  <lastmod>2024-06-24T02:58:45+00:00</lastmod>
+  <loc>https://naillabosalon.com/pricing.html</loc>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naillabosalon.com/joinus.html</loc>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>https://naillabosalon.com/book.html</loc>
-  <lastmod>2024-06-24T02:58:45+00:00</lastmod>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://naillabosalon.com/services/manicure.html</loc>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naillabosalon.com/services/pedicure.html</loc>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://naillabosalon.com/services/eyelash.html</loc>
+  <lastmod>2024-03-24T02:58:45+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 

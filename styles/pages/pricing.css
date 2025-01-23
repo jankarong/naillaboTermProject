@@ -1,0 +1,357 @@
+.price-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.page-title {
+    width: 100%;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* 创建两列布局 */
+.price-list-container::after {
+    content: '';
+    display: block;
+    width: calc(50% - 0.75rem);
+    /* 考虑到gap的一半 */
+}
+
+/* Manicure section - 占据左列 */
+.price-section:nth-child(2) {
+    width: calc(50% - 0.75rem);
+}
+
+/* 右侧服务 section */
+.price-section:nth-child(3) {
+    width: calc(50% - 0.75rem);
+    margin-left: auto;
+}
+
+.price-section {
+    margin-bottom: 1.5rem;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-large);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.price-section h2 {
+    display: none;
+}
+
+.price-grid {
+    display: grid;
+    gap: 0;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--light-gray);
+    min-height: 60px;
+}
+
+.service-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.price {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 80px;
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+.add-ons {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background: var(--light-gray);
+    border-radius: var(--radius-small);
+}
+
+.add-ons h3 {
+    color: var(--dark-gray);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.add-ons .price-grid {
+    gap: 0.25rem;
+}
+
+.add-ons .price-item {
+    background: var(--white);
+    border-radius: var(--radius-small);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    min-height: 45px;
+}
+
+.add-ons .service-name {
+    font-size: 0.9rem;
+}
+
+.add-ons .price {
+    font-size: 0.95rem;
+    min-width: 60px;
+}
+
+.note {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+    font-style: italic;
+}
+
+.disclaimer {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--dark-gray);
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+/* 添加新的服务类别样式 */
+.service-category:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.service-category {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--light-gray);
+}
+
+.service-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.service-category h3 i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.consultation-note {
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--accent-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.consultation-note i {
+    color: var(--primary-color);
+    margin-top: 0.2rem;
+}
+
+.consultation-note a {
+    color: var(--primary-color);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.consultation-note a:hover {
+    color: var(--primary-dark);
+}
+
+.consultation-note .fa-weixin,
+.consultation-note .fa-instagram {
+    color: #333333;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    padding: 0.25rem;
+}
+
+.consultation-note .fa-weixin:hover,
+.consultation-note .fa-instagram:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.consultation-note .wechat-link {
+    margin-right: 0.25rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .price-list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .price-section:nth-child(n) {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .price-list-container::after {
+        display: none;
+    }
+
+    .price-section:nth-child(n) {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .consultation-note {
+        padding: 0 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .price-list-container {
+        padding: 80px 15px 2rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .price-section {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        background: var(--white);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    /* 改进服务类别标题样式 */
+    .service-category h3 {
+        font-size: 1.2rem;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--secondary-color);
+        color: var(--primary-color);
+    }
+
+    .service-category h3 i {
+        font-size: 1rem;
+        color: var(--primary-color);
+        margin-right: 0.5rem;
+    }
+
+    /* 改进价格项目样式 */
+    .price-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 77, 141, 0.1);
+        min-height: auto;
+    }
+
+    .price-item:last-child {
+        border-bottom: none;
+    }
+
+    .service-name {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        flex: 1;
+        padding-right: 1rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        min-width: 70px;
+        text-align: right;
+    }
+
+    /* 改进附加服务样式 */
+    .add-ons {
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+        background: rgba(255, 227, 225, 0.3);
+        border-radius: var(--radius-medium);
+    }
+
+    .add-ons h3 {
+        font-size: 1rem;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .add-ons .service-name {
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .add-ons .price {
+        font-size: 1rem;
+        color: var(--primary-color);
+    }
+
+    /* 改进底部说明文字样式 */
+    .disclaimer {
+        font-size: 0.85rem;
+        color: var(--dark-gray);
+        padding: 0 1rem;
+        line-height: 1.5;
+        margin-top: 2rem;
+    }
+
+    .consultation-note {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 227, 225, 0.3);
+        border-radius: var(--radius-medium);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--accent-color);
+    }
+
+    .consultation-note i.fa-info-circle {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        margin-top: 0.1rem;
+    }
+
+    .consultation-note .fa-weixin,
+    .consultation-note .fa-instagram {
+        font-size: 1.4rem;
+        margin: 0 0.2rem;
+        color: var(--accent-color);
+    }
+}

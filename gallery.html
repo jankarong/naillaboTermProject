@@ -4,25 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Art Gallery Richmond BC | Eyelash Extensions Portfolio Aberdeen Center</title>
     <meta name="description"
-        content="Experience top-notch nail services at NaillaboSalon in Richmond. We offer expert manicures, pedicures, nail art, and eyelash extensions. Book your appointment today for beautiful nails and lashes at the best nail salon near you.">
-    <meta name="keywords"
-        content="nail salon Richmond, best nail salon, manicure, pedicure, nail art, nail design, gel nails, nail extensions, eyelash extensions, spa pedicure, nail salon near me, beauty salon Richmond">
-    <title>NaillaboSalon Gallery - Stunning Nail Art & Lash Extension Designs in Richmond</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/gallerystyle.css">
-
-    <!-- Hotjar Tracking Code for Site 5248695 (name missing) -->
-    <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 5248695, hjsv: 6 };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
+        content="Browse our stunning nail art designs and eyelash extension transformations. See the latest trends in gel nails, shellac manicures, and professional lash extensions at Richmond's premier beauty salon.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/components/buttons.css">
+    <link rel="stylesheet" href="styles/components/cards.css">
+    <link rel="stylesheet" href="styles/pages/gallery.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -36,221 +30,203 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-0DDDRHQJ9P');
     </script>
-    <!-- favicon -->
-    <link rel="icon" href="/image/icon.PNG" type="image/png">
-
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
-        rel="stylesheet">
-
-
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <!-- fontawesome icon-->
-    <script src="https://kit.fontawesome.com/ef0c70bc73.js" crossorigin="anonymous"></script>
-    <!-- import box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NailSalon",
-      "name": "NaillaboSalon",
-      "image": "./image/logo.png",
-      "description": "Experience top-notch nail services at NaillaboSalon in Richmond. We offer expert manicures, pedicures, nail art, and eyelash extensions.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "3530-4151 Hazelbridge Way",
-        "addressLocality": "Richmond",
-        "addressRegion": "BC",
-        "addressCountry": "CA"
-      },
-      "telephone": "604.998.7666",
-      "email": "naillabosales@gmail.com",
-      "url": "https://www.example.com",
-      "sameAs": [
-        "https://www.instagram.com/labonail/",
-        "https://www.facebook.com/NaillaboSalonOnlineBooking"
-      ],
-      "openingHours": "Mo-Su 09:00-21:00",
-      "priceRange": "$30+",
-      "servesCuisine": "Nail care",
-      "offer": {
-        "@type": "Offer",
-        "availableService": [
-          "Manicures",
-          "Pedicures",
-          "Nail Art",
-          "Nail Extensions",
-          "Eyelash Extensions",
-          "Spa Pedicure"
-        ]
-      }
-    }
-    </script>
-
-
 </head>
 
 <body>
-    <header>
-        <!-- Logo and navigation menu -->
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Elegant Nails Logo" class="logo-img">
+            </a>
 
-        <a href="./index.html">
-            <img src="./image/logo.png" alt="nail labo salon logo" class="logo">
+            <!-- 移动端顶部Book Now按钮 -->
+            <a href="book.html" class="header-book-btn">Book Now</a>
 
-        </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
+            <!-- 移动端菜单 -->
+            <div class="mobile-menu">
+                <ul class="nav-links">
+                    <li class="services-dropdown">
+                        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./services/manicure.html">Manicure & Nail Art</a></li>
+                            <li><a href="./services/pedicure.html">Pedicure</a></li>
+                            <li><a href="./services/eyelash.html">Eyelash Extension</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="joinus.html">Join Us</a></li>
+                </ul>
+            </div>
 
-
-
-        <!-- Navigation menu -->
-        <nav class="nav navigation-menu">
-            <a href="./index.html">
-                <img src="./image/logo.png" alt="nail labo salon logo" class="logo"></a>
-            <div class="divider"></div>
-
-
-            <a href="index.html" class="nav-link">HOME</a>
-
-            <a href="gallery.html" class="nav-link">GALLERY</a>
-            <a href="contact.html" class="nav-link">CONTACT</a>
-            <i class='bx bx-x close-menu'></i>
-
+            <!-- 桌面端菜单 -->
+            <div class="desktop-menu">
+                <ul class="nav-links">
+                    <li class="services-dropdown">
+                        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./services/manicure.html">Manicure & Nail Art</a></li>
+                            <li><a href="./services/pedicure.html">Pedicure</a></li>
+                            <li><a href="./services/eyelash.html">Eyelash Extension</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="joinus.html">Join Us</a></li>
+                    <li><a href="book.html" class="nav-btn">Book Now</a></li>
+                </ul>
+            </div>
         </nav>
-        <!-- Book now button and menu toggle for mobile views -->
-        <div class="bookButtonGroup">
-            <a href="./book.html">BOOK NOW</a>
-
-
-            <i class='bx bx-menu toggle-menu'></i>
-
-        </div>
-
-
     </header>
 
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <h1>Our Work Gallery</h1>
+                <p>Follow us on Instagram <a href="https://www.instagram.com/labonail/" target="_blank"
+                        class="instagram-link">@labonail</a> for more inspiration!</p>
+            </div>
 
-    <!-- gallery slider plugin- source：https://www.jqueryscript.net/plus/search.php?kwtype=0&keyword=slider#google_vignette-->
-    <br>
-    <h1>NAIL DESIGN & NAIL ART</h1>
-    <br>
-    <div class="useSliderPlugin">
-        <img src="./image/nail1.jpg" alt="short nails with glitter design">
-        <img src="./image/nail2.jpg" alt="Natural nude nail extensions">
-        <img src="./image/nail3.jpg" alt="gel manicure with floral nail art, French tip manicure">
-        <img src="./image/nail4.jpg" alt="Ombre nail design on long nails, red color">
-        <img src="./image/nail5.jpg" alt="Gel manicure with cherry nail art">
-    </div>
-    <a href="https://www.instagram.com/labonail/" class="instagram-button">View More on Instagram</a>
-    <br>
-    <h1>SPA & GEL PEDICURE</h1>
-    <br>
+            <div class="instagram-feed" id="instagramFeed">
+                <!-- Instagram 图片将通过 JavaScript 动态加载 -->
+            </div>
 
-    <div class="useSliderPlugin">
-        <img src="./image/pedicure1.jpg" alt="Cute red heart pedicure">
-        <img src="./image/pedicure2.jpg" alt="Sparkling pink glitter toe nail">
-        <img src="./image/pedicure3.jpg" alt="Spa pedicure with design">
-        <img src="./image/pedicure4.jpg" alt="Ombre pedicure design with glitter accents">
-        <img src="./image/pedicure5.jpg" alt=" Glittery pedicure with sparkly accent nails ">
-    </div>
-    <a href="https://www.instagram.com/labonail/" class="instagram-button">View More on Instagram</a>
-    <br>
-    <h1>LASH EXTENSIONS</h1>
-    <br>
+            <div class="gallery-cta">
+                <a href="https://www.instagram.com/labonail/" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-instagram"></i>
+                    Follow Us on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <div class="useSliderPlugin">
-        <img src="./image/eyelash1.png" alt="Subtle lash extensions for daily wear">
-        <img src="./image/eyelash2.png" alt="Natural-looking eyelash extensions">
-        <img src="./image/eyelash3.png" alt="Light volume lashes for everyday look">
-        <img src="./image/eyelash4.png" alt="eyelash extensions after lash lift">
-        <img src="./image/eyelash5.jpg" alt="Close-up of volume eyelash extensions">
-    </div>
-    <a href="https://www.instagram.com/labonail/" class="instagram-button">View More on Instagram</a>
-    <br>
-
-
-    <footer>
-        <div class="container1">
-
-            <div class="sec aboutus">
-                <h2>About Us</h2>
-                <p>Naillabo Salon, a nail beauty salon, has been successful at Aberdeen Center in Richmond, BC for over
-                    ten years. We
-                    provide services such as manicures (regular manicure, spa nails, nail extension, nail design), nail
-                    pedicures, and
-                    eyelash extensions. We are famous for our nice atmosphere and great nail services, perfect for your
-                    beauty treatment.
-                    Welcome to our online platform for booking nail appointments!
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p class="about-text">
+                    Naillabo Salon, a nail and eyelash extension beauty salon at Aberdeen Center in Richmond, BC . Our
+                    salon is renowned for
+                    exceptional nail services, including manicures, pedicures, and custom nail designs, as well as
+                    eyelash
+                    extensions.
                 </p>
-                <img src="./image/logo.png" alt="nail labo salon logo" class="logo">
+                <div class="social-links">
+                    <a href="javascript:void(0)" class="wechat-link" aria-label="WeChat"><i
+                            class="fa-brands fa-weixin"></i></a>
+                    <a href="https://www.instagram.com/labonail/" target="_blank" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/NaillaboSalonOnlineBooking" target="_blank"
+                        aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
             </div>
-            <div class="sec quicklinks">
-                <h2>Support</h2>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./gallery.html">Gallery</a></li>
-                    <li><a href="./contact.html">Contact US</a></li>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services/manicure.html">Manicure & Nail Art</a></li>
+                    <li><a href="services/pedicure.html">Pedicure & Spa Care</a></li>
+                    <li><a href="services/eyelash.html">Eyelash Extension</a></li>
                 </ul>
             </div>
 
-            <div class="sec contact">
-                <h2>Contact</h2>
-                <ul class="info">
-                    <li><span><i class="fa-regular fa-envelope"></i></span>
-                        <p><a href="#">naillabo3530@gmail.com</a></p>
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul class="business-info">
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <div class="time-info">
+                            <span>Mon - Sun: 10:00 - 19:00</span>
+                        </div>
                     </li>
-                    <li><span><i class="fa-solid fa-phone"></i></span>
-                        <p><a href="#">604.998.7666</a></p>
+                    <li>
+                        <i class="fa-solid fa-car"></i>
+                        <span>Free Parking Available</span>
                     </li>
-                    <li><span><i class="fa-brands fa-weixin"></i></span>
-                        <p><a href="#">naillabo3530</a></p>
+                    <li>
+                        <i class="fa-solid fa-tag"></i>
+                        <a href="book.html" class="footer-link">Online Booking Available</a>
                     </li>
-                    <li><span><i class="fa-solid fa-location-dot"></i></span>
-                        <p><a href="https://maps.app.goo.gl/e5at4vCP8VJvuesX9">3530-4151 Hazelbridge Way Richmond BC</a>
-                        </p>
-                    </li>
-
-
                 </ul>
             </div>
 
-            <div class="sec followUs">
-                <h2>Follow Us</h2>
-                <ul class="sociaMedia">
-                    <li><a href="#" id="wechat-icon"><i class="fa-brands fa-weixin"></i></a></li>
-                    <li><a href="https://www.instagram.com/labonail/"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://www.facebook.com/NaillaboSalonOnlineBooking"><i
-                                class="fa-brands fa-facebook"></i></a></li>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="address-info">
+                            <a href="https://maps.google.com/?q=Naillabo+Nail+%26+Eyelash+Beauty+Salon+Richmond+BC+Aberdeen+Center"
+                                target="_blank" class="map-link">
+                                <span>Aberdeen Center</span>
+                                <span>3530-4151 Hazelbridge Way</span>
+                                <span>Richmond BC</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:604.998.7666" class="footer-link">604.998.7666</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:naillabo3530@gmail.com" class="footer-link">naillabo3530@gmail.com</a>
+                    </li>
                 </ul>
             </div>
-            <div id="qr-popup" class="qr-popup">
-                <span class="close-menu" id="close-popup">&times;</span>
-                <img src="./image/qrcode.JPG" alt="WeChat QR Code">
+        </div>
+        <!-- 添加copyright区域 -->
+        <div class="footer-copyright">
+            <div class="container">
+                <p>&copy; 2025 Nail Labo. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <div class="copyRightText">
-        <p>Copyright © 2024 Naillabo.All Rights Reserved</p>
+
+    <div class="wechat-qr-modal">
+        <div class="wechat-qr-container">
+            <button class="close-qr-modal" aria-label="Close QR Code">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="./images/qrcode.JPG" alt="WeChat QR Code">
+        </div>
     </div>
 
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/instagram-feed.js"></script>
+    <script src="scripts/wechat-qr.js"></script>
 
-
-    <!-- toggle nav js -->
-    <script src="./Javascript/togglenavscript.js"></script>
-    <!-- gallery slider plugin js -->
-    <script src="./Javascript/galleryscript.js"></script>
-
-    <script src="./Javascript/qrcode.js"></script>
-
-
+    <!-- Schema tag -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Naillabo Beauty Salon Gallery",
+      "description": "Browse our stunning nail art designs and eyelash extension transformations",
+      "provider": {
+        "@type": "NailSalon",
+        "name": "Naillabo Beauty Salon",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3530-4151 Hazelbridge Way",
+          "addressLocality": "Richmond",
+          "addressRegion": "BC",
+          "addressCountry": "CA"
+        }
+      }
+    }
+    </script>
 </body>
 
 </html>

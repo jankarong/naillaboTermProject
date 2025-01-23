@@ -1,0 +1,21 @@
+/* Core */
+@import 'base/base.css';
+
+/* Components */
+@import 'components/header.css';
+@import 'components/banner.css';
+@import 'components/content.css';
+@import 'components/forms.css';
+@import 'components/footer.css';
+/* Tablet and smaller */
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Banner styles */
+.banner h1 {
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}

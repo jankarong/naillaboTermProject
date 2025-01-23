@@ -1,0 +1,371 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a:not(.nav-btn) {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:not(.nav-btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:not(.nav-btn):hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:not(.nav-btn):hover::after {
+    width: 100%;
+}
+
+/* 桌面端菜单 */
+.desktop-menu {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-menu .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 移动端菜单按钮 */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* 移动端菜单 */
+.mobile-menu {
+    display: none;
+}
+
+/* 默认隐藏移动端的Book Now按钮 */
+.header-book-btn {
+    display: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        margin-right: 0.75rem;
+    }
+
+    /* 移动端显示顶部Book Now按钮 */
+    .header-book-btn {
+        display: inline-block;
+        margin-right: 1rem;
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 0.6rem 1.2rem;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .header-book-btn:hover {
+        background-color: var(--primary-color);
+        transform: none;
+    }
+
+    /* 移动端菜单中隐藏Book Now按钮 */
+    .mobile-menu .nav-links .nav-btn {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        border-radius: 0 0 16px 16px;
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    .mobile-menu .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-menu .nav-links li {
+        text-align: center;
+    }
+
+    .mobile-menu .nav-links a {
+        display: block;
+        padding: 1rem;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .mobile-menu .nav-links a:not(.nav-btn):hover {
+        background-color: transparent;
+        color: var(--accent-color);
+    }
+
+    .mobile-menu .nav-links .nav-btn {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 0.8rem 2.5rem;
+        border-radius: 100px;
+        margin: 1rem 0;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu .nav-links .nav-btn:hover {
+        background-color: var(--primary-color);
+        transform: none;
+    }
+
+    /* 汉堡菜单动画优化 */
+    .mobile-menu-toggle span {
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle.active span {
+        margin: 0;
+        position: relative;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 2px;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: -2px;
+    }
+
+    .logo-img {
+        height: 28px;
+    }
+}
+
+/* 滚动效果 */
+.site-header.scrolled {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 0.8rem 0;
+}
+
+/* 更小屏幕的额外调整 */
+@media (max-width: 480px) {
+    .mobile-menu-toggle {
+        margin-right: 0.5rem;
+    }
+
+    .header-book-btn {
+        margin-right: 0.75rem;
+    }
+}
+
+/* 添加下拉菜单样式 */
+.services-dropdown {
+    position: relative;
+}
+
+.services-dropdown .fa-chevron-down {
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+    transition: transform 0.3s ease;
+    transform: rotate(-90deg);
+}
+
+.services-dropdown:hover .fa-chevron-down {
+    transform: rotate(0deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 200px;
+    padding: 0.75rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.services-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--light-gray);
+    color: var(--primary-color);
+    padding-left: 1.75rem;
+}
+
+/* 桌面端保持hover效果 */
+@media (min-width: 993px) {
+    .services-dropdown:hover .fa-chevron-down {
+        transform: rotate(0deg);
+    }
+}
+
+/* 移动端样式优化 */
+@media (max-width: 992px) {
+    .mobile-menu .dropdown-menu {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        margin-top: 0.5rem;
+    }
+
+    .mobile-menu .services-dropdown.active .dropdown-menu {
+        display: block;
+        animation: slideDown 0.3s ease;
+    }
+
+    .mobile-menu .dropdown-menu a {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+
+    .mobile-menu .dropdown-menu a:hover {
+        background: transparent;
+        padding-left: 2.25rem;
+    }
+}
