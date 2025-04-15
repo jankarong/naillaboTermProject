@@ -90,8 +90,23 @@
     gap: 0.5rem;
 }
 
-.gallery-cta {
+.gallery-cta,
+.load-more-container {
     text-align: center;
+    margin: 2rem 0;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
 }
 
 .gallery-cta .btn {
@@ -112,6 +127,44 @@
 
 .error {
     color: #dc3545;
+}
+
+/* Spinner Animation */
+.spinner {
+    margin: 0 auto 20px;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner>div {
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    display: inline-block;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    margin: 0 3px;
+}
+
+.spinner .bounce1 {
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1.0);
+    }
 }
 
 @media (min-width: 1200px) {

@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Instagram API configuration
-    const INSTAGRAM_TOKEN = 'EACOkohMWKJABO4EcN6H3YADrRu1ZCiB59e1HWFSXvBFER58enlAYVOo2zf1qZCi7puj7RINh2pPP0k0H7kstsIqA3ZC1zuiAW9kd0EHIqbpD23AuZA8iaKu62hanP50zCQwk8NMdGfTCIyXffnydg0mpfat42Prt91ir0eR7nRt5jsXm7ZCDZA6AZAU';
-    const POSTS_LIMIT = 16;
+    // Instagram configuration
+    const INSTAGRAM_APP_ID = '10032640196749456'; // PictureFeed App ID
+    const INSTAGRAM_USER_ID = '17841401570704472'; // Instagram Business Account ID
+    const INSTAGRAM_TOKEN = 'EACOkohMWKJABO2IdBjFrckoFF2HkunZBUOxerY7cVkbA9kZBbzTfYQIM7lsk8LPYAEKGiaFdBcD1SDyi9ZCKh1YS8tye7gPmgZACyn5H54SyKt8JAhg0irt2ZB7McejDfZCZAGZBk9jE9A3OthVrK2ZAWJDxBajEoZAqRW2ZA4OoHixjqE0JLxp7zv6J4FI';
+    const POSTS_LIMIT = 8; // Reduced initial limit for pagination
 
-    async function fetchInstagramFeed() {
+    // Store pagination data
+    let nextPageUrl = null;
+
+    async function fetchInstagramFeed(url = null) {
         try {
-            // 直接使用 Instagram API 获取媒体
-            const response = await fetch(
-                `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${INSTAGRAM_TOKEN}&limit=${POSTS_LIMIT}`
-            );
+            // Use provided URL or construct default URL
+            const apiUrl = url || `https://graph.facebook.com/v18.0/${INSTAGRAM_USER_ID}/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${INSTAGRAM_TOKEN}&limit=${POSTS_LIMIT}`;
+
+            // 使用 Facebook Graph API 获取 Instagram 媒体
+            const response = await fetch(apiUrl);
 
             const data = await response.json();
             console.log('API Response:', data);
@@ -17,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error(data.error.message);
             }
 
+            // Store next page URL if available
+            nextPageUrl = data.paging && data.paging.next ? data.paging.next : null;
+
+            // Return the data array directly
             return data.data || [];
         } catch (error) {
             console.error('Error fetching Instagram feed:', error);
@@ -30,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (post.media_type === 'VIDEO') {
             item.innerHTML = `
-                <video 
-                    src="${post.media_url}" 
-                    muted 
+                <video
+                    src="${post.media_url}"
+                    muted
                     loop
                     playsinline
                     poster="${post.thumbnail_url}"
@@ -112,7 +123,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function initializeInstagramFeed() {
         const instagramFeed = document.getElementById('instagramFeed');
-        instagramFeed.innerHTML = '<div class="loading">Loading Instagram feed...</div>';
+        instagramFeed.innerHTML = `
+            <div class="loading">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <p>Loading Instagram feed...</p>
+            </div>
+        `;
 
         try {
             const posts = await fetchInstagramFeed();
@@ -127,11 +147,79 @@ document.addEventListener('DOMContentLoaded', function () {
                 const item = createInstagramItem(post);
                 instagramFeed.appendChild(item);
             });
+
+            // Add Load More button if there's a next page
+            if (nextPageUrl) {
+                addLoadMoreButton();
+            }
         } catch (error) {
             console.error('Error:', error);
             instagramFeed.innerHTML = `<div class="error">Failed to load Instagram feed: ${error.message}</div>`;
         }
     }
 
+    function addLoadMoreButton() {
+        const instagramFeed = document.getElementById('instagramFeed');
+
+        // Check if button already exists
+        if (document.getElementById('loadMoreBtn')) {
+            return;
+        }
+
+        // Create load more button
+        const loadMoreContainer = document.createElement('div');
+        loadMoreContainer.className = 'load-more-container';
+        loadMoreContainer.innerHTML = `
+            <button id="loadMoreBtn" class="btn btn-outline">
+                <span>Load More</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        `;
+
+        instagramFeed.after(loadMoreContainer);
+
+        // Add event listener
+        document.getElementById('loadMoreBtn').addEventListener('click', async function () {
+            if (!nextPageUrl) return;
+
+            // Show loading state
+            this.innerHTML = `
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            `;
+            this.disabled = true;
+
+            try {
+                // Fetch next page
+                const morePosts = await fetchInstagramFeed(nextPageUrl);
+
+                // Add new posts
+                morePosts.forEach(post => {
+                    const item = createInstagramItem(post);
+                    instagramFeed.appendChild(item);
+                });
+
+                // Update button state
+                if (nextPageUrl) {
+                    this.innerHTML = `
+                        <span>Load More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    `;
+                    this.disabled = false;
+                } else {
+                    // No more posts, remove button
+                    loadMoreContainer.remove();
+                }
+            } catch (error) {
+                console.error('Error loading more posts:', error);
+                this.innerHTML = `Error: ${error.message}`;
+                this.disabled = true;
+            }
+        });
+    }
+
     initializeInstagramFeed();
-}); 
+});
