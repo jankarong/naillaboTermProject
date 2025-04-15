@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Instagram API configuration
+    const INSTAGRAM_ID = '670580785377785';
     const INSTAGRAM_TOKEN = '670580785377785|SBNACkQ_fqV2BZEBjS5K4jCCtlM';
     const POSTS_LIMIT = 16;
 
     async function fetchInstagramFeed() {
         try {
-            // 直接使用 Instagram API 获取媒体
+            // 使用特定的Instagram ID获取媒体
             const response = await fetch(
-                `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${INSTAGRAM_TOKEN}&limit=${POSTS_LIMIT}`
+                `https://graph.instagram.com/${INSTAGRAM_ID}/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=${INSTAGRAM_TOKEN}&limit=${POSTS_LIMIT}`
             );
 
             const data = await response.json();
@@ -30,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (post.media_type === 'VIDEO') {
             item.innerHTML = `
-                <video 
-                    src="${post.media_url}" 
-                    muted 
+                <video
+                    src="${post.media_url}"
+                    muted
                     loop
                     playsinline
                     poster="${post.thumbnail_url}"
@@ -134,4 +135,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     initializeInstagramFeed();
-}); 
+});
