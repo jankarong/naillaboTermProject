@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Instagram API configuration
-    const INSTAGRAM_TOKEN = 'IGAAQHXFqSesVBZAE96T2RwcEJmNWVjaHNxVUEzRzhSQkJWUWxzWEJiTDRUdXdKSDR3Q2JhOENrcnhrNl9yRndaWUxSdVEwMm5vVVhva0VjdzlGckpROVMtYVF5UlZA5Y1hQWjI1bmN2QzM4Qk5mejZAQWXpqakRDSDdfaXNxZAUphVQZDZD';
+    const INSTAGRAM_TOKEN = '670580785377785|SBNACkQ_fqV2BZEBjS5K4jCCtlM';
     const POSTS_LIMIT = 16;
 
     async function fetchInstagramFeed() {
