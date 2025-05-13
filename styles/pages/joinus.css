@@ -114,6 +114,24 @@
     flex-wrap: wrap;
 }
 
+.btn-wechat {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-wechat:hover {
+    background-color: darken(var(--accent-color), 10%);
+    color: black;
+}
+
 @media (max-width: 768px) {
     .careers-hero {
         padding: 80px 0 40px;

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /styleguide.html
+Disallow: /responsive.html
+
+Sitemap: https://naillabosalon.com/sitemap.xml

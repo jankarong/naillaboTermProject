@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Style Guide</title>
+    <link rel="stylesheet" href="styles/base/base.css">
+    <link rel="stylesheet" href="styles/components/buttons.css">
+    <link rel="stylesheet" href="styles/components/cards.css">
+    <link rel="stylesheet" href="styles/components/navigation.css">
+    <link rel="stylesheet" href="styles/styleguide.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant:wght@600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="styleguide-header">
+            <h1>Style Guide</h1>
+            <p class="text-large">A comprehensive guide to our design system components.</p>
+            <nav class="styleguide-nav">
+                <a href="styleguide.html" class="active">Components</a>
+                <a href="responsive.html">Responsive</a>
+            </nav>
+        </header>
+
+        <div class="styleguide-grid">
+            <!-- Left Column -->
+            <div>
+                <!-- Colors -->
+                <section class="styleguide-section">
+                    <h2>Colors</h2>
+                    <div class="color-grid">
+                        <div class="color-item">
+                            <div class="color-preview" style="background-color: var(--primary-color);"></div>
+                            <div class="color-info">
+                                <h4>Primary</h4>
+                                <code>#FF4D8D</code>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-preview" style="background-color: var(--secondary-color);"></div>
+                            <div class="color-info">
+                                <h4>Secondary</h4>
+                                <code>#FFE3E1</code>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-preview" style="background-color: var(--accent-color);"></div>
+                            <div class="color-info">
+                                <h4>Accent</h4>
+                                <code>#1A1A1A</code>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-preview" style="background-color: var(--text-color);"></div>
+                            <div class="color-info">
+                                <h4>Text</h4>
+                                <code>#333333</code>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Typography -->
+                <section class="styleguide-section">
+                    <h2>Typography</h2>
+                    <div class="typography-showcase">
+                        <div class="type-item">
+                            <h1>Heading 1</h1>
+                            <code>font-size: 3.5rem</code>
+                        </div>
+                        <div class="type-item">
+                            <h2>Heading 2</h2>
+                            <code>font-size: 2.5rem</code>
+                        </div>
+                        <div class="type-item">
+                            <h3>Heading 3</h3>
+                            <code>font-size: 2rem</code>
+                        </div>
+                        <div class="type-item">
+                            <h4>Heading 4</h4>
+                            <code>font-size: 1.5rem</code>
+                        </div>
+                        <div class="type-item">
+                            <p class="text-large">Large Text</p>
+                            <code>font-size: 1.25rem</code>
+                        </div>
+                        <div class="type-item">
+                            <p>Body Text</p>
+                            <code>font-size: 1rem</code>
+                        </div>
+                        <div class="type-item">
+                            <p class="text-small">Small Text</p>
+                            <code>font-size: 0.875rem</code>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <!-- Buttons -->
+                <section class="styleguide-section">
+                    <h2>Buttons</h2>
+                    <div class="button-showcase">
+                        <div class="showcase-item">
+                            <button class="btn btn-primary">Primary Button</button>
+                            <code>.btn.btn-primary</code>
+                        </div>
+                        <div class="showcase-item">
+                            <button class="btn btn-outline">Outline Button</button>
+                            <code>.btn.btn-outline</code>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cards -->
+                <section class="styleguide-section">
+                    <h2>Cards</h2>
+                    <div class="card-showcase">
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="https://placehold.co/280x280/FF4D8D/FFFFFF/webp?text=Image"
+                                    alt="Image Placeholder">
+                            </div>
+                            <div class="service-content">
+                                <h3>Service Title</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <ul class="service-features">
+                                    <li>Feature 1</li>
+                                    <li>Feature 2</li>
+                                </ul>
+                                <div class="service-price">
+                                    <span class="price">¥299</span>
+                                    <span class="duration">60 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation -->
+                <section class="styleguide-section">
+                    <h2>Navigation</h2>
+                    <nav>
+                        <a href="#" class="logo">Logo</a>
+                        <ul class="nav-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <!-- Responsive Breakpoints -->
+                <section class="styleguide-section">
+                    <h2>Responsive Breakpoints</h2>
+                    <div class="breakpoints-showcase">
+                        <div class="breakpoint-item">
+                            <div class="breakpoint-visual">
+                                <div class="device desktop"></div>
+                                <div class="size-marker">768px</div>
+                                <div class="arrow">></div>
+                            </div>
+                            <div class="breakpoint-info">
+                                <h4>Desktop</h4>
+                                <p>Large screens and laptops</p>
+                            </div>
+                        </div>
+                        <div class="breakpoint-item">
+                            <div class="breakpoint-visual">
+                                <div class="device tablet"></div>
+                                <div class="size-marker">480px - 768px</div>
+                            </div>
+                            <div class="breakpoint-info">
+                                <h4>Tablet</h4>
+                                <p>Tablets and large phones</p>
+                            </div>
+                        </div>
+                        <div class="breakpoint-item">
+                            <div class="breakpoint-visual">
+                                <div class="device mobile"></div>
+                                <div class="size-marker">
+                                    < 480px</div>
+                                </div>
+                                <div class="breakpoint-info">
+                                    <h4>Mobile</h4>
+                                    <p>Small phones</p>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

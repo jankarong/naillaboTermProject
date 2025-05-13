@@ -1,0 +1,278 @@
+/* Style Guide Specific Styles */
+.styleguide-header {
+    padding: 3rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--light-gray);
+    margin-bottom: 2rem;
+}
+
+/* Two Column Layout */
+.styleguide-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 0 1rem;
+}
+
+.styleguide-section {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-large);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.styleguide-section h2 {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    color: var(--accent-color);
+}
+
+/* Colors */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.color-item {
+    background: var(--white);
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    border: 1px solid var(--light-gray);
+}
+
+.color-preview {
+    height: 120px;
+}
+
+.color-info {
+    padding: 1rem;
+    background: var(--white);
+}
+
+.color-info h4 {
+    margin-bottom: 0.5rem;
+}
+
+.color-info code {
+    font-size: 0.875rem;
+    color: var(--dark-gray);
+    background: var(--light-gray);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-small);
+}
+
+/* Typography */
+.typography-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.type-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1.25rem;
+    background: var(--light-gray);
+    border-radius: var(--radius-medium);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 修改这里，让标题不换行 */
+.type-item h1,
+.type-item h2,
+.type-item h3,
+.type-item h4,
+.type-item p {
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.type-item code {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    background: var(--white);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-small);
+    white-space: nowrap;
+    margin-left: 2rem;
+    /* 增加一点间距 */
+}
+
+/* Button Showcase */
+.button-showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.showcase-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1.25rem;
+    background: var(--light-gray);
+    border-radius: var(--radius-medium);
+}
+
+.showcase-item code {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    background: var(--white);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-small);
+    margin-left: 1rem;
+}
+
+/* Card Showcase */
+.card-showcase {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: var(--radius-medium);
+}
+
+/* Navigation */
+nav {
+    background: var(--light-gray);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-medium);
+}
+
+/* Responsive Breakpoints */
+.breakpoints-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.breakpoint-item {
+    display: grid;
+    grid-template-columns: 200px 200px auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--radius-medium);
+    border: 1px solid var(--light-gray);
+}
+
+.breakpoint-visual {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+}
+
+.device {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.device.desktop {
+    width: 64px;
+    height: 40px;
+}
+
+.device.tablet {
+    width: 32px;
+    height: 40px;
+}
+
+.device.mobile {
+    width: 24px;
+    height: 40px;
+}
+
+.size-marker {
+    font-family: monospace;
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    background: var(--light-gray);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-small);
+}
+
+.arrow {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.breakpoint-info {
+    flex: 1;
+}
+
+.breakpoint-info h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.breakpoint-info p {
+    color: var(--dark-gray);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* 添加图片大小限制 */
+.breakpoint-image img {
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--radius-small);
+    border: 1px solid var(--light-gray);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .breakpoint-item {
+        grid-template-columns: 150px 150px auto;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .breakpoint-visual {
+        min-width: auto;
+    }
+
+    .size-marker {
+        display: none;
+    }
+}
+
+/* Styleguide Navigation */
+.styleguide-nav {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.styleguide-nav a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    transition: all 0.3s ease;
+}
+
+.styleguide-nav a:hover,
+.styleguide-nav a.active {
+    color: var(--primary-color);
+    background: var(--light-gray);
+}
+
+/* 添加容器最大宽度和居中 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
