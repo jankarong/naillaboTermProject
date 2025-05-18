@@ -48,7 +48,7 @@
             </a>
 
             <!-- 移动端顶部Book Now按钮 -->
-            <a href="../book.html" class="header-book-btn">Book Now</a>
+            <a href="../book-new.html" class="header-book-btn">Book Now</a>
 
             <button class="mobile-menu-toggle" aria-label="Toggle Menu">
                 <span></span>
@@ -87,7 +87,7 @@
                     <li><a href="../index.html#gallery">Gallery</a></li>
                     <li><a href="../pricing.html">Pricing</a></li>
                     <li><a href="../joinus.html">Join Us</a></li>
-                    <li><a href="../book.html" class="nav-btn">Book Now</a></li>
+                    <li><a href="../book-new.html" class="nav-btn">Book Now</a></li>
                 </ul>
             </div>
         </nav>
@@ -159,7 +159,7 @@
                             <span class="price">$99+</span>
                             <span class="duration"><i class="far fa-clock"></i> 75-90 mins</span>
                         </div>
-                        <a href="../book.html" class="btn btn-outline">Book Now</a>
+                        <a href="../book-new.html" class="btn btn-outline">Book Now</a>
                     </div>
                 </div>
 
@@ -182,7 +182,7 @@
                             <span class="price">$138</span>
                             <span class="duration"><i class="far fa-clock"></i> 100-120 mins</span>
                         </div>
-                        <a href="../book.html" class="btn btn-outline">Book Now</a>
+                        <a href="../book-new.html" class="btn btn-outline">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -261,7 +261,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-tag"></i>
-                        <a href="../book.html" class="footer-link">Online Booking Available</a>
+                        <a href="../book-new.html" class="footer-link">Online Booking Available</a>
                     </li>
                 </ul>
             </div>
@@ -309,6 +309,101 @@
 
     <script src="../scripts/navigation.js"></script>
     <script src="../scripts/wechat-qr.js"></script>
+
+    <!-- 中式美睫优惠弹窗 - 响应式设计 -->
+    <link rel="stylesheet" href="../styles/responsive-coupon-modal.css">
+    <div id="eyelashPromoModal" class="responsive-promo-modal">
+        <div class="responsive-promo-container">
+            <!-- 关闭按钮 -->
+            <button id="closePromoBtn" class="responsive-promo-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- 优惠标签 -->
+            <div class="responsive-promo-badge">LIMITED TIME OFFER</div>
+
+            <!-- 内容区域 -->
+            <div class="responsive-promo-content">
+                <!-- 左侧图片 -->
+                <div class="responsive-promo-image">
+                    <img src="../images/eyelash/chinese-style-eyelash.JPG" alt="Chinese Style Eyelash Extensions">
+                    <!-- 添加图片上的装饰元素 -->
+                    <div class="responsive-premium-badge">Premium Service</div>
+                </div>
+
+                <!-- 右侧内容 -->
+                <div class="responsive-promo-details">
+                    <!-- 标题区域 -->
+                    <h3 class="responsive-promo-title">Chinese Style Eyelash Special</h3>
+
+                    <!-- 副标题/描述 -->
+                    <p class="responsive-promo-description">
+                        Enjoy our professional Chinese style eyelash extensions for a naturally captivating look.
+                    </p>
+
+                    <!-- 价格显示 -->
+                    <div class="responsive-price-container">
+                        <!-- 价格标签 -->
+                        <div class="responsive-price-label">Special Offer</div>
+                        <!-- 价格容器 -->
+                        <div class="responsive-price-box">
+                            <!-- 价格 -->
+                            <div class="responsive-price">
+                                <span class="responsive-price-currency">$</span>
+                                <span class="responsive-price-amount">88-118</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 按钮区域 -->
+                    <div class="responsive-promo-actions">
+                        <a href="../book-new.html" id="bookNowBtn" class="responsive-book-btn">Book Now</a>
+                        <button id="noThanksBtn" class="responsive-cancel-btn">No Thanks</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加优惠券按钮脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取弹窗元素
+            const promoModal = document.getElementById('eyelashPromoModal');
+            const closeBtn = document.getElementById('closePromoBtn');
+            const noThanksBtn = document.getElementById('noThanksBtn');
+            const bookNowBtn = document.getElementById('bookNowBtn');
+
+            // 显示弹窗函数
+            function showPromoModal() {
+                promoModal.classList.add('active');
+            }
+
+            // 关闭弹窗函数
+            function closePromoModal() {
+                promoModal.classList.remove('active');
+            }
+
+            // 添加事件监听器
+            if (closeBtn) closeBtn.addEventListener('click', closePromoModal);
+            if (noThanksBtn) noThanksBtn.addEventListener('click', closePromoModal);
+            if (bookNowBtn) bookNowBtn.addEventListener('click', closePromoModal);
+
+            // 点击弹窗外部区域关闭弹窗
+            promoModal.addEventListener('click', function (event) {
+                if (event.target === promoModal) {
+                    closePromoModal();
+                }
+            });
+
+            // 添加优惠券按钮 - 使用CSS类
+            const couponBtn = document.createElement('button');
+            couponBtn.className = 'side-coupon-btn';
+            couponBtn.innerHTML = '<i class="fas fa-tag"></i> LIMITED OFFER';
+            couponBtn.addEventListener('click', showPromoModal);
+            document.body.appendChild(couponBtn);
+        });
+    </script>
 
     <!-- Schema tag -->
     <script type="application/ld+json">

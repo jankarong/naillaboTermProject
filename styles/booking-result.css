@@ -1,0 +1,292 @@
+/* 预约结果样式 */
+.booking-result {
+    text-align: center;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.booking-result .result-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.booking-result h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.booking-result p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.booking-result .result-actions {
+    margin-top: 25px;
+}
+
+/* 处理中状态 */
+.booking-result.processing {
+    background-color: #f0f7ff;
+    border: 1px solid #cce5ff;
+}
+
+.booking-result.processing .result-icon {
+    color: #0066cc;
+}
+
+/* 成功状态 */
+.booking-result.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.booking-result.success .result-icon {
+    color: #28a745;
+}
+
+/* 错误状态 */
+.booking-result.error {
+    background-color: #fff0f0;
+    border: 2px solid #ff4d6d;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.15);
+    animation: errorPulse 2s infinite;
+}
+
+.booking-result.error .result-icon {
+    color: #ff4d6d;
+    font-size: 60px;
+    animation: errorShake 0.5s ease-in-out;
+}
+
+.booking-result.error h3 {
+    color: #d32f2f;
+    font-weight: 700;
+}
+
+.booking-result.error p {
+    color: #333;
+}
+
+.booking-result.error .btn {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
+}
+
+.booking-result.error .btn:hover {
+    background-color: #e6375a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 77, 109, 0.4);
+}
+
+@keyframes errorPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 77, 109, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 77, 109, 0);
+    }
+}
+
+@keyframes errorShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-5px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .booking-result {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .booking-result .result-icon {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .booking-result h3 {
+        font-size: 20px;
+    }
+
+    .booking-result.error .result-icon {
+        font-size: 48px;
+    }
+
+    .booking-result.error .btn {
+        padding: 10px 20px;
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-result {
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .booking-result .result-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .booking-result h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .booking-result p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .booking-result .result-actions {
+        margin-top: 15px;
+    }
+
+    .booking-result.error {
+        animation: errorPulse 3s infinite;
+    }
+}
+
+/* Compact booking success styles */
+.booking-success.compact {
+    max-width: 500px;
+}
+
+.booking-success.compact .success-header {
+    padding: 15px 10px;
+}
+
+.booking-success.compact .success-header:after {
+    bottom: -10px;
+    height: 20px;
+}
+
+.booking-success.compact .success-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.booking-success.compact h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+
+.booking-success.compact .success-content {
+    padding: 15px 20px 20px;
+}
+
+.booking-success.compact .success-icon {
+    font-size: 2.5rem;
+    margin: 5px 0 10px;
+}
+
+.booking-success.compact .success-message p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.booking-success.compact .appointment-details {
+    margin: 15px 0;
+}
+
+.booking-success.compact .appointment-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.booking-success.compact .appointment-summary {
+    padding: 12px;
+    margin: 10px auto;
+    min-width: auto;
+}
+
+.booking-success.compact .service-list li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.service-list.compact-list li {
+    margin-bottom: 3px;
+    padding-left: 18px;
+    font-size: 0.85rem;
+}
+
+.service-list.compact-list li:before {
+    left: 5px;
+    font-size: 1rem;
+}
+
+.booking-success.compact .urgent-note {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    margin: 10px 0;
+}
+
+.booking-success.compact .action-buttons {
+    margin-top: 15px;
+}
+
+.booking-success.compact .btn {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+    .booking-success.compact .success-header {
+        padding: 12px 8px;
+    }
+
+    .booking-success.compact .success-logo {
+        height: 35px;
+    }
+
+    .booking-success.compact h2 {
+        font-size: 1.4rem;
+    }
+
+    .booking-success.compact .success-content {
+        padding: 12px 15px 15px;
+    }
+
+    .booking-success.compact .success-icon {
+        font-size: 2.2rem;
+        margin: 3px 0 8px;
+    }
+
+    .booking-success.compact .success-message p {
+        font-size: 0.9rem;
+    }
+}

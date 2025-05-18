@@ -1,0 +1,112 @@
+/* Booking Confirmation Modal Fix */
+.booking-confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex !important;
+    /* Force display flex */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000 !important;
+    /* Ensure it's above everything else */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.booking-confirmation-modal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    pointer-events: auto !important;
+}
+
+.booking-confirmation-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    padding: 30px;
+    z-index: 10001 !important;
+    /* Ensure content is above the overlay */
+}
+
+.booking-confirmation-modal.active .booking-confirmation-content {
+    transform: translateY(0);
+}
+
+.confirmation-buttons {
+    position: relative;
+    z-index: 10002 !important;
+    /* Ensure buttons are clickable */
+}
+
+.confirmation-buttons .btn {
+    position: relative;
+    z-index: 10003 !important;
+    /* Ensure buttons are clickable */
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+#confirm-booking-btn,
+#edit-booking-btn {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+/* Make buttons more visible */
+.confirmation-buttons .btn-primary {
+    background-color: #ff4d8d !important;
+    color: white !important;
+    border: 2px solid #ff4d8d !important;
+    padding: 12px 20px !important;
+    font-weight: bold !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.confirmation-buttons .btn-primary:hover {
+    background-color: #ff3377 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.confirmation-buttons .btn-secondary {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+    border: 2px solid #e0e0e0 !important;
+    padding: 12px 20px !important;
+    font-weight: bold !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.confirmation-buttons .btn-secondary:hover {
+    background-color: #e0e0e0 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Fix for mobile */
+@media (max-width: 768px) {
+    .confirmation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .confirmation-buttons .btn {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        padding: 15px 20px !important;
+    }
+}

@@ -187,3 +187,11 @@
 .btn i {
     margin-right: 8px;
 }
+
+/* 预约按钮特殊样式 - 无图标 */
+#book-appointment-btn,
+#confirm-booking-btn,
+#edit-booking-btn {
+    justify-content: center;
+    padding: 14px 30px;
+}

@@ -1,0 +1,427 @@
+/* 响应式优惠券弹窗样式 */
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(5px);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 12px rgba(255, 77, 141, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(255, 77, 141, 0.6);
+    }
+}
+
+/* 侧边优惠券按钮样式 */
+.side-coupon-btn {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 999;
+    padding: 12px 16px;
+    background-color: #FF4D8D;
+    color: white;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 77, 141, 0.3);
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 120px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    animation: bounce 2s infinite, glow 3s infinite;
+}
+
+.side-coupon-btn:hover {
+    background-color: #ff3a7f;
+    transform: translateY(-50%) translateX(5px);
+    box-shadow: 0 6px 15px rgba(255, 77, 141, 0.4);
+    animation: none;
+}
+
+.side-coupon-btn i {
+    font-size: 16px;
+}
+
+/* 移动端样式 */
+@media (max-width: 576px) {
+    .side-coupon-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+        min-width: 100px;
+    }
+
+    .side-coupon-btn i {
+        font-size: 14px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.responsive-promo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.responsive-promo-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.responsive-promo-container {
+    position: relative;
+    width: 95%;
+    max-width: 700px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: slideIn 0.4s ease forwards;
+}
+
+.responsive-promo-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.responsive-promo-close:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.responsive-promo-badge {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background-color: #1A1A1A;
+    color: white;
+    padding: 8px 16px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.responsive-promo-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.responsive-promo-image {
+    flex: 1.2;
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.responsive-promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.05);
+}
+
+.responsive-premium-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #FF4D8D;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-promo-details {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.responsive-promo-title {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.responsive-promo-description {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.responsive-price-container {
+    margin: 10px 0 25px;
+    position: relative;
+}
+
+.responsive-price-label {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background-color: #FF4D8D;
+    color: white;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.responsive-price-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #FF4D8D;
+}
+
+.responsive-price {
+    display: flex;
+    align-items: baseline;
+}
+
+.responsive-price-currency {
+    font-size: 18px;
+    color: #666;
+    margin-right: 5px;
+}
+
+.responsive-price-amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: #FF4D8D;
+}
+
+.responsive-promo-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.responsive-book-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 50px;
+    /* var(--radius-pill) */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    min-width: 160px;
+    background-color: #FF4D8D;
+    /* var(--primary-color) */
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 141, 0.15);
+    transition: all 0.3s ease;
+}
+
+.responsive-book-btn:hover {
+    background-color: #1A1A1A;
+    /* var(--accent-color) */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.responsive-cancel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 50px;
+    /* var(--radius-pill) */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 160px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.responsive-cancel-btn:hover {
+    background-color: transparent;
+    color: #666;
+    transform: translateY(-2px);
+}
+
+/* 响应式设计 - 平板电脑 */
+@media (max-width: 768px) {
+    .responsive-promo-container {
+        max-width: 90%;
+    }
+
+    .responsive-promo-title {
+        font-size: 22px;
+    }
+
+    .responsive-promo-description {
+        font-size: 14px;
+    }
+
+    .responsive-price-amount {
+        font-size: 32px;
+    }
+
+    .responsive-book-btn,
+    .responsive-cancel-btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        min-width: 140px;
+    }
+}
+
+/* 响应式设计 - 手机 */
+@media (max-width: 576px) {
+    .responsive-promo-content {
+        flex-direction: column;
+    }
+
+    .responsive-promo-image {
+        height: 200px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .responsive-promo-details {
+        padding: 20px;
+    }
+
+    .responsive-promo-title {
+        font-size: 20px;
+    }
+
+    .responsive-promo-description {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .responsive-price-container {
+        margin: 10px 0 20px;
+    }
+
+    .responsive-price-box {
+        padding: 15px;
+    }
+
+    .responsive-price-amount {
+        font-size: 28px;
+    }
+
+    .responsive-book-btn,
+    .responsive-cancel-btn {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    .responsive-promo-badge {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .responsive-premium-badge {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+}

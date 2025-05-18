@@ -1,0 +1,944 @@
+/* Form Styles */
+.appointment-form {
+    background-color: var(--white);
+    border-radius: var(--radius-large);
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-medium);
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font-size-body);
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 77, 141, 0.1);
+    background-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+.input-with-icon input,
+.input-with-icon select {
+    padding-left: 40px;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.form-submit-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.privacy-note {
+    display: flex;
+    align-items: center;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.privacy-note i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    top: 1px;
+}
+
+.form-submit-section .btn-primary {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: var(--radius-medium);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font-size-body);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #ff2d7d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 77, 141, 0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(255, 77, 141, 0.2);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+/* Service option button styles */
+.service-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.service-option-btn {
+    position: relative;
+    background-color: #f8f8f8;
+    border: 2px solid transparent;
+    border-radius: var(--radius-medium);
+    padding: 15px 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.service-option-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.service-option-btn.selected {
+    background-color: #fff0f5;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(255, 77, 141, 0.15);
+}
+
+.service-option-btn .hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.option-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-option-btn.selected .option-label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Legacy checkbox styles for backward compatibility */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: var(--radius-medium);
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.checkbox-item:hover {
+    background-color: #f0f0f0;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.checkbox-item label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* Service cards styling */
+.service-selection {
+    margin-bottom: 20px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+}
+
+.service-card {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.service-card-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.service-card-header:hover {
+    background-color: #f0f0f0;
+}
+
+.service-card-header:hover .service-card-title span {
+    color: var(--primary-color);
+}
+
+.service-card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    flex: 1;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.card-toggle {
+    cursor: pointer;
+    padding: 10px;
+    margin: -10px;
+    position: relative;
+    z-index: 2;
+}
+
+.service-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.service-card-header:hover .service-icon {
+    transform: scale(1.05);
+}
+
+.service-card-header input[type="hidden"] {
+    display: none;
+}
+
+.card-toggle {
+    margin-left: auto;
+    color: var(--dark-gray);
+    transition: all 0.3s ease;
+}
+
+.service-card-header:hover .card-toggle {
+    color: var(--primary-color);
+    transform: translateX(-3px);
+}
+
+.service-card-options {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    background-color: #fff;
+    padding: 0 15px;
+    opacity: 0;
+    visibility: hidden;
+    display: block !important;
+    /* Ensure it's always in the DOM */
+}
+
+.service-card.active .service-card-options {
+    max-height: 500px;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    opacity: 1;
+    visibility: visible;
+}
+
+.service-card.active .card-toggle i {
+    transform: rotate(180deg);
+}
+
+.service-card.active .service-card-header,
+.service-card.selected .service-card-header {
+    background-color: #fff0f5;
+}
+
+.service-card.active,
+.service-card.selected {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(255, 77, 141, 0.15);
+}
+
+.service-card.active .service-icon,
+.service-card.selected .service-icon {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.service-card.active .service-card-title span,
+.service-card.selected .service-card-title span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.options-title {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.other-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-medium);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.other-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 77, 141, 0.1);
+}
+
+/* Form validation styles */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: #ff3b30;
+}
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border-color: #ff3b30;
+    background-color: #fff8f8;
+}
+
+.form-group input.valid,
+.form-group select.valid,
+.form-group textarea.valid {
+    border-color: #34c759;
+    background-color: #f8fff8;
+}
+
+.form-group .error-message {
+    color: #ff3b30;
+    font-size: var(--font-size-small);
+    margin-top: 5px;
+    display: none;
+    padding: 4px 8px;
+    background-color: #ffeeee;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.form-group.error .error-message {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form submission error message */
+.error-message {
+    background-color: #ffeeee;
+    border-left: 4px solid #ff3b30;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: var(--radius-medium);
+    color: #d32f2f;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.error-message a {
+    color: #d32f2f;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.error-message a:hover {
+    text-decoration: none;
+}
+
+/* Loading spinner */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Booking confirmation modal */
+.booking-confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.booking-confirmation-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.booking-confirmation-content {
+    background-color: white;
+    border-radius: var(--radius-large);
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.booking-confirmation-modal.active .booking-confirmation-content {
+    transform: translateY(0);
+}
+
+.booking-confirmation-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.confirmation-details {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: var(--radius-medium);
+    border-left: 4px solid var(--primary-color);
+}
+
+.confirmation-details p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.confirmation-services {
+    margin: 10px 0 10px 20px;
+    padding-left: 0;
+}
+
+.confirmation-services li {
+    margin-bottom: 8px;
+    list-style-type: none;
+}
+
+.confirmation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Booking success message - See styles/pages/book.css for complete styling */
+.booking-success {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: var(--radius-large);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    border: none;
+}
+
+/* Special Requests Section Styling */
+.special-requests-section {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius-medium);
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.special-requests-section:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(255, 77, 141, 0.1);
+}
+
+.special-requests-section:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(255, 77, 141, 0.15);
+}
+
+.special-requests-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #ff85a2 100%);
+    color: white;
+    padding: 14px 18px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.special-requests-header::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.special-requests-header i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.special-requests-section:hover .special-requests-header i {
+    transform: scale(1.1);
+}
+
+.special-requests-section textarea {
+    border: none;
+    border-radius: 0;
+    border-bottom-left-radius: var(--radius-medium);
+    border-bottom-right-radius: var(--radius-medium);
+    padding: 16px 18px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    min-height: 120px;
+    position: relative;
+}
+
+.special-requests-section textarea:focus {
+    background-color: #fff;
+    outline: none;
+}
+
+.special-requests-section textarea::placeholder {
+    color: #999;
+    opacity: 1;
+    font-style: italic;
+}
+
+.special-requests-section::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23cccccc'%3E%3Cpath d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.special-requests-section:hover::after {
+    opacity: 0.7;
+}
+
+.special-requests-section:focus-within::after {
+    opacity: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .appointment-form {
+        padding: 20px;
+    }
+
+    .form-section {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+    }
+
+    .special-requests-header {
+        padding: 12px 15px;
+    }
+
+    .special-requests-header i {
+        font-size: 1.1rem;
+    }
+
+    .special-requests-section textarea {
+        padding: 14px 15px;
+        min-height: 100px;
+    }
+
+    .special-requests-section::after {
+        bottom: 12px;
+        right: 12px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .service-options-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .service-option-btn {
+        padding: 12px 8px;
+    }
+
+    .option-icon {
+        font-size: 1.3rem;
+    }
+
+    .option-label {
+        font-size: 0.9rem;
+    }
+
+    .service-option-btn.selected:after {
+        top: 5px;
+        right: 5px;
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+    }
+
+    .checkbox-group {
+        gap: 8px;
+    }
+
+    .checkbox-item {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .service-options {
+        padding: 12px;
+    }
+
+    .service-cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .service-card-header {
+        padding: 12px;
+    }
+
+    .service-icon {
+        font-size: 1.8rem;
+    }
+
+    .form-submit-section {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .privacy-note {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    /* Confirmation modal responsive styles */
+    .booking-confirmation-content {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .confirmation-details {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .confirmation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .confirmation-buttons button {
+        width: 100%;
+    }
+
+    .btn-secondary {
+        order: 2;
+    }
+
+    .btn-primary.confirm-booking {
+        order: 1;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointment-form {
+        padding: 15px;
+    }
+
+    .form-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .special-requests-header {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .special-requests-header i {
+        font-size: 1rem;
+        margin-right: 8px;
+    }
+
+    .special-requests-section textarea {
+        padding: 12px;
+        min-height: 90px;
+        font-size: 0.95rem;
+    }
+
+    .special-requests-section::after {
+        bottom: 10px;
+        right: 10px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .service-options-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .service-option-btn {
+        padding: 10px 5px;
+    }
+
+    .option-icon {
+        font-size: 1.2rem;
+    }
+
+    .option-label {
+        font-size: 0.85rem;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .checkbox-item {
+        width: 100%;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card-options {
+        padding: 0 10px;
+    }
+
+    .service-card.active .service-card-options {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .section-text {
+        height: 24px;
+        line-height: 24px;
+    }
+
+    .section-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.9rem;
+        margin-right: 8px;
+    }
+
+    .options-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .option-instruction {
+        margin: 5px 0 0 0;
+    }
+
+    /* Confirmation modal small screen styles */
+    .booking-confirmation-content {
+        padding: 15px;
+        width: 100%;
+        border-radius: 0;
+        max-height: 100vh;
+        height: 100%;
+    }
+
+    .booking-confirmation-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .confirmation-details {
+        padding: 12px;
+        margin: 12px 0;
+    }
+
+    .confirmation-services {
+        margin-left: 15px;
+    }
+
+    .confirmation-buttons {
+        margin-top: 20px;
+    }
+}

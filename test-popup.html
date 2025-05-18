@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Popup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 基本样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 弹窗样式 */
+        .popup-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-container {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, #f5a3a3 0%, #e77979 100%);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-header h3 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .popup-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .popup-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .popup-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #e77979;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-price .currency {
+            font-size: 20px;
+            margin-right: 2px;
+        }
+
+        .popup-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .popup-btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .popup-btn-primary {
+            background-color: #e77979;
+            color: white;
+            border: none;
+        }
+
+        .popup-btn-secondary {
+            background-color: transparent;
+            color: #777;
+            border: 1px solid #ddd;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>测试弹窗页面</h1>
+    <p>这个页面用于测试弹窗功能</p>
+    <button id="showPopupBtn">显示弹窗</button>
+
+    <!-- 弹窗 -->
+    <div class="popup-modal" id="testPopup">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h3>限时优惠 | Limited Time Offer</h3>
+                <button class="close-popup" id="closePopupBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-content">
+                <img src="images/eyelash/chinese-style-eyelash.JPG" alt="Chinese Style Eyelash Extensions"
+                    class="popup-image">
+                <h4>中式美睫特别优惠 | Chinese Style Eyelash Special</h4>
+                <!-- 价格显示 - 专业设计 -->
+                <div style="margin: 15px auto 25px; position: relative; max-width: 250px;">
+                    <!-- 价格标签 -->
+                    <div
+                        style="position: absolute; top: -10px; left: 0; background-color: #FF4D8D; color: white; font-size: 12px; padding: 3px 10px; border-radius: 4px; text-transform: uppercase; font-weight: 600;">
+                        Special Offer
+                    </div>
+                    <!-- 价格容器 - 简化设计 -->
+                    <div
+                        style="display: flex; align-items: center; justify-content: center; background-color: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 4px solid #FF4D8D;">
+                        <!-- 价格 -->
+                        <div style="display: flex; align-items: baseline;">
+                            <span style="font-size: 18px; color: #666; margin-right: 5px;">$</span>
+                            <span style="font-size: 38px; font-weight: 700; color: #FF4D8D;">88-118</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="popup-description">
+                    享受我们专业的中式美睫服务，打造自然迷人的眼神。<br>
+                    Enjoy our professional Chinese style eyelash extensions for a naturally captivating look.
+                </p>
+                <div class="popup-actions">
+                    <a href="#" class="popup-btn popup-btn-primary">立即预约 | Book Now</a>
+                    <button class="popup-btn popup-btn-secondary" id="noThanksPopupBtn">稍后再说 | No Thanks</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const popup = document.getElementById('testPopup');
+            const showBtn = document.getElementById('showPopupBtn');
+            const closeBtn = document.getElementById('closePopupBtn');
+            const noThanksBtn = document.getElementById('noThanksPopupBtn');
+
+            // 默认隐藏弹窗
+            popup.style.display = 'none';
+
+            // 显示弹窗
+            showBtn.addEventListener('click', function () {
+                popup.style.display = 'flex';
+            });
+
+            // 关闭弹窗
+            function closePopup() {
+                popup.style.display = 'none';
+            }
+
+            closeBtn.addEventListener('click', closePopup);
+            noThanksBtn.addEventListener('click', closePopup);
+        });
+    </script>
+</body>
+
+</html>

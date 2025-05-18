@@ -1,0 +1,112 @@
+/* Fix for modal buttons */
+.combo-offer-modal {
+    z-index: 9999 !important;
+    /* Ensure modal is on top */
+}
+
+.combo-offer-container {
+    z-index: 10000 !important;
+    /* Ensure container is on top */
+}
+
+.combo-offer-actions {
+    position: relative;
+    z-index: 10001 !important;
+    /* Ensure buttons are clickable */
+}
+
+.combo-offer-actions .btn {
+    position: relative;
+    z-index: 10002 !important;
+    /* Ensure buttons are clickable */
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+#add-pedicure-btn,
+#add-manicure-btn,
+#no-thanks-btn,
+#add-bare-pedicure-btn,
+#add-bare-manicure-btn,
+#no-thanks-bare-btn,
+.close-combo-modal,
+.close-bare-combo-modal {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 10003 !important;
+}
+
+/* Fix for bare combo modal prices */
+#bare-combo-offer-modal .original-price {
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+    color: #888 !important;
+    position: relative !important;
+    text-decoration: line-through !important;
+    opacity: 0.8 !important;
+}
+
+#bare-combo-offer-modal .original-price::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: -2px !important;
+    right: -2px !important;
+    height: 2px !important;
+    background-color: #ff4d8d !important;
+    transform: rotate(-8deg) !important;
+}
+
+#bare-combo-offer-modal .price-tag {
+    font-size: 3rem !important;
+    font-weight: bold !important;
+    color: var(--accent-color) !important;
+    line-height: 1 !important;
+}
+
+/* Make buttons more visible */
+.combo-offer-actions .btn-primary {
+    background-color: #ff4d8d !important;
+    color: white !important;
+    border: 2px solid #ff4d8d !important;
+    padding: 12px 20px !important;
+    font-weight: bold !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.combo-offer-actions .btn-primary:hover {
+    background-color: #ff3377 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.combo-offer-actions .btn-secondary {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+    border: 2px solid #e0e0e0 !important;
+    padding: 12px 20px !important;
+    font-weight: bold !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.combo-offer-actions .btn-secondary:hover {
+    background-color: #e0e0e0 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Fix for mobile */
+@media (max-width: 768px) {
+    .combo-offer-actions {
+        padding: 0 20px 30px !important;
+    }
+
+    .combo-offer-actions .btn {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        padding: 15px 20px !important;
+    }
+}

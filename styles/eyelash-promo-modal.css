@@ -1,0 +1,201 @@
+/* 中式美睫优惠弹窗样式 */
+.eyelash-promo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.eyelash-promo-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.eyelash-promo-container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #fff8f8 0%, #fff 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 0;
+    animation: modalPop 0.5s forwards;
+    border: 1px solid #f0d4d4;
+}
+
+@keyframes modalPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.promo-header {
+    background: linear-gradient(135deg, #f5a3a3 0%, #e77979 100%);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.promo-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.promo-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.promo-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.promo-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #e77979;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-price .currency {
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.promo-description {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.promo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.promo-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.promo-btn-primary {
+    background-color: #e77979;
+    color: white;
+    border: none;
+}
+
+.promo-btn-primary:hover {
+    background-color: #d86565;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.promo-btn-secondary {
+    background-color: transparent;
+    color: #777;
+    border: 1px solid #ddd;
+}
+
+.promo-btn-secondary:hover {
+    background-color: #f5f5f5;
+    color: #555;
+}
+
+.close-promo-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-promo-modal:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.limited-time-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(15deg);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .eyelash-promo-container {
+        width: 95%;
+        max-width: 400px;
+    }
+    
+    .promo-header h3 {
+        font-size: 18px;
+    }
+    
+    .promo-price {
+        font-size: 28px;
+    }
+    
+    .promo-description {
+        font-size: 14px;
+    }
+    
+    .promo-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .promo-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

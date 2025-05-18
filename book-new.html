@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Nail & Lash Appointments Richmond BC | New Online Booking Aberdeen Center</title>
+    <meta name="description"
+        content="Easy online booking for nail services and eyelash extensions in Richmond BC. Schedule your manicure, pedicure, or lash appointment at our Aberdeen Center location. Same-day appointments available.">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Cormorant for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Inter for body text -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/components/buttons.css">
+    <link rel="stylesheet" href="styles/pages/book.css">
+    <link rel="stylesheet" href="styles/fix-modal.css">
+    <link rel="stylesheet" href="styles/confirmation-modal-fix.css">
+    <link rel="stylesheet" href="styles/booking-result.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "phv0inhrsh");
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DDDRHQJ9P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0DDDRHQJ9P');
+    </script>
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Elegant Nails Logo" class="logo-img">
+            </a>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <ul class="nav-links">
+                    <li class="services-dropdown">
+                        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/manicure.html">Manicure & Nail Art</a></li>
+                            <li><a href="services/pedicure.html">Pedicure</a></li>
+                            <li><a href="services/eyelash.html">Eyelash Extension</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="joinus.html">Join Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="desktop-menu">
+                <ul class="nav-links">
+                    <li class="services-dropdown">
+                        <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/manicure.html">Manicure & Nail Art</a></li>
+                            <li><a href="services/pedicure.html">Pedicure</a></li>
+                            <li><a href="services/eyelash.html">Eyelash Extension</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="joinus.html">Join Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h1>Book Your Appointment</h1>
+                <p>Book your professional beauty service with us</p>
+            </div>
+
+            <div class="booking-form-container">
+                <form id="appointment-form" class="appointment-form" method="POST">
+                    <!-- Using direct Gmail sending instead of FormSubmit -->
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <div class="section-number">1</div>
+                            <div class="section-text">Personal Information</div>
+                        </h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                    title="Please enter a valid email address (e.g., name@example.com)" required>
+                                <div class="error-message">Please enter a valid email address (e.g., name@example.com)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g., 604-123-4567"
+                                pattern="[0-9\-\+\(\)\s\.]{10,15}"
+                                title="Please enter a valid phone number (10-15 digits, may include -, +, (), spaces)"
+                                required>
+                            <div class="error-message">Please enter a valid phone number (e.g., 604-123-4567)</div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <div class="section-number">2</div>
+                            <div class="section-text">Select Services</div>
+                        </h3>
+                        <p class="section-description">Choose one or more services for your appointment</p>
+
+                        <div class="form-group">
+                            <div class="service-selection">
+                                <div class="service-cards">
+                                    <!-- Manicure Card -->
+                                    <div class="service-card" id="manicure-card" data-service="manicure">
+                                        <div class="service-card-header">
+                                            <div class="service-card-title">
+                                                <i class="fas fa-hand-sparkles service-icon"></i>
+                                                <span>Manicure</span>
+                                            </div>
+                                            <div class="card-toggle">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                            <input type="hidden" name="service-categories[]" value="manicure">
+                                        </div>
+                                        <div class="service-card-options">
+                                            <div class="options-title">Select options:</div>
+                                            <div class="service-options-grid">
+                                                <div class="service-option-btn" data-option="color"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-color" name="manicure-options[]"
+                                                        value="color" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Single color</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="bare-manicure"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-bare" name="manicure-options[]"
+                                                        value="bare-manicure" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Bare Manicure</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="removal"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-removal"
+                                                        name="manicure-options[]" value="removal"
+                                                        class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Removal</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="full-set-extension"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-full-set"
+                                                        name="manicure-options[]" value="full-set-extension"
+                                                        class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Nail Extension</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="simple-art-design"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-simple-art"
+                                                        name="manicure-options[]" value="simple-art-design"
+                                                        class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Simple art design</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="soft-gel"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-soft-gel"
+                                                        name="manicure-options[]" value="soft-gel"
+                                                        class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Soft gel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="hard-gel"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-hard-gel"
+                                                        name="manicure-options[]" value="hard-gel"
+                                                        class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Hard gel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="other"
+                                                    data-service="manicure">
+                                                    <input type="checkbox" id="manicure-other" name="manicure-options[]"
+                                                        value="other" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Other</span>
+                                                    </div>
+                                                </div>
+                                                <div class="other-details" id="manicure-other-details"
+                                                    style="display: none; width: 100%; margin-top: 10px;">
+                                                    <input type="text" name="manicure-other-text"
+                                                        placeholder="Please specify other service" class="other-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Pedicure Card -->
+                                    <div class="service-card" id="pedicure-card" data-service="pedicure">
+                                        <div class="service-card-header">
+                                            <div class="service-card-title">
+                                                <i class="fas fa-shoe-prints service-icon"></i>
+                                                <span>Pedicure</span>
+                                            </div>
+                                            <div class="card-toggle">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                            <input type="hidden" name="service-categories[]" value="pedicure">
+                                        </div>
+                                        <div class="service-card-options">
+                                            <div class="options-title">Select options:</div>
+                                            <div class="service-options-grid">
+                                                <div class="service-option-btn" data-option="color"
+                                                    data-service="pedicure">
+                                                    <input type="checkbox" id="pedicure-color" name="pedicure-options[]"
+                                                        value="color" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Single color</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="bare-pedicure"
+                                                    data-service="pedicure">
+                                                    <input type="checkbox" id="pedicure-bare" name="pedicure-options[]"
+                                                        value="bare-pedicure" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Bare Pedicure</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="removal"
+                                                    data-service="pedicure">
+                                                    <input type="checkbox" id="pedicure-removal"
+                                                        name="pedicure-options[]" value="removal"
+                                                        class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Removal</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="simple-art-design"
+                                                    data-service="pedicure">
+                                                    <input type="checkbox" id="pedicure-simple-art"
+                                                        name="pedicure-options[]" value="simple-art-design"
+                                                        class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Simple art design</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="other"
+                                                    data-service="pedicure">
+                                                    <input type="checkbox" id="pedicure-other" name="pedicure-options[]"
+                                                        value="other" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Other</span>
+                                                    </div>
+                                                </div>
+                                                <div class="other-details" id="pedicure-other-details"
+                                                    style="display: none; width: 100%; margin-top: 10px;">
+                                                    <input type="text" name="pedicure-other-text"
+                                                        placeholder="Please specify other service" class="other-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Eyelash Extension Card -->
+                                    <div class="service-card" id="eyelash-card" data-service="eyelash">
+                                        <div class="service-card-header">
+                                            <div class="service-card-title">
+                                                <i class="fas fa-eye service-icon"></i>
+                                                <span>Eyelash Extension</span>
+                                            </div>
+                                            <div class="card-toggle">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                            <input type="hidden" name="service-categories[]" value="eyelash">
+                                        </div>
+                                        <div class="service-card-options">
+                                            <div class="options-title">Select options:</div>
+                                            <div class="service-options-grid">
+                                                <div class="service-option-btn" data-option="removal"
+                                                    data-service="eyelash">
+                                                    <input type="checkbox" id="eyelash-removal" name="eyelash-options[]"
+                                                        value="removal" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Removal</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="natural-style"
+                                                    data-service="eyelash">
+                                                    <input type="checkbox" id="eyelash-natural" name="eyelash-options[]"
+                                                        value="natural-style" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Natural style</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="volume-style"
+                                                    data-service="eyelash">
+                                                    <input type="checkbox" id="eyelash-volume" name="eyelash-options[]"
+                                                        value="volume-style" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Volume style</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="chinese-style"
+                                                    data-service="eyelash">
+                                                    <input type="checkbox" id="eyelash-chinese" name="eyelash-options[]"
+                                                        value="chinese-style" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Chinese style</span>
+                                                        <span class="coupon-badge"><i class="fas fa-tag"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="other"
+                                                    data-service="eyelash">
+                                                    <input type="checkbox" id="eyelash-other" name="eyelash-options[]"
+                                                        value="other" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Other</span>
+                                                    </div>
+                                                </div>
+                                                <div class="other-details" id="eyelash-other-details"
+                                                    style="display: none; width: 100%; margin-top: 10px;">
+                                                    <input type="text" name="eyelash-other-text"
+                                                        placeholder="Please specify other service" class="other-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Spa Treatment Card -->
+                                    <div class="service-card" id="spa-card" data-service="spa">
+                                        <div class="service-card-header">
+                                            <div class="service-card-title">
+                                                <i class="fas fa-spa service-icon"></i>
+                                                <span>Spa Treatment</span>
+                                            </div>
+                                            <div class="card-toggle">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </div>
+                                            <input type="hidden" name="service-categories[]" value="spa">
+                                        </div>
+                                        <div class="service-card-options">
+                                            <div class="options-title">Select options:</div>
+                                            <div class="service-options-grid">
+                                                <div class="service-option-btn" data-option="hand" data-service="spa">
+                                                    <input type="checkbox" id="spa-hand" name="spa-options[]"
+                                                        value="hand" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Hand</span>
+                                                    </div>
+                                                </div>
+                                                <div class="service-option-btn" data-option="feet" data-service="spa">
+                                                    <input type="checkbox" id="spa-feet" name="spa-options[]"
+                                                        value="feet" class="hidden-checkbox">
+                                                    <div class="option-content">
+                                                        <span class="option-label">Feet</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <div class="section-number">3</div>
+                            <div class="section-text">Schedule Your Appointment</div>
+                        </h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date / 预约日期</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-calendar-alt input-icon"></i>
+                                    <input type="date" id="date" name="date" required
+                                        placeholder="Select a date / 选择日期">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time">Preferred Time / 预约时间</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-clock input-icon"></i>
+                                    <select id="time" name="time" required>
+                                        <option value="">Select a time / 选择时间</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="10:15">10:15 AM</option>
+                                        <option value="10:30">10:30 AM</option>
+                                        <option value="10:45">10:45 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="11:15">11:15 AM</option>
+                                        <option value="11:30">11:30 AM</option>
+                                        <option value="11:45">11:45 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="12:15">12:15 PM</option>
+                                        <option value="12:30">12:30 PM</option>
+                                        <option value="12:45">12:45 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:15">1:15 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="13:45">1:45 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="14:15">2:15 PM</option>
+                                        <option value="14:30">2:30 PM</option>
+                                        <option value="14:45">2:45 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="15:15">3:15 PM</option>
+                                        <option value="15:30">3:30 PM</option>
+                                        <option value="15:45">3:45 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="16:15">4:15 PM</option>
+                                        <option value="16:30">4:30 PM</option>
+                                        <option value="16:45">4:45 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="17:15">5:15 PM</option>
+                                        <option value="17:30">5:30 PM</option>
+                                        <option value="17:45">5:45 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="18:15">6:15 PM</option>
+                                        <option value="18:30">6:30 PM</option>
+                                        <option value="18:45">6:45 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group special-requests-section">
+                            <div class="special-requests-header">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Special Requests or Notes / 特殊要求或备注</span>
+                            </div>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Tell us about any special requests, preferences, or additional information we should know / 请告诉我们您有任何特殊要求、偏好或我们需要了解的其他信息"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section form-submit-section">
+                        <div class="privacy-note">
+                            <i class="fas fa-clock"></i>
+                            <p>We look forward to serving you at your scheduled time.</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="book-appointment-btn">
+                            Continue to Confirm
+                        </button>
+                    </div>
+
+                    <script>
+                        // Direct event handler for the submit button
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const bookBtn = document.getElementById('book-appointment-btn');
+                            if (bookBtn) {
+                                bookBtn.addEventListener('click', function (e) {
+                                    console.log('Book appointment button clicked directly');
+
+                                    // Explicitly submit the form to ensure the event is triggered
+                                    const form = document.getElementById('appointment-form');
+                                    if (form) {
+                                        console.log('Explicitly submitting form');
+                                        // This will trigger the submit event which is handled by our event listeners
+                                        form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p class="about-text">
+                    Naillabo Salon, a nail and eyelash extension beauty salon at Aberdeen Center in Richmond, BC. Our
+                    salon is renowned for exceptional nail services, including manicures, pedicures, and custom nail
+                    designs, as well as eyelash extensions.
+                </p>
+                <div class="social-links">
+                    <a href="javascript:void(0)" class="wechat-link" aria-label="WeChat"><i
+                            class="fa-brands fa-weixin"></i></a>
+                    <a href="https://www.instagram.com/labonail/" target="_blank" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/NaillaboSalonOnlineBooking" target="_blank"
+                        aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services/manicure.html">Manicure & Nail Art</a></li>
+                    <li><a href="services/pedicure.html">Pedicure & Spa Care</a></li>
+                    <li><a href="services/eyelash.html">Eyelash Extension</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul class="business-info">
+                    <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <div class="time-info">
+                            <span>Mon - Sun: 10:00 - 19:00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-car"></i>
+                        <span>Free Parking Available</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-tag"></i>
+                        <a href="book-new.html" class="footer-link">Online Booking Available</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="address-info">
+                            <a href="https://maps.google.com/?q=Naillabo+Nail+%26+Eyelash+Beauty+Salon+Richmond+BC+Aberdeen+Center"
+                                target="_blank" class="map-link">
+                                <span>Aberdeen Center</span>
+                                <span>3530-4151 Hazelbridge Way</span>
+                                <span>Richmond BC</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:604.998.7666" class="footer-link">604.998.7666</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:naillabo3530@gmail.com" class="footer-link">naillabo3530@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <p>&copy; 2025 Nail Labo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="wechat-qr-modal">
+        <div class="wechat-qr-container">
+            <button class="close-qr-modal" aria-label="Close QR Code">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="./images/qrcode.JPG" alt="WeChat QR Code">
+        </div>
+    </div>
+
+    <!-- Single Color Combo Offer Modal -->
+    <div class="combo-offer-modal" id="combo-offer-modal">
+        <div class="combo-offer-container">
+            <button class="close-combo-modal" aria-label="Close Offer"
+                onclick="document.getElementById('combo-offer-modal').classList.remove('active');">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="combo-offer-content">
+                <div class="combo-offer-header">
+                    <h3>Manicure + Pedicure Combo</h3>
+                    <div class="combo-offer-badge">
+                        <span>SAVE $10</span>
+                    </div>
+                </div>
+                <div class="combo-price">
+                    <div class="price-comparison">
+                        <span class="original-price">$138</span>
+                        <span class="price-tag">$128</span>
+                    </div>
+                    <span class="price-label">Single Color</span>
+                </div>
+                <div class="combo-details">
+                    <p>Enjoy our special combo price when you book both services together!</p>
+                    <p class="note">For additional options or custom designs, we'll discuss pricing in-store.</p>
+                </div>
+                <div class="combo-offer-actions">
+                    <button id="add-pedicure-btn" class="btn btn-primary"
+                        onclick="document.getElementById('combo-offer-modal').classList.remove('active'); console.log('Add pedicure clicked directly');">
+                        <i class="fas fa-plus-circle"></i> Add Pedicure
+                    </button>
+                    <button id="add-manicure-btn" class="btn btn-primary" style="display: none;"
+                        onclick="document.getElementById('combo-offer-modal').classList.remove('active'); console.log('Add manicure clicked directly');">
+                        <i class="fas fa-plus-circle"></i> Add Manicure
+                    </button>
+                    <button id="no-thanks-btn" class="btn btn-secondary"
+                        onclick="document.getElementById('combo-offer-modal').classList.remove('active'); console.log('No thanks clicked directly');">
+                        No, Thanks
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bare Combo Offer Modal -->
+    <div class="combo-offer-modal" id="bare-combo-offer-modal">
+        <div class="combo-offer-container">
+            <button class="close-bare-combo-modal" aria-label="Close Offer"
+                onclick="document.getElementById('bare-combo-offer-modal').classList.remove('active');">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="combo-offer-content">
+                <div class="combo-offer-header">
+                    <h3>Bare Manicure + Pedicure Combo</h3>
+                    <div class="combo-offer-badge">
+                        <span>SAVE $7</span>
+                    </div>
+                </div>
+                <div class="combo-price">
+                    <div class="price-comparison">
+                        <span class="original-price">$85</span>
+                        <span class="price-tag">$78</span>
+                    </div>
+                    <span class="price-label">Bare Service</span>
+                </div>
+                <div class="combo-details">
+                    <p>Enjoy our special bare service combo price when you book both together!</p>
+                    <p class="note">Perfect for natural nail care without polish.</p>
+                </div>
+                <div class="combo-offer-actions">
+                    <button id="add-bare-pedicure-btn" class="btn btn-primary"
+                        onclick="document.getElementById('bare-combo-offer-modal').classList.remove('active'); console.log('Add bare pedicure clicked directly');">
+                        <i class="fas fa-plus-circle"></i> Add Bare Pedicure
+                    </button>
+                    <button id="add-bare-manicure-btn" class="btn btn-primary" style="display: none;"
+                        onclick="document.getElementById('bare-combo-offer-modal').classList.remove('active'); console.log('Add bare manicure clicked directly');">
+                        <i class="fas fa-plus-circle"></i> Add Bare Manicure
+                    </button>
+                    <button id="no-thanks-bare-btn" class="btn btn-secondary"
+                        onclick="document.getElementById('bare-combo-offer-modal').classList.remove('active'); console.log('No thanks bare clicked directly');">
+                        No, Thanks
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="booking-confirmation-modal" id="booking-confirmation-modal">
+        <div class="booking-confirmation-content">
+            <h2>Confirm Your Appointment</h2>
+            <p>Please review your booking details below / 请确认以下预约详情</p>
+
+            <div class="confirmation-details">
+                <p><strong>Name / 姓名:</strong> <span id="confirm-name"></span></p>
+                <p><strong>Email / 电子邮箱:</strong> <span id="confirm-email"></span></p>
+                <p><strong>Phone / 电话:</strong> <span id="confirm-phone"></span></p>
+                <p><strong>Date / 日期:</strong> <span id="confirm-date"></span></p>
+                <p><strong>Time / 时间:</strong> <span id="confirm-time"></span></p>
+                <p><strong>Services / 服务:</strong></p>
+                <ul class="confirmation-services" id="confirm-services">
+                    <!-- Services will be populated here -->
+                </ul>
+                <p id="confirm-message-container" style="display: none;">
+                    <strong>Special Requests / 特殊要求:</strong>
+                    <span id="confirm-message"></span>
+                </p>
+            </div>
+
+            <div class="confirmation-buttons">
+                <button id="confirm-booking-btn" class="btn btn-primary" type="button">
+                    Confirm Booking / 确认预约
+                </button>
+                <button id="edit-booking-btn" class="btn btn-secondary" type="button">
+                    Edit Details / 编辑详情
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS for reliable email sending - using latest version -->
+    <!-- EmailJS removed - using Gmail app password instead -->
+    <!-- EmailJS initialization removed - using Gmail app password instead -->
+
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/date-picker.js"></script>
+    <script src="scripts/booking.js"></script>
+    <script src="scripts/api-handler.js"></script>
+    <script src="scripts/confirmation-modal-fix.js"></script>
+    <script src="scripts/form-validation.js"></script>
+
+
+
+
+
+    <!-- Script to fix service card expansion and ensure combo offers work -->
+    <!-- Additional debugging for combo offer buttons -->
+    <script>
+        // Add a global error handler to catch and log any JavaScript errors
+        window.addEventListener('error', function (event) {
+            console.error('Global error caught:', event.error);
+        });
+
+        // Add a mutation observer to monitor changes to the service cards
+        document.addEventListener('DOMContentLoaded', function () {
+            // Debug function to check the state of service cards and options
+            window.debugServiceCards = function () {
+                const cards = document.querySelectorAll('.service-card');
+                console.log('--- Service Card Debug ---');
+                cards.forEach(card => {
+                    const serviceType = card.dataset.service;
+                    const isActive = card.classList.contains('active');
+                    const isSelected = card.classList.contains('selected');
+                    const options = card.querySelectorAll('input[type="checkbox"]:checked');
+                    const optionValues = Array.from(options).map(opt => opt.value);
+
+                    console.log(`Card: ${serviceType}, Active: ${isActive}, Selected: ${isSelected}, Options: ${optionValues.join(', ')}`);
+                });
+                console.log('------------------------');
+            };
+
+            // Call the debug function when combo buttons are clicked
+            document.querySelectorAll('#add-pedicure-btn, #add-manicure-btn, #add-bare-pedicure-btn, #add-bare-manicure-btn').forEach(btn => {
+                const originalClick = btn.onclick;
+                btn.onclick = function (e) {
+                    console.log('Combo button clicked, running original handler:', this.id);
+                    if (originalClick) originalClick.call(this, e);
+
+                    // Debug after the click handler has run
+                    setTimeout(function () {
+                        window.debugServiceCards();
+                    }, 100);
+                };
+            });
+        });
+    </script>
+    <script>
+        // Wait for page to fully load
+        window.addEventListener('load', function () {
+            console.log('Window fully loaded');
+
+            // Get all service cards
+            const cards = document.querySelectorAll('.service-card');
+            console.log('Found', cards.length, 'service cards');
+
+            // First, make all cards active initially so users can see options
+            cards.forEach(function (card) {
+                card.classList.add('active');
+                console.log('Made card active:', card.id);
+
+                // Check if any options are already selected in this card
+                const serviceType = card.dataset.service;
+                const checkboxes = card.querySelectorAll(`input[name="${serviceType}-options[]"]:checked`);
+                if (checkboxes.length > 0) {
+                    // Mark the card as selected if it has any selected options
+                    card.classList.add('selected');
+                    console.log('Card has selected options, marking as selected:', card.id);
+                }
+            });
+
+            // Card headers are now handled by booking.js
+            // Make sure all toggle icons are properly rotated initially
+            document.querySelectorAll('.service-card-header .card-toggle i').forEach(function (toggleIcon) {
+                const card = toggleIcon.closest('.service-card');
+                if (card && card.classList.contains('active')) {
+                    toggleIcon.style.transform = 'rotate(180deg)';
+                } else {
+                    toggleIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Make sure combo offer modals are initialized
+            const comboOfferModal = document.getElementById('combo-offer-modal');
+            const bareComboOfferModal = document.getElementById('bare-combo-offer-modal');
+
+            // Ensure combo offer buttons are properly set up
+            const addPedicureBtn = document.getElementById('add-pedicure-btn');
+            const addManicureBtn = document.getElementById('add-manicure-btn');
+            const addBarePedicureBtn = document.getElementById('add-bare-pedicure-btn');
+            const addBareManicureBtn = document.getElementById('add-bare-manicure-btn');
+
+            // Debug log
+            console.log('Combo offer modal found:', !!comboOfferModal);
+            console.log('Bare combo offer modal found:', !!bareComboOfferModal);
+
+            // Test function to show combo offer modals
+            window.testComboModal = function () {
+                console.log('Testing combo offer modal');
+                if (comboOfferModal) {
+                    // Show "Add Pedicure" button, hide "Add Manicure" button
+                    if (addPedicureBtn) addPedicureBtn.style.display = 'block';
+                    if (addManicureBtn) addManicureBtn.style.display = 'none';
+
+                    comboOfferModal.classList.add('active');
+                    window.comboOfferShown = true;
+                }
+            };
+
+            window.testBareComboModal = function () {
+                console.log('Testing bare combo offer modal');
+                if (bareComboOfferModal) {
+                    // Show "Add Bare Pedicure" button, hide "Add Bare Manicure" button
+                    if (addBarePedicureBtn) addBarePedicureBtn.style.display = 'block';
+                    if (addBareManicureBtn) addBareManicureBtn.style.display = 'none';
+
+                    bareComboOfferModal.classList.add('active');
+                    window.bareComboOfferShown = true;
+                }
+            };
+
+            // 不要自动显示弹窗，等待用户点击相关服务后才显示
+            // setTimeout(function () {
+            //     window.testComboModal();
+            // }, 2000);
+
+            // Make sure the combo offer modals work with the checkboxes
+            document.querySelectorAll('#manicure-color, #pedicure-color, #manicure-bare, #pedicure-bare').forEach(function (checkbox) {
+                console.log('Adding special handler to checkbox:', checkbox.id);
+
+                checkbox.addEventListener('change', function () {
+                    if (!this.checked) return;
+
+                    console.log('Special checkbox changed:', this.id);
+
+                    // Handle single color combo offer
+                    if (this.id === 'manicure-color') {
+                        const pedicureCard = document.getElementById('pedicure-card');
+                        const isPedicureSelected = pedicureCard && pedicureCard.classList.contains('selected');
+
+                        if (!isPedicureSelected && !window.comboOfferShown) {
+                            console.log('Showing single color combo offer (manicure)');
+
+                            // Show "Add Pedicure" button, hide "Add Manicure" button
+                            if (addPedicureBtn) addPedicureBtn.style.display = 'block';
+                            if (addManicureBtn) addManicureBtn.style.display = 'none';
+
+                            setTimeout(function () {
+                                comboOfferModal.classList.add('active');
+                                window.comboOfferShown = true;
+                            }, 500);
+                        }
+                    }
+
+                    // Handle pedicure single color
+                    if (this.id === 'pedicure-color') {
+                        const manicureCard = document.getElementById('manicure-card');
+                        const isManicureSelected = manicureCard && manicureCard.classList.contains('selected');
+
+                        if (!isManicureSelected && !window.comboOfferShown) {
+                            console.log('Showing single color combo offer (pedicure)');
+
+                            // Show "Add Manicure" button, hide "Add Pedicure" button
+                            if (addManicureBtn) addManicureBtn.style.display = 'block';
+                            if (addPedicureBtn) addPedicureBtn.style.display = 'none';
+
+                            setTimeout(function () {
+                                comboOfferModal.classList.add('active');
+                                window.comboOfferShown = true;
+                            }, 500);
+                        }
+                    }
+
+                    // Handle bare manicure combo
+                    if (this.id === 'manicure-bare') {
+                        const pedicureCard = document.getElementById('pedicure-card');
+                        const pedicureBareCheckbox = document.getElementById('pedicure-bare');
+                        const isBarePedicureSelected = pedicureCard &&
+                            pedicureCard.classList.contains('selected') &&
+                            pedicureBareCheckbox &&
+                            pedicureBareCheckbox.checked;
+
+                        if (!isBarePedicureSelected && !window.bareComboOfferShown) {
+                            console.log('Showing bare combo offer (manicure)');
+
+                            // Show "Add Bare Pedicure" button, hide "Add Bare Manicure" button
+                            if (addBarePedicureBtn) addBarePedicureBtn.style.display = 'block';
+                            if (addBareManicureBtn) addBareManicureBtn.style.display = 'none';
+
+                            setTimeout(function () {
+                                bareComboOfferModal.classList.add('active');
+                                window.bareComboOfferShown = true;
+                            }, 500);
+                        }
+                    }
+
+                    // Handle bare pedicure combo
+                    if (this.id === 'pedicure-bare') {
+                        const manicureCard = document.getElementById('manicure-card');
+                        const manicureBareCheckbox = document.getElementById('manicure-bare');
+                        const isBareManicureSelected = manicureCard &&
+                            manicureCard.classList.contains('selected') &&
+                            manicureBareCheckbox &&
+                            manicureBareCheckbox.checked;
+
+                        if (!isBareManicureSelected && !window.bareComboOfferShown) {
+                            console.log('Showing bare combo offer (pedicure)');
+
+                            // Show "Add Bare Manicure" button, hide "Add Bare Pedicure" button
+                            if (addBareManicureBtn) addBareManicureBtn.style.display = 'block';
+                            if (addBarePedicureBtn) addBarePedicureBtn.style.display = 'none';
+
+                            setTimeout(function () {
+                                bareComboOfferModal.classList.add('active');
+                                window.bareComboOfferShown = true;
+                            }, 500);
+                        }
+                    }
+                });
+            });
+
+            // Set up combo offer modal button handlers
+            const closeComboModalBtn = document.querySelector('.close-combo-modal');
+            const noThanksBtn = document.getElementById('no-thanks-btn');
+
+            console.log('Close combo modal button found:', !!closeComboModalBtn);
+            console.log('No thanks button found:', !!noThanksBtn);
+
+            // Direct button click handlers with debugging
+            document.querySelectorAll('#add-pedicure-btn, #add-manicure-btn, #no-thanks-btn, .close-combo-modal').forEach(function (button) {
+                console.log('Adding direct click handler to button:', button.id || button.className);
+
+                // Remove any existing click handlers
+                button.onclick = null;
+
+                // Add new click handler
+                button.onclick = function (e) {
+                    console.log('Button clicked:', this.id || this.className);
+
+                    // Close the modal
+                    if (comboOfferModal) {
+                        comboOfferModal.classList.remove('active');
+                    }
+
+                    // Handle specific button actions
+                    if (this.id === 'add-pedicure-btn') {
+                        // Additional actions for add pedicure button
+                        const pedicureCard = document.getElementById('pedicure-card');
+                        if (pedicureCard) {
+                            // Open the pedicure card
+                            pedicureCard.classList.add('active');
+
+                            // Find the single color option button and checkbox
+                            const colorOption = document.getElementById('pedicure-color');
+                            const colorOptionBtn = document.querySelector('.service-option-btn[data-option="color"][data-service="pedicure"]');
+
+                            if (colorOption && colorOptionBtn) {
+                                // Check the checkbox
+                                colorOption.checked = true;
+
+                                // Add selected class to the button
+                                colorOptionBtn.classList.add('selected');
+
+                                // Mark the card as selected
+                                pedicureCard.classList.add('selected');
+
+                                // Trigger the change event to update the card's selected state
+                                const changeEvent = new Event('change', { bubbles: true });
+                                colorOption.dispatchEvent(changeEvent);
+
+                                console.log('Pedicure color option selected:', colorOption.checked);
+                                console.log('Pedicure card selected:', pedicureCard.classList.contains('selected'));
+                            }
+
+                            // Scroll to the pedicure card
+                            pedicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    } else if (this.id === 'add-manicure-btn') {
+                        // Additional actions for add manicure button
+                        const manicureCard = document.getElementById('manicure-card');
+                        if (manicureCard) {
+                            // Open the manicure card
+                            manicureCard.classList.add('active');
+
+                            // Find the single color option button and checkbox
+                            const colorOption = document.getElementById('manicure-color');
+                            const colorOptionBtn = document.querySelector('.service-option-btn[data-option="color"][data-service="manicure"]');
+
+                            if (colorOption && colorOptionBtn) {
+                                // Check the checkbox
+                                colorOption.checked = true;
+
+                                // Add selected class to the button
+                                colorOptionBtn.classList.add('selected');
+
+                                // Mark the card as selected
+                                manicureCard.classList.add('selected');
+
+                                // Trigger the change event to update the card's selected state
+                                const changeEvent = new Event('change', { bubbles: true });
+                                colorOption.dispatchEvent(changeEvent);
+
+                                console.log('Manicure color option selected:', colorOption.checked);
+                                console.log('Manicure card selected:', manicureCard.classList.contains('selected'));
+                            }
+
+                            // Scroll to the manicure card
+                            manicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }
+                };
+            });
+
+            // Original handlers (keeping as backup)
+            if (closeComboModalBtn) {
+                closeComboModalBtn.addEventListener('click', function () {
+                    console.log('Close combo modal button clicked');
+                    comboOfferModal.classList.remove('active');
+                });
+            }
+
+            if (noThanksBtn) {
+                noThanksBtn.addEventListener('click', function () {
+                    console.log('No thanks button clicked');
+                    comboOfferModal.classList.remove('active');
+                });
+            }
+
+            if (addPedicureBtn) {
+                addPedicureBtn.addEventListener('click', function () {
+                    console.log('Add pedicure button clicked');
+                    // Find the pedicure card and open it
+                    const pedicureCard = document.getElementById('pedicure-card');
+                    if (pedicureCard) {
+                        // Open the pedicure card
+                        pedicureCard.classList.add('active');
+
+                        // Find the single color option button and checkbox
+                        const colorOption = document.getElementById('pedicure-color');
+                        const colorOptionBtn = document.querySelector('.service-option-btn[data-option="color"][data-service="pedicure"]');
+
+                        if (colorOption && colorOptionBtn) {
+                            // Check the checkbox
+                            colorOption.checked = true;
+
+                            // Add selected class to the button
+                            colorOptionBtn.classList.add('selected');
+
+                            // Mark the card as selected
+                            pedicureCard.classList.add('selected');
+
+                            // Trigger the change event to update the card's selected state
+                            const changeEvent = new Event('change', { bubbles: true });
+                            colorOption.dispatchEvent(changeEvent);
+
+                            console.log('Pedicure color option selected (backup handler):', colorOption.checked);
+                            console.log('Pedicure card selected (backup handler):', pedicureCard.classList.contains('selected'));
+                        }
+
+                        // Scroll to the pedicure card
+                        pedicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    // Close the modal
+                    comboOfferModal.classList.remove('active');
+                });
+            }
+
+            if (addManicureBtn) {
+                addManicureBtn.addEventListener('click', function () {
+                    console.log('Add manicure button clicked');
+                    // Find the manicure card and open it
+                    const manicureCard = document.getElementById('manicure-card');
+                    if (manicureCard) {
+                        // Open the manicure card
+                        manicureCard.classList.add('active');
+
+                        // Find the single color option button and checkbox
+                        const colorOption = document.getElementById('manicure-color');
+                        const colorOptionBtn = document.querySelector('.service-option-btn[data-option="color"][data-service="manicure"]');
+
+                        if (colorOption && colorOptionBtn) {
+                            // Check the checkbox
+                            colorOption.checked = true;
+
+                            // Add selected class to the button
+                            colorOptionBtn.classList.add('selected');
+
+                            // Mark the card as selected
+                            manicureCard.classList.add('selected');
+
+                            // Trigger the change event to update the card's selected state
+                            const changeEvent = new Event('change', { bubbles: true });
+                            colorOption.dispatchEvent(changeEvent);
+
+                            console.log('Manicure color option selected:', colorOption.checked);
+                            console.log('Manicure card selected:', manicureCard.classList.contains('selected'));
+                        }
+
+                        // Scroll to the manicure card
+                        manicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    // Close the modal
+                    comboOfferModal.classList.remove('active');
+                });
+            }
+
+            // Set up bare combo offer modal button handlers
+            const closeBareComboModalBtn = document.querySelector('.close-bare-combo-modal');
+            const noThanksBareBtn = document.getElementById('no-thanks-bare-btn');
+
+            console.log('Close bare combo modal button found:', !!closeBareComboModalBtn);
+            console.log('No thanks bare button found:', !!noThanksBareBtn);
+
+            // Direct button click handlers for bare combo modal
+            document.querySelectorAll('#add-bare-pedicure-btn, #add-bare-manicure-btn, #no-thanks-bare-btn, .close-bare-combo-modal').forEach(function (button) {
+                console.log('Adding direct click handler to bare combo button:', button.id || button.className);
+
+                // Remove any existing click handlers
+                button.onclick = null;
+
+                // Add new click handler
+                button.onclick = function (e) {
+                    console.log('Bare combo button clicked:', this.id || this.className);
+
+                    // Close the modal
+                    if (bareComboOfferModal) {
+                        bareComboOfferModal.classList.remove('active');
+                    }
+
+                    // Handle specific button actions
+                    if (this.id === 'add-bare-pedicure-btn') {
+                        // Additional actions for add bare pedicure button
+                        const pedicureCard = document.getElementById('pedicure-card');
+                        if (pedicureCard) {
+                            // Open the pedicure card
+                            pedicureCard.classList.add('active');
+
+                            // Find the bare pedicure option button and checkbox
+                            const barePedicureOption = document.getElementById('pedicure-bare');
+                            const barePedicureOptionBtn = document.querySelector('.service-option-btn[data-option="bare-pedicure"][data-service="pedicure"]');
+
+                            if (barePedicureOption && barePedicureOptionBtn) {
+                                // Check the checkbox
+                                barePedicureOption.checked = true;
+
+                                // Add selected class to the button
+                                barePedicureOptionBtn.classList.add('selected');
+
+                                // Mark the card as selected
+                                pedicureCard.classList.add('selected');
+
+                                // Trigger the change event to update the card's selected state
+                                const changeEvent = new Event('change', { bubbles: true });
+                                barePedicureOption.dispatchEvent(changeEvent);
+
+                                console.log('Bare pedicure option selected:', barePedicureOption.checked);
+                                console.log('Pedicure card selected:', pedicureCard.classList.contains('selected'));
+                            }
+
+                            // Scroll to the pedicure card
+                            pedicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    } else if (this.id === 'add-bare-manicure-btn') {
+                        // Additional actions for add bare manicure button
+                        const manicureCard = document.getElementById('manicure-card');
+                        if (manicureCard) {
+                            // Open the manicure card
+                            manicureCard.classList.add('active');
+
+                            // Find the bare manicure option button and checkbox
+                            const bareManicureOption = document.getElementById('manicure-bare');
+                            const bareManicureOptionBtn = document.querySelector('.service-option-btn[data-option="bare-manicure"][data-service="manicure"]');
+
+                            if (bareManicureOption && bareManicureOptionBtn) {
+                                // Check the checkbox
+                                bareManicureOption.checked = true;
+
+                                // Add selected class to the button
+                                bareManicureOptionBtn.classList.add('selected');
+
+                                // Mark the card as selected
+                                manicureCard.classList.add('selected');
+
+                                // Trigger the change event to update the card's selected state
+                                const changeEvent = new Event('change', { bubbles: true });
+                                bareManicureOption.dispatchEvent(changeEvent);
+
+                                console.log('Bare manicure option selected:', bareManicureOption.checked);
+                                console.log('Manicure card selected:', manicureCard.classList.contains('selected'));
+                            }
+
+                            // Scroll to the manicure card
+                            manicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }
+                };
+            });
+
+            // Original handlers (keeping as backup)
+            if (closeBareComboModalBtn) {
+                closeBareComboModalBtn.addEventListener('click', function () {
+                    console.log('Close bare combo modal button clicked');
+                    bareComboOfferModal.classList.remove('active');
+                });
+            }
+
+            if (noThanksBareBtn) {
+                noThanksBareBtn.addEventListener('click', function () {
+                    console.log('No thanks bare button clicked');
+                    bareComboOfferModal.classList.remove('active');
+                });
+            }
+
+            if (addBarePedicureBtn) {
+                addBarePedicureBtn.addEventListener('click', function () {
+                    console.log('Add bare pedicure button clicked');
+                    // Find the pedicure card and open it
+                    const pedicureCard = document.getElementById('pedicure-card');
+                    if (pedicureCard) {
+                        // Open the pedicure card
+                        pedicureCard.classList.add('active');
+
+                        // Find the bare pedicure option button and checkbox
+                        const barePedicureOption = document.getElementById('pedicure-bare');
+                        const barePedicureOptionBtn = document.querySelector('.service-option-btn[data-option="bare-pedicure"][data-service="pedicure"]');
+
+                        if (barePedicureOption && barePedicureOptionBtn) {
+                            // Check the checkbox
+                            barePedicureOption.checked = true;
+
+                            // Add selected class to the button
+                            barePedicureOptionBtn.classList.add('selected');
+
+                            // Mark the card as selected
+                            pedicureCard.classList.add('selected');
+
+                            // Trigger the change event to update the card's selected state
+                            const changeEvent = new Event('change', { bubbles: true });
+                            barePedicureOption.dispatchEvent(changeEvent);
+
+                            console.log('Bare pedicure option selected (backup handler):', barePedicureOption.checked);
+                            console.log('Pedicure card selected (backup handler):', pedicureCard.classList.contains('selected'));
+                        }
+
+                        // Scroll to the pedicure card
+                        pedicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    // Close the modal
+                    bareComboOfferModal.classList.remove('active');
+                });
+            }
+
+            if (addBareManicureBtn) {
+                addBareManicureBtn.addEventListener('click', function () {
+                    console.log('Add bare manicure button clicked');
+                    // Find the manicure card and open it
+                    const manicureCard = document.getElementById('manicure-card');
+                    if (manicureCard) {
+                        // Open the manicure card
+                        manicureCard.classList.add('active');
+
+                        // Find the bare manicure option button and checkbox
+                        const bareManicureOption = document.getElementById('manicure-bare');
+                        const bareManicureOptionBtn = document.querySelector('.service-option-btn[data-option="bare-manicure"][data-service="manicure"]');
+
+                        if (bareManicureOption && bareManicureOptionBtn) {
+                            // Check the checkbox
+                            bareManicureOption.checked = true;
+
+                            // Add selected class to the button
+                            bareManicureOptionBtn.classList.add('selected');
+
+                            // Mark the card as selected
+                            manicureCard.classList.add('selected');
+
+                            // Trigger the change event to update the card's selected state
+                            const changeEvent = new Event('change', { bubbles: true });
+                            bareManicureOption.dispatchEvent(changeEvent);
+
+                            console.log('Bare manicure option selected (backup handler):', bareManicureOption.checked);
+                            console.log('Manicure card selected (backup handler):', manicureCard.classList.contains('selected'));
+                        }
+
+                        // Scroll to the manicure card
+                        manicureCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    // Close the modal
+                    bareComboOfferModal.classList.remove('active');
+                });
+            }
+        });
+    </script>
+
+    <!-- Date picker and booking scripts are already included above -->
+
+    <!-- Main booking script -->
+    <script src="scripts/booking.js"></script>
+
+    <!-- Service option buttons script -->
+    <script src="scripts/service-option-buttons.js"></script>
+
+    <!-- Service card toggle fix script -->
+    <script src="scripts/service-card-toggle-fix.js"></script>
+
+    <!-- API booking script -->
+    <script src="scripts/booking-api.js"></script>
+
+    <!-- API handler script -->
+    <script src="scripts/api-handler.js"></script>
+
+    <!-- Confirmation modal fix script -->
+    <script src="scripts/confirmation-modal-fix.js"></script>
+
+    <!-- Schema tag -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ReservationPage",
+      "name": "Book Appointment - Naillabo Beauty Salon",
+      "description": "Book your nail services and eyelash extensions appointment",
+      "provider": {
+        "@type": "NailSalon",
+        "name": "Naillabo Beauty Salon",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3530-4151 Hazelbridge Way",
+          "addressLocality": "Richmond",
+          "addressRegion": "BC",
+          "addressCountry": "CA"
+        }
+      }
+    }
+    </script>
+    <!-- Chatbot -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "mfASjJYTt37a0hQ65WX6A",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="mfASjJYTt37a0hQ65WX6A" domain="www.chatbase.co" defer>
+    </script>
+</body>
+
+</html>

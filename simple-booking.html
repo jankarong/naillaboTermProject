@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单预约表单 - Naillabo Salon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff4d8d;
+            text-align: center;
+        }
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-section h2 {
+            margin-top: 0;
+            color: #ff4d8d;
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 10px;
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        .service-options {
+            margin-top: 10px;
+        }
+        .service-option {
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ff4d8d;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #e6336d;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>简单预约表单</h1>
+        <p>请填写以下信息预约您的服务。</p>
+        
+        <form id="booking-form">
+            <div class="form-section">
+                <h2>个人信息</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">姓名 / Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">电子邮箱 / Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">电话 / Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>服务选择</h2>
+                <div class="form-group">
+                    <label>选择服务类型 / Select Service Type</label>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <input type="checkbox" id="manicure" name="service-type" value="Manicure">
+                            <label for="manicure">美甲 / Manicure</label>
+                            <select id="manicure-type" name="manicure-type" disabled>
+                                <option value="">选择美甲类型 / Select Manicure Type</option>
+                                <option value="Bare Manicure">裸甲 / Bare Manicure</option>
+                                <option value="Single Color">单色 / Single Color</option>
+                                <option value="Nail Extension">甲片延长 / Nail Extension</option>
+                                <option value="Other">其他 / Other</option>
+                            </select>
+                            <input type="text" id="manicure-other" name="manicure-other" placeholder="请说明其他美甲类型 / Specify other manicure type" style="display: none; margin-top: 5px;">
+                        </div>
+                        
+                        <div class="service-option">
+                            <input type="checkbox" id="pedicure" name="service-type" value="Pedicure">
+                            <label for="pedicure">足部护理 / Pedicure</label>
+                            <select id="pedicure-type" name="pedicure-type" disabled>
+                                <option value="">选择足部护理类型 / Select Pedicure Type</option>
+                                <option value="Bare Pedicure">裸甲 / Bare Pedicure</option>
+                                <option value="Single Color">单色 / Single Color</option>
+                                <option value="Other">其他 / Other</option>
+                            </select>
+                            <input type="text" id="pedicure-other" name="pedicure-other" placeholder="请说明其他足部护理类型 / Specify other pedicure type" style="display: none; margin-top: 5px;">
+                        </div>
+                        
+                        <div class="service-option">
+                            <input type="checkbox" id="spa" name="service-type" value="Spa Treatment">
+                            <label for="spa">水疗护理 / Spa Treatment</label>
+                            <select id="spa-type" name="spa-type" disabled>
+                                <option value="">选择水疗护理类型 / Select Spa Type</option>
+                                <option value="Hands">手部 / Hands</option>
+                                <option value="Feet">足部 / Feet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="service-option">
+                            <input type="checkbox" id="eyelash" name="service-type" value="Eyelash">
+                            <label for="eyelash">睫毛服务 / Eyelash Service</label>
+                            <select id="eyelash-type" name="eyelash-type" disabled>
+                                <option value="">选择睫毛服务类型 / Select Eyelash Type</option>
+                                <option value="Classic">经典 / Classic</option>
+                                <option value="Volume">浓密 / Volume</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>预约时间</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">日期 / Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">时间 / Time</label>
+                        <select id="time" name="time" required>
+                            <option value="">选择时间 / Select Time</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:15">10:15 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="10:45">10:45 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:15">11:15 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="11:45">11:45 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:15">12:15 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="12:45">12:45 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:15">1:15 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="13:45">1:45 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:15">2:15 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="14:45">2:45 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:15">3:15 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="15:45">3:45 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:15">4:15 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                            <option value="16:45">4:45 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:15">5:15 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="17:45">5:45 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:15">6:15 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="18:45">6:45 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">特殊要求 / Special Requests</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn" id="submit-btn">提交预约 / Submit Booking</button>
+        </form>
+        
+        <div id="result" class="result"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 服务类型选择逻辑
+            const serviceCheckboxes = document.querySelectorAll('input[name="service-type"]');
+            serviceCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const serviceType = this.value.toLowerCase();
+                    const typeSelect = document.getElementById(`${serviceType}-type`);
+                    if (typeSelect) {
+                        typeSelect.disabled = !this.checked;
+                        if (!this.checked) {
+                            typeSelect.value = '';
+                            
+                            // 隐藏"其他"输入框
+                            const otherInput = document.getElementById(`${serviceType}-other`);
+                            if (otherInput) {
+                                otherInput.style.display = 'none';
+                                otherInput.value = '';
+                            }
+                        }
+                    }
+                });
+            });
+            
+            // "其他"选项逻辑
+            const serviceTypeSelects = document.querySelectorAll('select[name$="-type"]');
+            serviceTypeSelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    const serviceType = this.name.replace('-type', '');
+                    const otherInput = document.getElementById(`${serviceType}-other`);
+                    if (otherInput) {
+                        otherInput.style.display = this.value === 'Other' ? 'block' : 'none';
+                        if (this.value !== 'Other') {
+                            otherInput.value = '';
+                        }
+                    }
+                });
+            });
+            
+            // 设置日期最小值为今天
+            const dateInput = document.getElementById('date');
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            dateInput.min = `${year}-${month}-${day}`;
+            
+            // 表单提交处理
+            const bookingForm = document.getElementById('booking-form');
+            const resultDiv = document.getElementById('result');
+            
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // 基本验证
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                
+                // 检查是否选择了至少一项服务
+                let anyServiceSelected = false;
+                let selectedServices = [];
+                
+                serviceCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        anyServiceSelected = true;
+                        const serviceType = checkbox.value;
+                        const typeSelect = document.getElementById(`${serviceType.toLowerCase()}-type`);
+                        let serviceDetail = '';
+                        
+                        if (typeSelect && typeSelect.value) {
+                            serviceDetail = typeSelect.value;
+                            
+                            // 如果选择了"其他"，获取详细说明
+                            if (serviceDetail === 'Other') {
+                                const otherInput = document.getElementById(`${serviceType.toLowerCase()}-other`);
+                                if (otherInput && otherInput.value.trim()) {
+                                    serviceDetail = `Other: ${otherInput.value.trim()}`;
+                                }
+                            }
+                        }
+                        
+                        selectedServices.push(`${serviceType}: ${serviceDetail}`);
+                    }
+                });
+                
+                if (!name || !email || !phone || !date || !time || !anyServiceSelected) {
+                    resultDiv.className = 'result error';
+                    resultDiv.style.display = 'block';
+                    resultDiv.textContent = '请填写所有必填字段并选择至少一项服务 / Please fill in all required fields and select at least one service';
+                    return;
+                }
+                
+                // 准备邮件内容
+                const message = document.getElementById('message').value.trim();
+                const servicesText = selectedServices.join('\n');
+                
+                // 构建邮件正文
+                const emailBody = `
+姓名 / Name: ${name}
+电子邮箱 / Email: ${email}
+电话 / Phone: ${phone}
+日期 / Date: ${date}
+时间 / Time: ${time}
+服务 / Services:
+${servicesText}
+${message ? `特殊要求 / Special Requests:\n${message}` : ''}
+                `.trim();
+                
+                // 构建mailto链接
+                const subject = encodeURIComponent(`预约请求: ${name} - ${date} ${time}`);
+                const body = encodeURIComponent(emailBody);
+                const mailtoLink = `mailto:naillabo3530@gmail.com?subject=${subject}&body=${body}`;
+                
+                // 显示成功消息
+                resultDiv.className = 'result success';
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `
+                    <p><strong>预约信息已准备好发送！</strong></p>
+                    <p>点击下面的按钮使用您的默认邮件客户端发送预约请求。</p>
+                    <p><a href="${mailtoLink}" class="btn" style="text-decoration: none;">发送预约邮件</a></p>
+                    <p>发送后，我们会尽快回复确认您的预约。</p>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
