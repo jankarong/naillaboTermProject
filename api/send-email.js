@@ -192,6 +192,8 @@ module.exports = async (req, res) => {
 
     // 发送客户确认邮件
     logMessage('正在发送客户确认邮件...');
+    logMessage(`客户邮件将发送至: ${email}`);
+    logMessage(`客户邮件内容: ${JSON.stringify(customerMailOptions)}`);
     const customerInfo = await transporter.sendMail(customerMailOptions);
     logMessage(`客户确认邮件发送成功: ${customerInfo.messageId}`);
 
@@ -205,10 +207,13 @@ module.exports = async (req, res) => {
 
   } catch (error) {
     logMessage(`邮件发送错误: ${error.message}`);
+    logMessage(`错误详情: ${JSON.stringify(error)}`);
+    logMessage(`错误堆栈: ${error.stack}`);
     return res.status(500).json({
       success: false,
       message: '邮件发送失败，请稍后再试。',
-      error: error.message
+      error: error.message,
+      stack: error.stack
     });
   }
 };
