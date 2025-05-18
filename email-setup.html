@@ -111,7 +111,7 @@
 
         <div class="setup-section">
             <h2>Current Configuration</h2>
-            <p>Gmail App Password: <strong>titz phvs ktxs eoqt</strong> (configured)</p>
+            <p>Gmail App Password: <strong>••••••••••••••••</strong> (configured securely on server)</p>
             <p>Email Sending Method: <strong>Direct SMTP</strong></p>
 
             <div id="status-box" class="status-box info">
@@ -171,9 +171,8 @@
             const testForm = document.getElementById('test-form');
             const statusBox = document.getElementById('status-box');
 
-            // Store the Gmail app password
-            sessionStorage.setItem('gmail_app_password', "titz phvs ktxs eoqt");
-            console.log('Gmail app password set in email-setup.html');
+            // Email credentials are now stored securely on the server side
+            console.log('Email credentials are now stored securely on the server side');
 
             testForm.addEventListener('submit', function (event) {
                 event.preventDefault();

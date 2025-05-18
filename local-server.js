@@ -8,6 +8,13 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 
+// 加载环境变量（如果存在.env文件）
+try {
+    require('dotenv').config();
+} catch (e) {
+    console.log('dotenv模块未安装，将使用硬编码的环境变量');
+}
+
 // 创建Express应用
 const app = express();
 const PORT = process.env.PORT || 8082; // 使用一个不太可能被占用的端口
@@ -58,8 +65,8 @@ app.post('/api/send-email', async (req, res) => {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'naillabo3530@gmail.com',
-                pass: 'titz phvs ktxs eoqt' // Gmail应用专用密码
+                user: process.env.GMAIL_USER || 'naillabo3530@gmail.com',
+                pass: process.env.GMAIL_APP_PASSWORD || 'kgbx nfwh ospj digq' // Gmail应用专用密码
             }
         });
 

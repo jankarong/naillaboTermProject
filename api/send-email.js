@@ -1,6 +1,10 @@
 // Vercel Serverless Function for sending emails
 const nodemailer = require('nodemailer');
 
+// Vercel 环境变量在部署时设置，这里提供一个默认值作为备份
+const GMAIL_USER = process.env.GMAIL_USER || 'naillabo3530@gmail.com';
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD || 'kgbx nfwh ospj digq';
+
 // 创建日志函数
 function logMessage(message) {
   console.log(`[${new Date().toISOString()}] ${message}`);
@@ -43,8 +47,8 @@ module.exports = async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'naillabo3530@gmail.com',
-        pass: 'titz phvs ktxs eoqt' // Gmail应用专用密码
+        user: GMAIL_USER,
+        pass: GMAIL_APP_PASSWORD // Gmail应用专用密码
       }
     });
 
