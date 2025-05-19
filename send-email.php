@@ -194,8 +194,8 @@ $customerBody = "
                 <p class='confirm-text-cn'>请回复数字\"1\"确认您的预约</p>
             </div>
 
-            <p style='font-size: 16px; color: #333;'>If you have any questions, please contact us at <a href='tel:604.998.7666' style='color: #ff4d8d; text-decoration: none; font-weight: 600;'>604.998.7666</a></p>
             <p style='font-size: 16px; color: #333;'>We look forward to serving you!</p>
+            <p style='font-size: 16px; color: #333;'>If you have any questions, please contact us at <a href='tel:604.998.7666' style='color: #ff4d8d; text-decoration: none; font-weight: 600;'>604.998.7666</a></p>
             <p style='font-size: 16px; color: #333; font-weight: 600;'>Naillabo Salon Team</p>
         </div>
         <div class='footer'>
