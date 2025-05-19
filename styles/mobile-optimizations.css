@@ -1,6 +1,6 @@
 /**
  * Mobile Optimizations for Booking Interface
- * 
+ *
  * This file contains specific optimizations for the mobile view of the booking interface,
  * focusing on improving service selection, date/time pickers, and overall usability.
  */
@@ -9,52 +9,55 @@
 
 /* Optimize service cards for mobile */
 @media (max-width: 480px) {
+
     /* Make service cards display in a single column */
     .service-cards {
         grid-template-columns: 1fr !important;
         gap: 16px !important;
     }
-    
+
     /* Improve service card header */
     .service-card-header {
         padding: 16px !important;
         min-height: 60px;
     }
-    
+
     /* Make service icons larger and more visible */
     .service-icon {
         font-size: 2.2rem !important;
         margin-bottom: 5px;
     }
-    
+
     /* Improve service card title */
     .service-card-title span {
         font-size: 1.1rem !important;
         font-weight: 500;
     }
-    
+
     /* Ensure toggle icon is easily tappable */
     .card-toggle {
         padding: 12px !important;
         margin: -12px !important;
     }
-    
+
     .card-toggle i {
         font-size: 1.2rem;
     }
-    
+
     /* Improve service options area */
     .service-card.active .service-card-options {
         padding: 16px !important;
-        max-height: 800px !important; /* Allow more space for options */
+        max-height: 800px !important;
+        /* Allow more space for options */
     }
-    
+
     /* Optimize service option buttons grid */
     .service-options-grid {
-        grid-template-columns: 1fr 1fr !important; /* Two columns only */
+        grid-template-columns: 1fr 1fr !important;
+        /* Two columns only */
         gap: 12px !important;
     }
-    
+
     /* Make service option buttons larger and more tappable */
     .service-option-btn {
         padding: 16px 10px !important;
@@ -63,24 +66,68 @@
         justify-content: center !important;
         align-items: center !important;
         border-radius: 10px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        -webkit-tap-highlight-color: transparent !important;
+        /* Remove default tap highlight */
+        touch-action: manipulation !important;
+        /* Optimize for touch */
     }
-    
+
+    /* Add touch feedback effect */
+    .service-option-btn::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(255, 77, 141, 0.1) !important;
+        opacity: 0 !important;
+        transition: opacity 0.2s ease !important;
+        pointer-events: none !important;
+    }
+
+    .service-option-btn:active::after {
+        opacity: 1 !important;
+    }
+
     /* Improve option label visibility */
     .option-label {
         font-size: 1rem !important;
         line-height: 1.2 !important;
+        pointer-events: none !important;
+        /* Ensure clicks go through to the button */
     }
-    
+
     /* Make selected state more obvious */
     .service-option-btn.selected {
         background-color: #fff0f5 !important;
         border: 2px solid var(--primary-color) !important;
         box-shadow: 0 4px 8px rgba(255, 77, 141, 0.2) !important;
     }
-    
+
     .service-option-btn.selected .option-label {
         color: var(--primary-color) !important;
         font-weight: 600 !important;
+    }
+
+    /* Add checkmark to selected options */
+    .service-option-btn.selected::before {
+        content: '✓' !important;
+        position: absolute !important;
+        top: 5px !important;
+        right: 5px !important;
+        width: 18px !important;
+        height: 18px !important;
+        background-color: var(--primary-color) !important;
+        color: white !important;
+        border-radius: 50% !important;
+        font-size: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 1 !important;
     }
 }
 
@@ -88,28 +135,56 @@
 
 /* Standardize date and time selectors */
 @media (max-width: 768px) {
+
     /* Make form groups full width */
     .form-row {
         flex-direction: column !important;
         gap: 16px !important;
     }
-    
+
     .form-group {
         width: 100% !important;
         margin-bottom: 16px !important;
     }
-    
+
     /* Standardize date input */
     input[type="date"] {
         height: 54px !important;
         width: 100% !important;
         padding: 0 15px !important;
-        font-size: 16px !important; /* Mobile-friendly size */
+        font-size: 16px !important;
+        /* Mobile-friendly size */
         border: 1px solid #ddd !important;
         border-radius: 10px !important;
         background-color: #ffffff !important;
+        cursor: pointer !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='%23444444' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z'/></svg>") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 15px center !important;
+        background-size: 24px !important;
     }
-    
+
+    /* Fix date input text alignment */
+    input[type="date"]::-webkit-datetime-edit {
+        padding: 0 !important;
+        line-height: 54px !important;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 54px !important;
+        height: 54px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+        cursor: pointer !important;
+    }
+
     /* Standardize time select */
     select#time {
         height: 54px !important;
@@ -119,15 +194,16 @@
         border: 1px solid #ddd !important;
         border-radius: 10px !important;
         background-color: #ffffff !important;
+        cursor: pointer !important;
         -webkit-appearance: none !important;
         -moz-appearance: none !important;
         appearance: none !important;
-        background-image: url("data:image/svg+xml;utf8,<svg fill='%23444444' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") !important;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='%23444444' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'/></svg>") !important;
         background-repeat: no-repeat !important;
         background-position: right 15px center !important;
         background-size: 24px !important;
     }
-    
+
     /* Improve focus states */
     input[type="date"]:focus,
     select#time:focus {
@@ -135,27 +211,50 @@
         border-color: var(--primary-color) !important;
         box-shadow: 0 0 0 3px rgba(255, 77, 141, 0.1) !important;
     }
+
+    /* Add active state for better touch feedback */
+    input[type="date"]:active,
+    select#time:active {
+        background-color: #f9f9f9 !important;
+        transform: scale(0.99) !important;
+    }
+
+    /* Fix input icon positioning */
+    .input-with-icon {
+        position: relative !important;
+    }
+
+    .input-with-icon .input-icon {
+        position: absolute !important;
+        left: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        pointer-events: none !important;
+        display: none !important;
+        /* Hide default icons since we're using custom ones */
+    }
 }
 
 /* ===== Overall Layout Improvements ===== */
 
 @media (max-width: 480px) {
+
     /* Adjust section spacing */
     .booking-section {
         padding: 100px 0 40px !important;
     }
-    
+
     .booking-container {
         padding: 0 15px !important;
     }
-    
+
     /* Improve form sections */
     .form-section {
         padding: 20px 15px !important;
         margin-bottom: 20px !important;
         border-radius: 12px !important;
     }
-    
+
     /* Adjust section titles */
     .section-title {
         font-size: 1.1rem !important;
@@ -163,22 +262,23 @@
         display: flex !important;
         align-items: center !important;
     }
-    
+
     .section-number {
         width: 28px !important;
         height: 28px !important;
         font-size: 1rem !important;
         margin-right: 10px !important;
     }
-    
+
     /* Ensure all form elements have adequate tap targets */
     .form-group input,
     .form-group select,
     .form-group textarea {
-        font-size: 16px !important; /* Mobile-friendly size */
+        font-size: 16px !important;
+        /* Mobile-friendly size */
         padding: 12px 15px !important;
     }
-    
+
     /* Improve submit button */
     .btn-primary {
         padding: 14px 20px !important;
