@@ -396,15 +396,103 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 console.log('Any service selected:', anyServiceSelected);
 
+                // Create a custom dialog function to replace alerts
+                function showCustomDialog(message) {
+                    // Check if a dialog already exists and remove it
+                    const existingDialog = document.querySelector('.custom-validation-dialog');
+                    if (existingDialog) {
+                        existingDialog.remove();
+                    }
+
+                    // Create dialog element
+                    const dialog = document.createElement('div');
+                    dialog.className = 'custom-validation-dialog';
+                    dialog.innerHTML = `
+                        <div class="dialog-content">
+                            <p>${message}</p>
+                            <div class="dialog-buttons">
+                                <button type="button" class="btn btn-primary dialog-ok-btn">OK</button>
+                                <button type="button" class="btn btn-secondary dialog-suppress-btn">Suppress dialogs</button>
+                            </div>
+                        </div>
+                    `;
+
+                    // Add dialog to body
+                    document.body.appendChild(dialog);
+
+                    // Store dialog preference in localStorage
+                    const suppressDialogs = localStorage.getItem('suppressValidationDialogs') === 'true';
+
+                    // If dialogs are suppressed, don't show the dialog
+                    if (suppressDialogs) {
+                        dialog.remove();
+                        return;
+                    }
+
+                    // Add event listeners
+                    const okBtn = dialog.querySelector('.dialog-ok-btn');
+                    const suppressBtn = dialog.querySelector('.dialog-suppress-btn');
+
+                    okBtn.addEventListener('click', function () {
+                        dialog.remove();
+                    });
+
+                    suppressBtn.addEventListener('click', function () {
+                        localStorage.setItem('suppressValidationDialogs', 'true');
+                        dialog.remove();
+                    });
+
+                    // Add styles if they don't exist
+                    if (!document.getElementById('custom-dialog-styles')) {
+                        const style = document.createElement('style');
+                        style.id = 'custom-dialog-styles';
+                        style.textContent = `
+                            .custom-validation-dialog {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                z-index: 10000;
+                            }
+                            .custom-validation-dialog .dialog-content {
+                                background-color: white;
+                                padding: 20px;
+                                border-radius: 5px;
+                                max-width: 90%;
+                                width: 400px;
+                                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                            }
+                            .custom-validation-dialog p {
+                                margin-bottom: 15px;
+                                font-size: 16px;
+                            }
+                            .custom-validation-dialog .dialog-buttons {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                            .custom-validation-dialog .btn {
+                                padding: 8px 15px;
+                                cursor: pointer;
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                }
+
                 // Modified validation logic
                 if (!name || !email || !phone || !anyServiceSelected || !date || !time) {
                     event.preventDefault(); // Prevent form submission
 
                     // Show specific error message based on what's missing
                     if (!anyServiceSelected) {
-                        alert('请至少选择一项服务 / Please select at least one service option');
+                        showCustomDialog('请至少选择一项服务 / Please select at least one service option');
                     } else {
-                        alert('请填写所有必填字段 / Please fill in all required fields');
+                        showCustomDialog('请填写所有必填字段 / Please fill in all required fields');
                     }
                     return;
                 }
@@ -412,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Basic date validation - more detailed validation is in date-picker.js
                 if (!date) {
                     event.preventDefault(); // Prevent form submission
-                    alert('请选择预约日期 / Please select an appointment date');
+                    showCustomDialog('请选择预约日期 / Please select an appointment date');
                     return;
                 }
 
@@ -443,7 +531,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Only show warning if selected date is BEFORE today
                 if (selectedDateStr < todayStr) {
                     event.preventDefault(); // Prevent form submission
-                    alert('请选择今天或未来的日期 / Please select today or a future date');
+                    showCustomDialog('请选择今天或未来的日期 / Please select today or a future date');
                     return;
                 }
 
@@ -451,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(email)) {
                     event.preventDefault(); // Prevent form submission
-                    alert('Please enter a valid email address');
+                    showCustomDialog('Please enter a valid email address');
                     return;
                 }
 
@@ -459,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const phoneRegex = /^[0-9\-\+\(\)\s\.]+$/;
                 if (!phoneRegex.test(phone)) {
                     event.preventDefault(); // Prevent form submission
-                    alert('Please enter a valid phone number');
+                    showCustomDialog('Please enter a valid phone number');
                     return;
                 }
 

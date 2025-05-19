@@ -52,7 +52,85 @@ document.addEventListener('DOMContentLoaded', function () {
         // This means the date string is lexicographically less than today's string
         if (selectedDateStr < todayStr) {
             this.value = ''; // Clear the input
-            alert('不能选择过去的日期 / Cannot select past dates');
+
+            // Check if we should suppress dialogs
+            const suppressDialogs = localStorage.getItem('suppressValidationDialogs') === 'true';
+            if (!suppressDialogs) {
+                // Use custom dialog if available, otherwise fallback to alert
+                if (typeof showCustomDialog === 'function') {
+                    showCustomDialog('不能选择过去的日期 / Cannot select past dates');
+                } else {
+                    // Create a simple custom dialog
+                    const dialog = document.createElement('div');
+                    dialog.className = 'custom-validation-dialog';
+                    dialog.innerHTML = `
+                        <div class="dialog-content">
+                            <p>不能选择过去的日期 / Cannot select past dates</p>
+                            <div class="dialog-buttons">
+                                <button type="button" class="btn btn-primary dialog-ok-btn">OK</button>
+                                <button type="button" class="btn btn-secondary dialog-suppress-btn">Suppress dialogs</button>
+                            </div>
+                        </div>
+                    `;
+
+                    // Add styles if they don't exist
+                    if (!document.getElementById('custom-dialog-styles')) {
+                        const style = document.createElement('style');
+                        style.id = 'custom-dialog-styles';
+                        style.textContent = `
+                            .custom-validation-dialog {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                z-index: 10000;
+                            }
+                            .custom-validation-dialog .dialog-content {
+                                background-color: white;
+                                padding: 20px;
+                                border-radius: 5px;
+                                max-width: 90%;
+                                width: 400px;
+                                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                            }
+                            .custom-validation-dialog p {
+                                margin-bottom: 15px;
+                                font-size: 16px;
+                            }
+                            .custom-validation-dialog .dialog-buttons {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                            .custom-validation-dialog .btn {
+                                padding: 8px 15px;
+                                cursor: pointer;
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+
+                    // Add dialog to body
+                    document.body.appendChild(dialog);
+
+                    // Add event listeners
+                    const okBtn = dialog.querySelector('.dialog-ok-btn');
+                    const suppressBtn = dialog.querySelector('.dialog-suppress-btn');
+
+                    okBtn.addEventListener('click', function () {
+                        dialog.remove();
+                    });
+
+                    suppressBtn.addEventListener('click', function () {
+                        localStorage.setItem('suppressValidationDialogs', 'true');
+                        dialog.remove();
+                    });
+                }
+            }
         }
     });
 });
