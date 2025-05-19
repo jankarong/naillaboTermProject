@@ -169,11 +169,13 @@
     .btn {
         width: 100%;
         padding: 12px 24px;
+        border-radius: var(--radius-pill);
     }
 
     .header-book-btn {
         padding: 8px 24px;
         min-width: 120px;
+        border-radius: var(--radius-pill);
     }
 
     .slider-btn {
@@ -194,4 +196,5 @@
 #edit-booking-btn {
     justify-content: center;
     padding: 14px 30px;
+    border-radius: var(--radius-pill);
 }

@@ -69,6 +69,8 @@
         padding: 10px 12px;
         font-size: 12px;
         min-width: 100px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
     }
 
     .side-coupon-btn i {

@@ -279,10 +279,32 @@
         padding: 12px 15px !important;
     }
 
-    /* Improve submit button */
+    /* Improve all buttons for mobile */
+    .btn {
+        padding: 14px 20px !important;
+        font-size: 1rem !important;
+        border-radius: 50px !important;
+        /* Make all buttons rounded */
+    }
+
     .btn-primary {
         padding: 14px 20px !important;
         font-size: 1rem !important;
-        border-radius: 10px !important;
+        border-radius: 50px !important;
+    }
+
+    .btn-secondary {
+        padding: 14px 20px !important;
+        font-size: 1rem !important;
+        border-radius: 50px !important;
+    }
+
+    /* Ensure confirmation buttons are rounded */
+    #confirm-booking-btn,
+    #edit-booking-btn,
+    #book-appointment-btn,
+    .action-buttons .btn,
+    .confirmation-buttons .btn {
+        border-radius: 50px !important;
     }
 }

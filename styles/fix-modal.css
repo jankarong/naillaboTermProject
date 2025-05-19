@@ -74,6 +74,7 @@
     font-weight: bold !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.3s ease !important;
+    border-radius: 50px !important;
 }
 
 .combo-offer-actions .btn-primary:hover {
@@ -90,6 +91,7 @@
     font-weight: bold !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
     transition: all 0.3s ease !important;
+    border-radius: 50px !important;
 }
 
 .combo-offer-actions .btn-secondary:hover {
@@ -108,5 +110,6 @@
         width: 100% !important;
         margin-bottom: 10px !important;
         padding: 15px 20px !important;
+        border-radius: 50px !important;
     }
 }
