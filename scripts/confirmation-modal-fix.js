@@ -73,7 +73,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 // Get date and time in a more readable format
-                const dateObj = new Date(document.getElementById('date').value);
+                // Fix timezone issue by parsing date correctly
+                const dateValue = document.getElementById('date').value; // Format: YYYY-MM-DD
+                const [year, month, day] = dateValue.split('-').map(num => parseInt(num));
+                // Create date object in local timezone (avoid UTC interpretation)
+                const dateObj = new Date(year, month - 1, day); // month is 0-based
                 const formattedDate = dateObj.toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
