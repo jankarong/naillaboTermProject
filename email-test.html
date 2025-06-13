@@ -4,40 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmailJS Test Page</title>
+    <title>Email Template Test</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
             background-color: #f5f5f5;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
         .test-section {
-            margin-bottom: 30px;
+            background: white;
             padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .test-section h2 {
-            margin-top: 0;
-            color: #444;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
@@ -51,8 +33,7 @@
         }
 
         input,
-        textarea,
-        select {
+        textarea {
             width: 100%;
             padding: 8px;
             border: 1px solid #ddd;
@@ -64,281 +45,110 @@
             background-color: #ff4d8d;
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
         }
 
         button:hover {
-            background-color: #e6336d;
+            background-color: #ff3377;
         }
 
         .result {
-            margin-top: 15px;
+            margin-top: 10px;
             padding: 10px;
             border-radius: 4px;
-            display: none;
         }
 
         .success {
             background-color: #d4edda;
             color: #155724;
-            border: 1px solid #c3e6cb;
         }
 
         .error {
             background-color: #f8d7da;
             color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .info {
-            background-color: #e2f3fd;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
-        }
-
-        pre {
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-            white-space: pre-wrap;
-        }
-
-        .back-link {
-            display: block;
-            margin-top: 20px;
-            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>EmailJS Test Page</h1>
-        <p>This page helps diagnose issues with EmailJS configuration and email sending.</p>
-
-        <div class="test-section">
-            <h2>1. Verify EmailJS Configuration</h2>
+    <div class="test-section">
+        <h1>Test New Confirmation Email Template</h1>
+        <form id="test-form">
             <div class="form-group">
-                <label for="service-id">Service ID:</label>
-                <input type="text" id="service-id" value="service_rmiyfwo">
+                <label for="name">Customer Name:</label>
+                <input type="text" id="name" value="Test Customer" required>
             </div>
             <div class="form-group">
-                <label for="template-id">Template ID:</label>
-                <input type="text" id="template-id" value="template_hma2qxz">
+                <label for="email">To Email:</label>
+                <input type="email" id="email" value="your-email@example.com" required>
             </div>
             <div class="form-group">
-                <label for="public-key">Public Key:</label>
-                <input type="text" id="public-key" value="VPtNX1DxK3QAnNYS">
-            </div>
-            <button id="verify-btn">Verify Configuration</button>
-            <div id="verify-result" class="result"></div>
-        </div>
-
-        <div class="test-section">
-            <h2>2. Send Test Email</h2>
-            <div class="form-group">
-                <label for="to-email">To Email:</label>
-                <input type="email" id="to-email" value="naillabo3530@gmail.com">
+                <label for="date">Appointment Date:</label>
+                <input type="date" id="date" required>
             </div>
             <div class="form-group">
-                <label for="to-name">To Name:</label>
-                <input type="text" id="to-name" value="Naillabo Salon">
+                <label for="time">Appointment Time:</label>
+                <input type="text" id="time" value="10:00 AM" required>
             </div>
             <div class="form-group">
-                <label for="message">Test Message:</label>
-                <textarea id="message" rows="4">This is a test email to verify EmailJS functionality.</textarea>
+                <label for="services">Services:</label>
+                <textarea id="services" rows="3" required>Manicure - Single Color
+Pedicure - Bare Service</textarea>
             </div>
-            <button id="send-test-btn">Send Test Email</button>
-            <div id="send-result" class="result"></div>
-        </div>
-
-        <div class="test-section">
-            <h2>3. Check EmailJS Status</h2>
-            <p>Visit the <a href="https://status.emailjs.com/" target="_blank">EmailJS Status Page</a> to check if there
-                are any service outages.</p>
-            <p>Also, verify your account status in the <a href="https://dashboard.emailjs.com/admin"
-                    target="_blank">EmailJS Dashboard</a>.</p>
-        </div>
-
-        <a href="book-new.html" class="back-link">Back to Booking Page</a>
+            <div class="form-group">
+                <label for="message">Special Requests (Optional):</label>
+                <textarea id="message" rows="3">Please use light pink color for manicure</textarea>
+            </div>
+            <button type="submit">Send Test Email</button>
+        </form>
+        <div id="result" class="result" style="display: none;"></div>
     </div>
 
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <!-- Email credentials are now stored securely on the server side -->
     <script>
-        console.log('Email credentials are now stored securely on the server side');
-    </script>
+        document.getElementById('test-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Verify configuration button
-            document.getElementById('verify-btn').addEventListener('click', function () {
-                const serviceId = document.getElementById('service-id').value.trim();
-                const templateId = document.getElementById('template-id').value.trim();
-                const publicKey = document.getElementById('public-key').value.trim();
-                const resultDiv = document.getElementById('verify-result');
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result';
+            resultDiv.textContent = 'Sending test email...';
 
-                resultDiv.className = 'result info';
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = 'Verifying configuration...';
+            const testData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                services: document.getElementById('services').value,
+                message: document.getElementById('message').value
+            };
 
-                try {
-                    // Initialize EmailJS with the provided public key and debug mode
-                    emailjs.init({
-                        publicKey: publicKey,
-                        debug: true
-                    });
-                    console.log('EmailJS initialized with public key:', publicKey);
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
 
-                    // Check if the service and template exist by sending a minimal test
-                    const testParams = {
-                        to_name: 'Test',
-                        to_email: 'test@example.com',
-                        message: 'Configuration test'
-                    };
-
-                    emailjs.send({
-                        serviceID: serviceId,
-                        templateID: templateId,
-                        templateParams: testParams,
-                        publicKey: publicKey
-                    })
-                        .then(function (response) {
-                            resultDiv.className = 'result success';
-                            resultDiv.innerHTML = `
-                                <strong>Configuration verified successfully!</strong><br>
-                                Response: ${JSON.stringify(response)}
-                            `;
-                        })
-                        .catch(function (error) {
-                            resultDiv.className = 'result error';
-                            let errorDetails = '';
-                            if (error.text) {
-                                errorDetails = error.text;
-                            } else if (error.message) {
-                                errorDetails = error.message;
-                            } else {
-                                errorDetails = JSON.stringify(error);
-                            }
-
-                            resultDiv.innerHTML = `
-                                <strong>Configuration error:</strong><br>
-                                ${errorDetails}<br><br>
-                                <strong>Possible issues:</strong><br>
-                                - Service ID might be invalid or expired<br>
-                                - Template ID might be invalid or deleted<br>
-                                - Public key might be incorrect<br>
-                                - Account might have reached its limit<br>
-                                - Template parameters might not match what's expected
-                            `;
-                        });
-                } catch (error) {
-                    resultDiv.className = 'result error';
-                    resultDiv.innerHTML = `
-                        <strong>Initialization error:</strong><br>
-                        ${error.message || JSON.stringify(error)}
-                    `;
+                if (response.ok) {
+                    resultDiv.className = 'result success';
+                    resultDiv.textContent = 'Test email sent successfully! Please check your inbox.';
+                } else {
+                    throw new Error('Failed to send email');
                 }
-            });
-
-            // Send test email button
-            document.getElementById('send-test-btn').addEventListener('click', function () {
-                const serviceId = document.getElementById('service-id').value.trim();
-                const templateId = document.getElementById('template-id').value.trim();
-                const publicKey = document.getElementById('public-key').value.trim();
-                const toEmail = document.getElementById('to-email').value.trim();
-                const toName = document.getElementById('to-name').value.trim();
-                const message = document.getElementById('message').value.trim();
-                const resultDiv = document.getElementById('send-result');
-
-                resultDiv.className = 'result info';
-                resultDiv.style.display = 'block';
-                resultDiv.innerHTML = 'Sending test email...';
-
-                try {
-                    // Initialize EmailJS with the provided public key and debug mode
-                    emailjs.init({
-                        publicKey: publicKey,
-                        debug: true
-                    });
-                    console.log('EmailJS initialized with public key for test email:', publicKey);
-
-                    // Prepare parameters for the test email
-                    const testParams = {
-                        to_name: toName,
-                        to_email: toEmail,
-                        message: message,
-                        customer_name: 'Test User',
-                        customer_email: toEmail,
-                        customer_phone: '123-456-7890',
-                        date: new Date().toLocaleDateString(),
-                        time: new Date().toLocaleTimeString(),
-                        services: 'Test Service'
-                    };
-
-                    // Log detailed parameters for debugging
-                    console.log('Sending test email with the following parameters:');
-                    console.log('- Service ID:', serviceId);
-                    console.log('- Template ID:', templateId);
-                    console.log('- Public Key:', publicKey);
-                    console.log('- Parameters:', JSON.stringify(testParams));
-
-                    // Check if Gmail app password is set
-                    const storedPassword = sessionStorage.getItem('gmail_app_password');
-                    console.log('- Gmail App Password set:', !!storedPassword);
-
-                    // Send the email
-                    emailjs.send({
-                        serviceID: serviceId,
-                        templateID: templateId,
-                        templateParams: testParams,
-                        publicKey: publicKey
-                    })
-                        .then(function (response) {
-                            resultDiv.className = 'result success';
-                            resultDiv.innerHTML = `
-                                <strong>Test email sent successfully!</strong><br>
-                                Response: ${JSON.stringify(response)}<br><br>
-                                Email sent to: ${toEmail}
-                            `;
-                        })
-                        .catch(function (error) {
-                            resultDiv.className = 'result error';
-                            let errorDetails = '';
-                            if (error.text) {
-                                errorDetails = error.text;
-                            } else if (error.message) {
-                                errorDetails = error.message;
-                            } else {
-                                errorDetails = JSON.stringify(error);
-                            }
-
-                            resultDiv.innerHTML = `
-                                <strong>Failed to send test email:</strong><br>
-                                ${errorDetails}<br><br>
-                                <strong>Debug information:</strong><br>
-                                Service ID: ${serviceId}<br>
-                                Template ID: ${templateId}<br>
-                                Public Key: ${publicKey}<br>
-                                To Email: ${toEmail}<br>
-                                To Name: ${toName}
-                            `;
-                        });
-                } catch (error) {
-                    resultDiv.className = 'result error';
-                    resultDiv.innerHTML = `
-                        <strong>Error:</strong><br>
-                        ${error.message || JSON.stringify(error)}
-                    `;
-                }
-            });
+            } catch (error) {
+                resultDiv.className = 'result error';
+                resultDiv.textContent = 'Error sending test email: ' + error.message;
+            }
         });
+
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('date').value = tomorrow.toISOString().split('T')[0];
     </script>
 </body>
 
