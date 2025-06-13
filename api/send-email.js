@@ -43,7 +43,7 @@ async function sendCustomerConfirmationEmail(data) {
                 <h2 style="color: #ff4d8d; margin-top: 0;">Important: Two-Step Confirmation Process</h2>
                 <ol style="color: #333; line-height: 1.6;">
                     <li>Please reply to this email with the number "1" to confirm your appointment request.</li>
-                    <li>Wait for our confirmation email. Your appointment is not confirmed until you receive our confirmation email.</li>
+                    <li><strong style="color: #ff4d8d;">Wait for our confirmation email. Your appointment is not confirmed until you receive our confirmation email.</strong></li>
                 </ol>
                 <p style="color: #666; font-style: italic;">We will review your request and send a confirmation email within 24 hours.</p>
             </div>
@@ -71,7 +71,7 @@ async function sendCustomerConfirmationEmail(data) {
   const mailOptions = {
     from: 'Naillabo Salon <naillabo3530@gmail.com>',
     to: email,
-    subject: "Please reply with '1' to confirm your appointment",
+    subject: "Please reply with '1' to confirm your appointment / 请回复数字'1'确认您的预约",
     html: htmlContent
   };
 
