@@ -43,7 +43,7 @@ async function sendCustomerConfirmationEmail(data) {
                 <h2 style="color: #ff4d8d; margin-top: 0;">Important: Two-Step Confirmation Process</h2>
                 <ol style="color: #333; line-height: 1.6;">
                     <li>Please reply to this email with the number "1" to confirm your appointment request.</li>
-                    <li><strong style="color: #ff4d8d;">Wait for our confirmation email. Your appointment is not confirmed until you receive our confirmation email.</strong></li>
+                    <li><strong>Wait for our confirmation email</strong>. Your appointment is not confirmed until you receive our confirmation email.</li>
                 </ol>
                 <p style="color: #666; font-style: italic;">We will review your request and send a confirmation email within 24 hours.</p>
             </div>
