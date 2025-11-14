@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Instagram configuration
     const INSTAGRAM_APP_ID = '10032640196749456'; // PictureFeed App ID
     const INSTAGRAM_USER_ID = '17841401570704472'; // Instagram Business Account ID
-    const INSTAGRAM_TOKEN = 'EAATZCPZBlkRN0BP3SLVISAh9RtIukyb9zumvZAAp52wEp0qclS3p7VLs2kuTjXVq4z7MHFzWF6CrPyaPWFnHuFocxJixg34IeTECdfn3BiEZAVaTEmmxAWNs5WzODHbEbiYSGoRHxq92mwvEhDxIQCZAweXP0e9TxTZAjBq1JoZAVGx4whXRj4YJChZAjcxqJCV6o879dbQcNcDOEhyt0r8W0NaH7KZAgfrZBiazjHaZAViw18rAwZDZD';
+    const INSTAGRAM_TOKEN = 'EAATZCPZBlkRN0BPxsVeqBZAjqGuPpwvPeb5q4dKACKP6YIdAXS7JzJPBopoYPKw3Taso1xHsGAqDYk4pV4B2u0LEZAORYhf3uruPN2gmZAjtOvGbv3z1xtMwnIZCEaVJKBnXVJiNyZBpfzcU7ks9TVk88yz2x65ffw4BF2PUj7ypMEbVLecijLvumw3Hq3B7KGnfAZDZD';
     const POSTS_LIMIT = 8; // Reduced initial limit for pagination
 
     // Store pagination data
