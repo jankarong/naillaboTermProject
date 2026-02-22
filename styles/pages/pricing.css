@@ -348,10 +348,31 @@
         margin-top: 0.1rem;
     }
 
-    .consultation-note .fa-weixin,
-    .consultation-note .fa-instagram {
-        font-size: 1.4rem;
-        margin: 0 0.2rem;
-        color: var(--accent-color);
+.consultation-note .fa-weixin,
+.consultation-note .fa-instagram {
+    font-size: 1.4rem;
+    margin: 0 0.2rem;
+    color: var(--accent-color);
+}
+}
+
+.price-image-replacement {
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--radius-large);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 0.5rem;
+}
+
+.price-menu-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: calc(var(--radius-large) - 8px);
+}
+
+@media (max-width: 768px) {
+    .price-image-replacement {
+        padding: 0.25rem;
     }
 }

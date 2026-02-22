@@ -310,7 +310,7 @@
     <script src="../scripts/navigation.js"></script>
     <script src="../scripts/wechat-qr.js"></script>
 
-    <!-- 中式美睫优惠弹窗 - 响应式设计 -->
+    <!-- Combo 优惠弹窗 - 响应式设计 -->
     <link rel="stylesheet" href="../styles/responsive-coupon-modal.css">
     <div id="eyelashPromoModal" class="responsive-promo-modal">
         <div class="responsive-promo-container">
@@ -320,13 +320,13 @@
             </button>
 
             <!-- 优惠标签 -->
-            <div class="responsive-promo-badge">FIRST-TIME EYELASH CLIENT SPECIAL</div>
+            <div class="responsive-promo-badge">MANICURE + PEDICURE COMBO</div>
 
             <!-- 内容区域 -->
             <div class="responsive-promo-content">
                 <!-- 左侧图片 -->
                 <div class="responsive-promo-image">
-                    <img src="../images/eyelash/chinese-style-eyelash.JPG" alt="Chinese Style Eyelash Extensions">
+                    <img src="../images/nails/singleColor.jpg" alt="Shellac Manicure color palette">
                     <!-- 添加图片上的装饰元素 -->
                     <div class="responsive-premium-badge">Premium Service</div>
                 </div>
@@ -334,24 +334,25 @@
                 <!-- 右侧内容 -->
                 <div class="responsive-promo-details">
                     <!-- 标题区域 -->
-                    <h3 class="responsive-promo-title">Chinese Style Eyelash Special</h3>
+                    <h3 class="responsive-promo-title">Manicure + Pedicure Combo</h3>
 
                     <!-- 副标题/描述 -->
                     <p class="responsive-promo-description">
-                        Special offer for first-time eyelash clients! Enjoy our professional Chinese style eyelash
-                        extensions for a naturally captivating look.
+                        Book manicure and pedicure together to get our special combo offer.
+                        Perfect for clients who want complete hand and foot care in one visit.
                     </p>
 
                     <!-- 价格显示 -->
                     <div class="responsive-price-container">
                         <!-- 价格标签 -->
-                        <div class="responsive-price-label">First-Time Client Offer</div>
+                        <div class="responsive-price-label">Special Combo Price</div>
                         <!-- 价格容器 -->
                         <div class="responsive-price-box">
                             <!-- 价格 -->
                             <div class="responsive-price">
+                                <span class="responsive-old-price">$135</span>
                                 <span class="responsive-price-currency">$</span>
-                                <span class="responsive-price-amount">88-128</span>
+                                <span class="responsive-price-amount">128</span>
                             </div>
                         </div>
                     </div>
@@ -400,7 +401,7 @@
             // 添加优惠券按钮 - 使用CSS类
             const couponBtn = document.createElement('button');
             couponBtn.className = 'side-coupon-btn';
-            couponBtn.innerHTML = '<i class="fas fa-tag"></i> EYELASH SPECIAL';
+            couponBtn.innerHTML = '<i class="fas fa-tag"></i> COMBO SPECIAL';
             couponBtn.addEventListener('click', showPromoModal);
             document.body.appendChild(couponBtn);
         });

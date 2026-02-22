@@ -259,6 +259,7 @@
 .responsive-price {
     display: flex;
     align-items: baseline;
+    gap: 8px;
 }
 
 .responsive-price-currency {
@@ -271,6 +272,15 @@
     font-size: 36px;
     font-weight: 700;
     color: #FF4D8D;
+}
+
+.responsive-old-price {
+    font-size: 30px;
+    font-weight: 700;
+    color: #9b9b9b;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #FF4D8D;
 }
 
 .responsive-promo-actions {
