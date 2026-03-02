@@ -7,12 +7,12 @@
     <title>Nail & Eyelash Services Price List Richmond BC | Affordable Beauty Salon</title>
     <meta name="description"
         content="Competitive prices for nail services and eyelash extensions in Richmond BC. View our complete price list for manicures, pedicures, nail art, and lash extensions at Aberdeen Center.">
-    <link rel="stylesheet" href="../styles/base/base.css">
-    <link rel="stylesheet" href="../styles/components/buttons.css">
-    <link rel="stylesheet" href="../styles/components/cards.css">
-    <link rel="stylesheet" href="../styles/components/header.css">
-    <link rel="stylesheet" href="../styles/components/footer.css">
-    <link rel="stylesheet" href="../styles/pages/pricing.css">
+    <link rel="stylesheet" href="styles/base/base.css">
+    <link rel="stylesheet" href="styles/components/buttons.css">
+    <link rel="stylesheet" href="styles/components/cards.css">
+    <link rel="stylesheet" href="styles/components/header.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/pages/pricing.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Cormorant for headings -->
@@ -70,12 +70,12 @@
     <!-- Header Navigation -->
     <header class="site-header">
         <nav class="container">
-            <a href="../index.html" class="logo">
-                <img src="../images/logo.png" alt="Elegant Nails Logo" class="logo-img">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Elegant Nails Logo" class="logo-img">
             </a>
 
             <!-- 移动端顶部Book Now按钮 -->
-            <a href="../book-new.html" class="header-book-btn">Book Now</a>
+            <a href="book-new.html" class="header-book-btn">Book Now</a>
 
             <button class="mobile-menu-toggle" aria-label="Toggle Menu">
                 <span></span>
@@ -94,9 +94,14 @@
                             <li><a href="services/eyelash.html">Eyelash Extension</a></li>
                         </ul>
                     </li>
-                    <li><a href="../gallery.html">Gallery</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="../joinus.html">Join Us</a></li>
+                    <li class="services-dropdown">
+                        <a href="seattle-foot-care.html">Guide <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="seattle-foot-care.html">Seattle Foot Care</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
@@ -111,10 +116,15 @@
                             <li><a href="services/eyelash.html">Eyelash Extension</a></li>
                         </ul>
                     </li>
-                    <li><a href="../gallery.html">Gallery</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="../joinus.html">Join Us</a></li>
-                    <li><a href="../book-new.html" class="nav-btn">Book Now</a></li>
+                    <li class="services-dropdown">
+                        <a href="seattle-foot-care.html">Guide <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="seattle-foot-care.html">Seattle Foot Care</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="book-new.html" class="nav-btn">Book Now</a></li>
                 </ul>
             </div>
         </nav>
@@ -171,6 +181,7 @@
                     <li><a href="services/manicure.html">Manicure & Nail Art</a></li>
                     <li><a href="services/pedicure.html">Pedicure & Spa Care</a></li>
                     <li><a href="services/eyelash.html">Eyelash Extension</a></li>
+                    <li><a href="joinus.html">Join Us</a></li>
                 </ul>
             </div>
 
@@ -189,7 +200,7 @@
                     </li>
                     <li>
                         <i class="fa-solid fa-tag"></i>
-                        <a href="../book-new.html" class="footer-link">Online Booking Available</a>
+                        <a href="book-new.html" class="footer-link">Online Booking Available</a>
                     </li>
                 </ul>
             </div>
@@ -233,13 +244,13 @@
             <button class="close-qr-modal" aria-label="Close QR Code">
                 <i class="fas fa-times"></i>
             </button>
-            <img src="../images/qrcode.JPG" alt="WeChat QR Code">
+            <img src="images/qrcode.JPG" alt="WeChat QR Code">
         </div>
     </div>
 
     <!-- Scripts -->
-    <script src="../scripts/navigation.js"></script>
-    <script src="../scripts/wechat-qr.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/wechat-qr.js"></script>
     <!-- Chatbot -->
     <script>
         window.embeddedChatbotConfig = {

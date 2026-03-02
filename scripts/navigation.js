@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenuToggle.classList.toggle('active');
     });
 
-    // 点击导航链接时关闭菜单（排除服务下拉菜单）
+    // 点击导航链接时关闭菜单（排除下拉菜单触发项）
     const navLinks = document.querySelectorAll('.mobile-menu .nav-links a:not(.services-dropdown > a)');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -27,15 +27,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // 添加移动端服务下拉菜单的交互
-    const serviceDropdown = document.querySelector('.mobile-menu .services-dropdown');
-    const serviceLink = serviceDropdown.querySelector('a');
-    const chevronIcon = serviceLink.querySelector('.fa-chevron-down');
+    // 添加移动端下拉菜单的交互（支持多个下拉）
+    const dropdownGroups = document.querySelectorAll('.mobile-menu .services-dropdown');
+    dropdownGroups.forEach(group => {
+        const triggerLink = group.querySelector(':scope > a');
+        const triggerIcon = triggerLink ? triggerLink.querySelector('.fa-chevron-down') : null;
+        if (!triggerLink) return;
 
-    serviceLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        serviceDropdown.classList.toggle('active');
-        chevronIcon.style.transform = serviceDropdown.classList.contains('active') ? 'rotate(0deg)' : 'rotate(-90deg)';
+        triggerLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            group.classList.toggle('active');
+            if (triggerIcon) {
+                triggerIcon.style.transform = group.classList.contains('active') ? 'rotate(0deg)' : 'rotate(-90deg)';
+            }
+        });
     });
 
     // 点击下拉菜单项时才关闭整个导航
@@ -44,8 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('active');
             mobileMenuToggle.classList.remove('active');
-            serviceDropdown.classList.remove('active');
-            chevronIcon.style.transform = 'rotate(-90deg)';
+            dropdownGroups.forEach(group => {
+                group.classList.remove('active');
+                const icon = group.querySelector(':scope > a .fa-chevron-down');
+                if (icon) icon.style.transform = 'rotate(-90deg)';
+            });
         });
     });
 });
