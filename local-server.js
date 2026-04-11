@@ -238,7 +238,6 @@ app.get('/', (req, res) => {
         <p>这个服务器只处理API请求，不提供静态文件服务。</p>
         <p>您可以继续通过浏览器直接打开HTML文件，例如：</p>
         <ul>
-            <li><a href="file://${path.resolve(__dirname, 'book.html')}" target="_blank">book.html</a> (可能需要手动复制链接)</li>
             <li><a href="file://${path.resolve(__dirname, 'book-new.html')}" target="_blank">book-new.html</a> (可能需要手动复制链接)</li>
         </ul>
         <p>API端点: <code>http://localhost:${PORT}/api/send-email</code></p>

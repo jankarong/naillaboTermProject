@@ -1,3 +1,11 @@
 {
-    "routes": []
+    "routes": [
+        {
+            "src": "/book\\.html",
+            "status": 301,
+            "headers": {
+                "Location": "/book-new.html"
+            }
+        }
+    ]
 }
