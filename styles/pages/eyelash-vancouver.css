@@ -1,0 +1,307 @@
+/* Premium Blog Page Styles - Eyelash Extensions Vancouver */
+
+:root {
+    --primary-color: #FF4D8D;
+    --secondary-color: #FFE3E1;
+    --primary-dark: #1A1A1A;
+    --text-muted: #666;
+    --bg-soft: #faf9f6;
+    --accent-soft: #FFE3E1;
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.vancouver-page {
+    background-color: var(--bg-soft);
+    color: var(--primary-dark);
+    line-height: 1.8;
+}
+
+/* Hero Section */
+.vancouver-hero {
+    position: relative;
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #fff 0%, #f4efea 100%);
+    overflow: hidden;
+}
+
+.vancouver-hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 40%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.vancouver-hero .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.vancouver-hero-content {
+    flex: 1;
+}
+
+.vancouver-hero-image {
+    flex: 1;
+    position: relative;
+}
+
+.vancouver-hero-image img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 8px solid #fff;
+    transition: var(--transition-smooth);
+}
+
+.vancouver-hero-image:hover img {
+    transform: scale(1.02) translateY(-10px);
+}
+
+.vancouver-hero h1 {
+    font-size: 3.5rem;
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--primary-dark);
+}
+
+.vancouver-hero .lead {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Section Common */
+.vancouver-section {
+    padding: 100px 0;
+}
+
+.vancouver-section h2 {
+    font-family: 'Cormorant', serif;
+    font-size: 2.75rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.vancouver-section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: var(--text-muted);
+}
+
+/* Grid Layouts */
+.vancouver-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* Feature Cards */
+.vancouver-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.vancouver-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.vancouver-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    display: inline-block;
+}
+
+.vancouver-card h3 {
+    font-family: 'Cormorant', serif;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+/* Content with Image Split */
+.vancouver-split {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.vancouver-split:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.vancouver-split-content {
+    flex: 1;
+}
+
+.vancouver-split-image {
+    flex: 1;
+}
+
+.vancouver-split-image img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 6px solid #fff;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Aftercare Section */
+.vancouver-aftercare {
+    background-color: var(--primary-dark);
+    color: #fff;
+    border-radius: 30px;
+    padding: 80px;
+    margin: 0 20px;
+}
+
+.vancouver-aftercare h2 {
+    color: #fff;
+}
+
+.aftercare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.aftercare-item {
+    display: flex;
+    gap: 20px;
+}
+
+.aftercare-item-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* FAQ Accordion-style */
+.vancouver-faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vancouver-faq-item {
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.vancouver-faq-question {
+    padding: 24px 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.vancouver-faq-answer {
+    padding: 0 30px 24px;
+    color: var(--text-muted);
+}
+
+/* CTA Section */
+.vancouver-cta {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+    margin-top: 80px;
+}
+
+.vancouver-cta h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.vancouver-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.vancouver-cta .btn-white {
+    background: #fff;
+    color: #1a1a1a;
+    padding: 18px 45px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+.vancouver-cta .btn-white:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .vancouver-hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .vancouver-hero h1 {
+        font-size: 2.75rem;
+    }
+    
+    .vancouver-split {
+        flex-direction: column !important;
+        gap: 40px;
+    }
+    
+    .vancouver-aftercare {
+        padding: 40px 20px;
+    }
+    
+    .aftercare-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .vancouver-section {
+        padding: 60px 0;
+    }
+    
+    .vancouver-hero {
+        padding: 80px 0 60px;
+    }
+}
